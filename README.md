@@ -6,7 +6,7 @@ Pick a unique game that is complicated enough to have a variety of strategy opti
 
 Within this repo, be sure to notice the Milestones, Issues, and Wiki -- this will guide your development process!
 
-Game selections are first-come, first-serve.  <b>Post your choice to the Wiki</b>, once you've made sure that other other CS403 student has already taken exactly the same game (it's certainly possible to spin one that's already taken).  
+Game selections are first-come, first-serve.  <b>Post your choice to the Wiki's "Project List"</b>, once you've made sure that no other CS403 student has already taken exactly the same game (it's certainly possible to spin one that's already taken).  
 
 
 
