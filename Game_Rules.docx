@@ -1,34 +1,34 @@
-Number of Players
+EUCHRE
+Number of Players:
 Game is played with 4 players playing 2 versus 2. Partners sit opposite each other.
-The Pack
-Standard 53-card deck omitting cards 2-6. The game is played 33 total cards, Joker, A, K, Q, J, 10, 9, 8, 7 of each suit.
-Rank of Cards
-The highest trump is the joker. The second-highest trump is the jack of the trump suit, called the "right bower." The third-highest trump is the jack of the other suit of the same color called the "left bower." (Example: If diamonds are trumps, the right bower is J? (diamond) and left bower is J? (heart).) The remaining trumps, and also the plain suits, rank as follows: A (high), K, Q, J, 10, 9, 8, 7.
-The Shuffle and Cut
-The dealer has the right to shuffle last. The pack is cut by the player to the dealer's right. The cut must not leave less than four cards in each packet.
-The Deal
-The cards are dealt clockwise, to the left, beginning with the player to the left of the dealer. Each player receives five cards. The dealer may give a round of three at a time, then a round of two at a time, or may give two, then three; but the dealer must adhere to whichever distribution plan he begins with. After the first deal, the deal passes to the player on the dealer's left.
-The Turn-up
-On completing the deal, the dealer places the rest of the pack in the center of the table and turns the top card face up. Should the turn-up be accepted as trump by any player, the dealer has the right to exchange the turn-up for another card in his hand. In this case, the dealer picks up the trump card, if desired, and places his discard face down underneath the pack.
-Making the Trump
-Beginning with the player to the left of the dealer, each player passes or accepts the turn-up as trump. An opponent of the dealer accepts by saying "I order it up." The partner of the dealer accepts by saying, "I assist." The dealer accepts by making his discard, called "taking it up."
-The dealer signifies refusal of the turn-up by removing the card from the top and placing it (face up) partially underneath the pack; this is called "turning it down."
-If all four players pass in the first round, each player in turn, starting with the player to the dealer's left, has the option of passing again or of naming the trump suit. The rejected suit may not be named. Declaring the other suit of the same color as the reject is called "making it next"; declaring a suit of opposite color is called "crossing it."
-If all four players pass in the second round, the cards are gathered and shuffled, and the next dealer deals. Once the trump is fixed, either by acceptance of the turn-up or by the naming of another suit, the turn-up is rejected, the bidding ends and play begins. If all players reject calling trump the 
-Playing Alone
-If the player who fixes the trump suit believes it will be to his side's advantage to play without the help of his partner's cards, the player exercises this option by declaring "alone" distinctly at the time of making the trump. This player's partner then turns his cards face down and does not participate in the play.
-Object of the Game
-The goal is to win at least three tricks. If the side that fixed the trump fails to get three tricks, it is said to be "euchred." Winning all five tricks is called a "march."
-The Play
-The opening lead is made by the player to the dealer's left, or if this player's partner is playing alone, it is made by the player across from the dealer. If he can, each player must follow suit to a lead. If unable to follow suit, the player may trump or discard any card. A trick is won by the highest card of the suit led, or, if it contains trumps, by the highest trump. The winner of a trick leads next.
-Scoring
+The Pack:
+The game is played 32 total cards: A, K, Q, J, 10, 9, 8, 7 of each suit.
+Rank of Cards:
+Trump is a designated high-suit. The highest trump is the jack of the trump suit, called the "right bower." The second-highest trump is the jack of the other suit of the same color called the "left bower." (Example: If diamonds are trumps, the right bower is J? and left bower is J?.) The remaining trumps, and also the plain suits, rank as follows: A (high), K, Q, J, 10, 9, 8, 7.
+The Deal:
+A random person is chosen to be the initial dealer. The cards are dealt clockwise, to the left, beginning with the player to the left of the dealer. Each player receives five cards. After the first deal, the deal passes to the player on the dealer's left.
+The Turn-up:
+On completing the deal, the dealer places the rest of the pack in the center of the table and turns the top card face up. The face up card designates the trump suit. 
+Object of the Game:
+The goal is to win at least three hands, called tricks. If dealer?s team fails to get three tricks, they are "euchred." Winning all five tricks is called a "march."
+The Play:
+The opening lead is made by the player to the dealer's left. If he can, each player must follow suit to a lead. If unable to follow suit, the player may trump or discard any card. A trick is won by the highest card of the suit led, or, if it contains trumps, by the highest trump. The winner of a trick leads next. 
+Possible Strategies:
+1. When possible, trump with highest trump in hand.
+2. When possible, trump with lowest trump in hand. 
+3. When possible, lead with highest card. 
+4. When possible, lead with lowest card. 
+5. When following suit, save highest cards for last. 
+6. When following suit, play highest card possible. 
+7. When not following suit (hand does not contain played suit) play lowest trump.
+8. When not following suit (hand does not contain played suit) play highest trump.
+9. When not following suit (hand does not contain played suit) play lowest non-trump card.
+10. If a partner is winning the hand, play off (i.e. play lowest card possible).
+11. If partner is winning the hand and there is another player that still needs to play then play a higher card if possible. 
+These strategies can be played in combination between partners. For example, one partner will follow strategy 1 while the other plays with strategy 2. 
+Scoring:
 The following shows all scoring situations: 
-Partnership making trump wins 3 or 4 tricks 1
-Partnership making trump wins 5 tricks 2
-Lone hand wins 3 or 4 tricks 1
-Lone hand wins 5 tricks 4
-Partnership or lone hand is euchred, opponents score 2
-When game is 5 points, each side uses a three-spot and a four-spot as markers. To indicate a score of 1, the four is placed face down on the three, with one pip left exposed. For a score of 2, the three is placed face down on the four, with two pips left exposed. For a score of 3, the three is placed face up on the four. For a score of 4, the four is placed face up on the three.
-Game
-The first player or partnership to score 7 points wins the game. 
-
+Dealer?s team wins 3 or 4 tricks 1
+Dealer?s team wins 5 tricks 2
+Dealer?s team is euchred, opponents score 2
+The first team to score 7 points wins the game. 
