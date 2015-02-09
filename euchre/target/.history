@@ -1,0 +1,23 @@
+run
+compile
+build
+scalaVersion
+set scalaVersion := "2.10.4"
+set version := "1.0"
+set name := "Euchre SBT Project, CS403"
+session save
+test
+run
+build
+clean
+compile
+run
+compile
+clean
+compile
+run
+exit
+clean
+compile
+run
+exit

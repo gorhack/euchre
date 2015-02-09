@@ -1,6 +1,6 @@
-name := "euchre"
+scalaVersion := "2.10.4"
 
 version := "1.0"
 
-scalaVersion := "2.11.5"
-    
+name := "Euchre SBT Project, CS403"
+
