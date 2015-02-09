@@ -1,21 +1,20 @@
 describe("A Deck") {
 	describe("in its initial state") {
 		it("has 32 cards") { fail }
-		it("has has 4 Aces") { fail }
-		it("has has 4 Kings") { fail }
-		it("has has 4 Queens") { fail }
-		it("has has 4 Jacks") { fail }
-		it("has has 4 10s") { fail }
-		it("has has 4 9s") { fail }
-		it("has has 4 8s") { fail }
-		it("has has 4 7s") { fail }
-		it("has has 4 Suits") { fail }
-		it("can shuffle") { fail }
+		it("has has value") { fail }
+		it("has has suit") { fail }
 	}
 	describe("in its ready state") {
 		it("can deal card") { fail }
 		it("can show top card") { fail }
 		it("can shuffle") { fail }
+	}
+	describe("in its play state") { // during a round
+		it("shows top card") { fail }
+		it("has 20 cards") { fail }
+	}
+	describe("after round completed") {
+		it("is initialized") { fail }
 	}
 }
 
@@ -28,6 +27,9 @@ describe("A Hand") {
 	}
 	describe("during normal gameplay") {
 		it("can play a card") { fail }
+	}
+	describe("after round completed") {
+		it("is has no cards") { fail }
 	}
 }
 
@@ -62,8 +64,9 @@ describe("A team") {
 		it("has 0 points") { fail }
 	}
 	describe("during normal gameplay") {
-		it("has up to 7 points") { fail }
+		it("has 7 or fewer points") { fail }
 		it("has the deal") { fail }
+		it("has between 0 and 5 tricks")
 	}
 }
 
@@ -74,10 +77,7 @@ describe("A Trick") {
 	}
 	describe("after first card has been played") {
 		it("is the suit of trump") { fail }
-		it("is a heart") { fail }
-		it("is a club") { fail }
-		it("is a spade") { fail }
-		it("is a diamond") { fail }
+		it("is not trump") { fail }
 	}
 	describe("in its normal state") {
 		it("has been trumped") { fail }
@@ -95,11 +95,31 @@ describe("A Round") {
 		it("has score of dealing team") { fail }
 	}
 	describe("during normal gameplay") {
-		it("has up to 5 tricks") { fail }
+		it("award trick to team") { fail }
 		it("has dealing team score up to 5 tricks") { fail }
 	}
-	describe("5 tricks have been played") {
-		it("declares winner of round") { fail }
-		it("assigns points to winning team") { fail }
+}
+
+describe("A Scoreboard") {
+	describe("in its initial state") {
+		it("all scores are zero") { fail }
+		it("round is zero") { fail }
+	}
+	describe("in its normal state") {
+		it("has high score >= 0") { fail }
+		it("round is not zero") { fail }
+		it("high score is not greater than 7") { fail }
+	}
+}
+
+describe("A GameArea") {
+	describe("in its initial state") {
+		it("has scoreboard") { fail }
+		it("has round") { fail }
+	}
+	describe("after round complete") {
+		it("updates scorebaord") { fail }
+		it("displays scoreboard") { fail }
+		it("starts another round") { fail }
 	}
 }
