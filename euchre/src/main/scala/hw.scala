@@ -1,1 +1,5 @@
-object Hi { def main(args: Array[String]) = println("Hi!") }
+object Euchre {
+	def main(args: Array[String]) {
+		println("Welcome to a game of Euchre!")
+	}
+}

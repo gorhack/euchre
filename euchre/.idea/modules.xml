@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/euchre.iml" filepath="$PROJECT_DIR$/.idea/modules/euchre.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/euchre-build.iml" filepath="$PROJECT_DIR$/.idea/modules/euchre-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/Euchre SBT Project, CS403.iml" filepath="$PROJECT_DIR$/.idea_modules/Euchre SBT Project, CS403.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea_modules/Euchre SBT Project, CS403-build.iml" filepath="$PROJECT_DIR$/.idea_modules/Euchre SBT Project, CS403-build.iml" />
     </modules>
   </component>
 </project>

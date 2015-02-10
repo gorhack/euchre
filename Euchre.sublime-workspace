@@ -1,0 +1,395 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"text",
+				"textBox"
+			],
+			[
+				"Gener",
+				"GenerateReport"
+			],
+			[
+				"repor",
+				"reportFile"
+			],
+			[
+				"cache",
+				"cacheFile"
+			],
+			[
+				"client",
+				"clientSocket"
+			],
+			[
+				"server",
+				"serverSocket"
+			],
+			[
+				"selection_",
+				"selection_clear  (function)"
+			],
+			[
+				"make",
+				"makeResponse"
+			],
+			[
+				"re",
+				"response_body"
+			],
+			[
+				"serv",
+				"serverPort"
+			],
+			[
+				"respo",
+				"response_status_txt"
+			],
+			[
+				"respon",
+				"response_status"
+			],
+			[
+				"connection",
+				"connectionSocket"
+			],
+			[
+				"connec",
+				"connectionSocket"
+			],
+			[
+				"conn",
+				"connectionSocket"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "euchre/src/main/scala/hw.scala",
+			"settings":
+			{
+				"buffer_size": 96,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "euchre/build.sbt",
+			"settings":
+			{
+				"buffer_size": 158,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"sbt",
+				"SBT: Stop SBT"
+			],
+			[
+				"run",
+				"SBT: Run"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"scala",
+				"SublimeREPL: Scala"
+			],
+			[
+				"python",
+				"SublimeREPL: Python"
+			],
+			[
+				"print",
+				"Print Entire File"
+			],
+			[
+				"pyth",
+				"Set Syntax: Python"
+			],
+			[
+				"sql",
+				"SQLExec: Execute"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/kyle/Documents/Development/cs403/euchre",
+		"/Users/kyle/Documents/Development/cs403/euchre/src",
+		"/Users/kyle/Documents/Development/cs403/euchre/src/main",
+		"/Users/kyle/Documents/Development/cs403/euchre/src/main/scala"
+	],
+	"file_history":
+	[
+		"/Users/kyle/Documents/Development/cs403/Behavior_Specifications.scala",
+		"/Users/kyle/Documents/Development/cs403/euchre/build.sbt",
+		"/Users/kyle/Documents/Development/cs403/euchre/hw.scala",
+		"/Users/kyle/.sbt/0.13/plugins/plugins.sbt",
+		"/Users/kyle/Downloads/openstego-0.6.1/openstego.bat",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS484/Gorak_PA2.py",
+		"/Users/kyle/Downloads/function_eval_service_source.py",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS350/Gorak_TEE_V1.sql.sql",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS350/HW4.py",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS350/HW4.sql",
+		"/Users/kyle/Desktop/ascii.py",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS484/Gorak_PA3.py",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS350/Gorak_HW3.sql",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS484/proxyServerShell - AY151.py",
+		"/Users/kyle/Library/Application Support/Sublime Text 3/Packages/SQLExec/SQLExec.sublime-settings",
+		"/Users/kyle/Documents/Development/guppyChecklist/db.sql",
+		"/Users/kyle/Documents/Development/guppyChecklist/test.sql",
+		"/Users/kyle/Documents/Development/ruby-getting-started/Procfile",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS484/TCP_Server.py",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS484/TCP_Client.py",
+		"/Users/kyle/Documents/lsn07solution.sql",
+		"/Users/kyle/Documents/lsn06solution_V2.sql",
+		"/Users/kyle/Documents/lsn05_ice_solution.sql",
+		"/Users/kyle/Documents/lsn4solution.sql",
+		"/Users/kyle/Documents/lsn3solution.sql",
+		"/Users/kyle/Documents/AY151_hw1.sql"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"textbox",
+			"1.0",
+			"clientSock",
+			"response",
+			"selectPort",
+			"choosePort"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "/Users/kyle/Documents/Development/cs403/euchre"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "euchre/src/main/scala/hw.scala",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 96,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Scala/Scala.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "euchre/build.sbt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 158,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								158,
+								158
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 23.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sbt":
+	{
+		"height": 76.0
+	},
+	"output.sbt_error":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

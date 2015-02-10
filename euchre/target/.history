@@ -21,3 +21,39 @@ clean
 compile
 run
 exit
+set libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.1" % "test" 
+session save
+test
+scalaVersion
+set scalaVersion := "2.11.5"
+save session
+session save
+build
+compile
+run
+test
+exit
+clean
+compile
+run
+test
+exit
+clean
+compile
+test
+run
+compile
+run
+exit
+compile
+run
+test
+gen-idea
+sbt compile
+exit
+idea-gen
+sbt-idea
+exit
+idea
+gen-idea
+exit
