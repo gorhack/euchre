@@ -57,3 +57,10 @@ exit
 idea
 gen-idea
 exit
+gen-idea
+clean
+exit
+compile
+run
+test
+exit
