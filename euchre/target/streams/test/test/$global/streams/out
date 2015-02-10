@@ -1,5 +1,8 @@
-[0m[[0minfo[0m] [0m[36mRun completed in 37 milliseconds.[0m[0m
-[0m[[0minfo[0m] [0m[36mTotal number of tests run: 0[0m[0m
-[0m[[0minfo[0m] [0m[36mSuites: completed 0, aborted 0[0m[0m
-[0m[[0minfo[0m] [0m[36mTests: succeeded 0, failed 0, canceled 0, ignored 0, pending 0[0m[0m
-[0m[[0minfo[0m] [0m[33mNo tests were executed.[0m[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(com.test.ProjectTester, org.scalatest.tools.Framework$$anon$1@9a849bb, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 368 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 2[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 1, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 2, failed 0, canceled 0, ignored 0, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	com.test.ProjectTester[0m
