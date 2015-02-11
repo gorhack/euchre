@@ -1,0 +1,70 @@
+run
+compile
+build
+scalaVersion
+set scalaVersion := "2.10.4"
+set version := "1.0"
+set name := "Euchre SBT Project, CS403"
+session save
+test
+run
+build
+clean
+compile
+run
+compile
+clean
+compile
+run
+exit
+clean
+compile
+run
+exit
+set libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.1" % "test" 
+session save
+test
+scalaVersion
+set scalaVersion := "2.11.5"
+save session
+session save
+build
+compile
+run
+test
+exit
+clean
+compile
+run
+test
+exit
+clean
+compile
+test
+run
+compile
+run
+exit
+compile
+run
+test
+gen-idea
+sbt compile
+exit
+idea-gen
+sbt-idea
+exit
+idea
+gen-idea
+exit
+gen-idea
+clean
+exit
+compile
+run
+test
+exit
+compile
+run
+test
+exit
