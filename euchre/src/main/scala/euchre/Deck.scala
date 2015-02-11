@@ -4,5 +4,9 @@
 package euchre
 
 class Deck {
-
+  def init: Deck = ???
+  def length = ???
+  def deal: Boolean = ???
+  def shuffle: Boolean = ???
+  def showTopCard: Card = ???
 }

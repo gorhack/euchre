@@ -4,5 +4,8 @@
 package euchre
 
 class Team {
-
+  def size: Int = ???
+  def points: Int = ???
+  def hasDeal: Boolean = ???
+  def tricks: Int = ???
 }

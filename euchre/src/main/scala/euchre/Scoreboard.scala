@@ -4,5 +4,6 @@
 package euchre
 
 class Scoreboard {
-
+  def scores: (Int, Int) = ???
+  def highScore: (Team, Int) = ???
 }

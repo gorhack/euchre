@@ -4,5 +4,6 @@
 package euchre
 
 class Hand {
-
+  def length: Int = ???
+  def playCard: Boolean = ???
 }
