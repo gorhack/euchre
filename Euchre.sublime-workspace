@@ -67,22 +67,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "euchre/src/main/scala/hw.scala",
-			"settings":
-			{
-				"buffer_size": 96,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "euchre/build.sbt",
-			"settings":
-			{
-				"buffer_size": 158,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -163,12 +147,16 @@
 		"/Users/kyle/Documents/Development/cs403/euchre",
 		"/Users/kyle/Documents/Development/cs403/euchre/src",
 		"/Users/kyle/Documents/Development/cs403/euchre/src/main",
-		"/Users/kyle/Documents/Development/cs403/euchre/src/main/scala"
+		"/Users/kyle/Documents/Development/cs403/euchre/src/test",
+		"/Users/kyle/Documents/Development/cs403/euchre/src/test/scala"
 	],
 	"file_history":
 	[
-		"/Users/kyle/Documents/Development/cs403/Behavior_Specifications.scala",
+		"/Users/kyle/Dropbox/USMA/2014 Classes/CS474/Lesson1 - Intro/Rectangle.py",
 		"/Users/kyle/Documents/Development/cs403/euchre/build.sbt",
+		"/Users/kyle/Documents/Development/cs403/Behavior_Specifications.scala",
+		"/Users/kyle/Documents/Development/cs403/euchre/src/test/scala/com/test/ProjectTest.scala",
+		"/Users/kyle/Documents/Development/cs403/euchre/src/main/scala/hw.scala",
 		"/Users/kyle/Documents/Development/cs403/euchre/hw.scala",
 		"/Users/kyle/.sbt/0.13/plugins/plugins.sbt",
 		"/Users/kyle/Downloads/openstego-0.6.1/openstego.bat",
@@ -240,65 +228,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "euchre/src/main/scala/hw.scala",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 96,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Scala/Scala.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "euchre/build.sbt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 158,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								158,
-								158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

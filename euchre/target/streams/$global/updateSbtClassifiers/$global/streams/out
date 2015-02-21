@@ -4,13 +4,13 @@
 [debug] 	URLRepository(typesafe-ivy-releases,Patterns(ivyPatterns=List(http://repo.typesafe.com/typesafe/ivy-releases/[organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]), artifactPatterns=List(http://repo.typesafe.com/typesafe/ivy-releases/[organization]/[module]/[revision]/[type]s/[artifact](-[classifier]).[ext]), isMavenCompatible=false, descriptorOptional=false, skipConsistencyCheck=false))
 [debug] 	public: http://repo1.maven.org/maven2/
 [debug] Using inline dependencies specified in Scala.
-[debug] :: resolving dependencies :: euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0
+[debug] :: resolving dependencies :: default#euchre$sbt_2.11;1.0
 [debug] 	confs: [default]
 [debug] 	validate = true
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'default'
-[debug] == resolving dependencies for euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0 [default]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->org.scala-sbt#sbt;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies for default#euchre$sbt_2.11;1.0 [default]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->org.scala-sbt#sbt;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.5
@@ -516,14 +516,14 @@
 [debug] == resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->compile]
 [debug] == resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-lang#scala-library;2.10.4 [compile->master]
 [debug] == resolving dependencies org.scala-sbt#precompiled-2_9_3;0.13.5->org.scala-sbt#interface;0.13.5 [compile->default(compile)]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->default(compile)]
 [info] Resolving com.github.mpeltonen#sbt-idea;1.6.0 ...
 [debug] sbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.6.0 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.6.0
 [debug] 	found com.github.mpeltonen#sbt-idea;1.6.0 in sbt-chain
 [debug] 	[1.6.0] com.github.mpeltonen#sbt-idea;1.6.0
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->compile]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->runtime]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->compile]
 [debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->compile(*)]
 [info] Resolving commons-io#commons-io;2.0.1 ...
 [debug] sbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
@@ -538,11 +538,11 @@
 [debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [compile->compile]
 [debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->runtime(*)]
 [debug] == resolving dependencies com.github.mpeltonen#sbt-idea;1.6.0->commons-io#commons-io;2.0.1 [runtime->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->default(compile)]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->master]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->master]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->runtime]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->compile]
+[debug] == resolving dependencies default#euchre$sbt_2.11;1.0->commons-io#commons-io;2.0.1 [default->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.5!sbt.jar
@@ -593,277 +593,277 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.5!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar
-[debug] :: resolution report :: resolve 727ms :: artifacts dl 31ms
-[debug] 	report for euchre-sbt-project-cs403#euchre-sbt-project-cs403$sbt_2.11;1.0 default produced in /Users/kyle/Documents/Development/cs403/euchre/target/resolution-cache/reports/euchre-sbt-project-cs403-euchre-sbt-project-cs403$sbt_2.11-default.xml
-[debug] 	resolve done (727ms resolve - 31ms download)
+[debug] :: resolution report :: resolve 862ms :: artifacts dl 32ms
+[debug] 	report for default#euchre$sbt_2.11;1.0 default produced in /Users/kyle/Documents/Development/cs403/euchre/target/resolution-cache/reports/default-euchre$sbt_2.11-default.xml
+[debug] 	resolve done (862ms resolve - 32ms download)
 [debug] Using inline dependencies specified in Scala.
-[debug] :: resolving dependencies :: euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0
+[debug] :: resolving dependencies :: default#euchre$sources_2.11;1.0
 [debug] 	confs: [default]
 [debug] 	validate = true
 [debug] 	refresh = false
 [debug] resolving dependencies for configuration 'default'
-[debug] == resolving dependencies for euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0 [default]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#sbt;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies for default#euchre$sources_2.11;1.0 [default]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#sbt;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.5
 [debug] 	found org.scala-sbt#sbt;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->default(compile)]
 [info] Resolving org.scala-lang#scala-library;2.10.4 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-library;2.10.4 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4
 [debug] 	found org.scala-lang#scala-library;2.10.4 in sbt-chain
 [debug] 	[2.10.4] org.scala-lang#scala-library;2.10.4
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#main;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-library;2.10.4 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#main;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#main;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#main;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#main;0.13.5
 [debug] 	found org.scala-sbt#main;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#actions;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#actions;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#actions;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#actions;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#actions;0.13.5
 [debug] 	found org.scala-sbt#actions;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#classpath;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#classpath;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#classpath;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#classpath;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#classpath;0.13.5
 [debug] 	found org.scala-sbt#classpath;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->default(compile)]
 [info] Resolving org.scala-lang#scala-compiler;2.10.4 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-compiler;2.10.4 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-compiler;2.10.4
 [debug] 	found org.scala-lang#scala-compiler;2.10.4 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-compiler;2.10.4 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->default(compile)]
 [info] Resolving org.scala-lang#scala-reflect;2.10.4 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-lang#scala-reflect;2.10.4 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-lang#scala-reflect;2.10.4
 [debug] 	found org.scala-lang#scala-reflect;2.10.4 in sbt-chain
 [debug] 	[2.10.4] org.scala-lang#scala-reflect;2.10.4
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#launcher-interface;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-lang#scala-reflect;2.10.4 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#launcher-interface;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#launcher-interface;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#launcher-interface;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#launcher-interface;0.13.5
 [debug] 	found org.scala-sbt#launcher-interface;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#interface;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#interface;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#interface;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#interface;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#interface;0.13.5
 [debug] 	found org.scala-sbt#interface;0.13.5 in sbt-chain
 [debug] 	[0.13.5] org.scala-sbt#interface;0.13.5
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#io;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#io;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#io;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#io;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#io;0.13.5
 [debug] 	found org.scala-sbt#io;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#control;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#control;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#control;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#control;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#control;0.13.5
 [debug] 	found org.scala-sbt#control;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#completion;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#completion;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#completion;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#completion;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#completion;0.13.5
 [debug] 	found org.scala-sbt#completion;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#collections;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#collections;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#collections;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#collections;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#collections;0.13.5
 [debug] 	found org.scala-sbt#collections;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->jline#jline;2.11 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->jline#jline;2.11 [default->default(compile)]
 [info] Resolving jline#jline;2.11 ...
 [debug] sbt-chain: Checking cache for: dependency: jline#jline;2.11 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: jline#jline;2.11
 [debug] 	found jline#jline;2.11 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->jline#jline;2.11 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->jline#jline;2.11 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->jline#jline;2.11 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#api;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->jline#jline;2.11 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->jline#jline;2.11 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->jline#jline;2.11 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#api;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#api;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#api;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#api;0.13.5
 [debug] 	found org.scala-sbt#api;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#compiler-integration;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#compiler-integration;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#compiler-integration;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#compiler-integration;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#compiler-integration;0.13.5
 [debug] 	found org.scala-sbt#compiler-integration;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#incremental-compiler;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#incremental-compiler;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#incremental-compiler;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#incremental-compiler;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#incremental-compiler;0.13.5
 [debug] 	found org.scala-sbt#incremental-compiler;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#logging;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#logging;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#logging;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#logging;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#logging;0.13.5
 [debug] 	found org.scala-sbt#logging;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#process;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#process;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#process;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#process;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#process;0.13.5
 [debug] 	found org.scala-sbt#process;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#relation;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#relation;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#relation;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#relation;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#relation;0.13.5
 [debug] 	found org.scala-sbt#relation;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#compile;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#compile;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#compile;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#compile;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#compile;0.13.5
 [debug] 	found org.scala-sbt#compile;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#persist;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#persist;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#persist;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#persist;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#persist;0.13.5
 [debug] 	found org.scala-sbt#persist;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-tools.sbinary#sbinary_2.10;0.4.2 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-tools.sbinary#sbinary_2.10;0.4.2 [default->default(compile)]
 [info] Resolving org.scala-tools.sbinary#sbinary_2.10;0.4.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-tools.sbinary#sbinary_2.10;0.4.2 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-tools.sbinary#sbinary_2.10;0.4.2
 [debug] 	found org.scala-tools.sbinary#sbinary_2.10;0.4.2 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#classfile;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#classfile;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#classfile;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#classfile;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#classfile;0.13.5
 [debug] 	found org.scala-sbt#classfile;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#compiler-ivy-integration;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#compiler-ivy-integration;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#compiler-ivy-integration;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#compiler-ivy-integration;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#compiler-ivy-integration;0.13.5
 [debug] 	found org.scala-sbt#compiler-ivy-integration;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#ivy;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#ivy;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#ivy;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#ivy;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#ivy;0.13.5
 [debug] 	found org.scala-sbt#ivy;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#cross;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#cross;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#cross;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#cross;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#cross;0.13.5
 [debug] 	found org.scala-sbt#cross;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->default(compile)]
 [info] Resolving org.apache.ivy#ivy;2.3.0 ...
 [debug] sbt-chain: Checking cache for: dependency: org.apache.ivy#ivy;2.3.0 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.apache.ivy#ivy;2.3.0
 [debug] 	found org.apache.ivy#ivy;2.3.0 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.apache.ivy#ivy;2.3.0 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->default(compile)]
 [info] Resolving com.jcraft#jsch;0.1.46 ...
 [debug] sbt-chain: Checking cache for: dependency: com.jcraft#jsch;0.1.46 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.jcraft#jsch;0.1.46
 [debug] 	found com.jcraft#jsch;0.1.46 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#run;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.jcraft#jsch;0.1.46 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#run;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#run;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#run;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#run;0.13.5
 [debug] 	found org.scala-sbt#run;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#task-system;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#task-system;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#task-system;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#task-system;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#task-system;0.13.5
 [debug] 	found org.scala-sbt#task-system;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#tasks;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#tasks;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#tasks;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#tasks;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#tasks;0.13.5
 [debug] 	found org.scala-sbt#tasks;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#tracking;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#tracking;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#tracking;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#tracking;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#tracking;0.13.5
 [debug] 	found org.scala-sbt#tracking;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#cache;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#cache;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#cache;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#cache;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#cache;0.13.5
 [debug] 	found org.scala-sbt#cache;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#testing;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#testing;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#testing;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#testing;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#testing;0.13.5
 [debug] 	found org.scala-sbt#testing;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#test-agent;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#test-agent;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#test-agent;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#test-agent;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#test-agent;0.13.5
 [debug] 	found org.scala-sbt#test-agent;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->default(compile)]
 [info] Resolving org.scala-sbt#test-interface;1.0 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#test-interface;1.0 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#test-interface;1.0
 [debug] 	found org.scala-sbt#test-interface;1.0 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#main-settings;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#test-interface;1.0 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#main-settings;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#main-settings;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#main-settings;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#main-settings;0.13.5
 [debug] 	found org.scala-sbt#main-settings;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#apply-macro;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#apply-macro;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#apply-macro;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#apply-macro;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#apply-macro;0.13.5
 [debug] 	found org.scala-sbt#apply-macro;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#command;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#command;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#command;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#command;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#command;0.13.5
 [debug] 	found org.scala-sbt#command;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#logic;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#logic;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#logic;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#logic;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#logic;0.13.5
 [debug] 	found org.scala-sbt#logic;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#precompiled-2_8_2;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#precompiled-2_8_2;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#precompiled-2_8_2;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#precompiled-2_8_2;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#precompiled-2_8_2;0.13.5
 [debug] 	found org.scala-sbt#precompiled-2_8_2;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#precompiled-2_9_2;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#precompiled-2_9_2;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#precompiled-2_9_2;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#precompiled-2_9_2;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#precompiled-2_9_2;0.13.5
 [debug] 	found org.scala-sbt#precompiled-2_9_2;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->org.scala-sbt#precompiled-2_9_3;0.13.5 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->org.scala-sbt#precompiled-2_9_3;0.13.5 [default->default(compile)]
 [info] Resolving org.scala-sbt#precompiled-2_9_3;0.13.5 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#precompiled-2_9_3;0.13.5 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#precompiled-2_9_3;0.13.5
 [debug] 	found org.scala-sbt#precompiled-2_9_3;0.13.5 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->default(compile)]
 [info] Resolving com.github.mpeltonen#sbt-idea;1.6.0 ...
 [debug] sbt-chain: Checking cache for: dependency: com.github.mpeltonen#sbt-idea;1.6.0 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: com.github.mpeltonen#sbt-idea;1.6.0
 [debug] 	found com.github.mpeltonen#sbt-idea;1.6.0 in sbt-chain
 [debug] 	[1.6.0] com.github.mpeltonen#sbt-idea;1.6.0
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->master]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->default(compile)]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->com.github.mpeltonen#sbt-idea;1.6.0 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->default(compile)]
 [info] Resolving commons-io#commons-io;2.0.1 ...
 [debug] sbt-chain: Checking cache for: dependency: commons-io#commons-io;2.0.1 {default=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: commons-io#commons-io;2.0.1
 [debug] 	found commons-io#commons-io;2.0.1 in sbt-chain
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->runtime]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->compile]
-[debug] == resolving dependencies euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->master]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->runtime]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->compile]
+[debug] == resolving dependencies default#euchre$sources_2.11;1.0->commons-io#commons-io;2.0.1 [default->master]
 [debug] 	resolved ivy file produced in cache
 [debug] :: downloading artifacts ::
 [debug] 	[NOT REQUIRED] org.scala-sbt#sbt;0.13.5!sbt.jar(src)
@@ -912,6 +912,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.5!precompiled-2_9_3.jar(src)
 [debug] 	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar(src)
 [debug] 	[NOT REQUIRED] commons-io#commons-io;2.0.1!commons-io.jar(src)
-[debug] :: resolution report :: resolve 160ms :: artifacts dl 25ms
-[debug] 	report for euchre-sbt-project-cs403#euchre-sbt-project-cs403$sources_2.11;1.0 default produced in /Users/kyle/Documents/Development/cs403/euchre/target/resolution-cache/reports/euchre-sbt-project-cs403-euchre-sbt-project-cs403$sources_2.11-default.xml
-[debug] 	resolve done (160ms resolve - 25ms download)
+[debug] :: resolution report :: resolve 190ms :: artifacts dl 26ms
+[debug] 	report for default#euchre$sources_2.11;1.0 default produced in /Users/kyle/Documents/Development/cs403/euchre/target/resolution-cache/reports/default-euchre$sources_2.11-default.xml
+[debug] 	resolve done (190ms resolve - 26ms download)
