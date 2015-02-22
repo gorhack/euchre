@@ -1,0 +1,583 @@
+[0m[[0minfo[0m] [0m[32mProjectTester:[0m[0m
+[0m[[0minfo[0m] [0m[32mA Deck[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[32m  - has 32 cards[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its ready state[0m[0m
+[0m[[0minfo[0m] [0m[32m  - can deal card[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can show top card *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    109Heart was not equal to 109Heart (ProjectTest.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[32m  - can shuffle[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its play state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 20 cards *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    euchre.Deck@301cbddc had length 32 instead of expected length 20 (ProjectTest.scala:30)[0m[0m
+[0m[[0minfo[0m] [0m[32m  after round completed[0m[0m
+[0m[[0minfo[0m] [0m[31m  - is initialized *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    List(109Heart, 109Diamond, 109Club, 109Spade, 119Heart, 119Diamond, 119Club, 119Spade, 125Heart, 125Diamond, 125Club, 125Spade, 118Heart, 118Diamond, 118Club, 118Spade, 92Heart, 92Diamond, 92Club, 92Spade, 101Heart, 101Diamond, 101Club, 101Spade, 100Heart, 100Diamond, 100Club, 100Spade, 99Heart, 99Diamond, 99Club, 99Spade) did not equal euchre.Deck@49b975a (ProjectTest.scala:36)[0m[0m
+[0m[[0minfo[0m] [0m[32mA Card[0m[0m
+[0m[[0minfo[0m] [0m[31m- has value *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  'A' did not equal (A,K,Q,J,0,9,8,7) (ProjectTest.scala:44)[0m[0m
+[0m[[0minfo[0m] [0m[31m- has suit *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m  "Heart" did not equal (Club,Spade,Diamond,Heart) (ProjectTest.scala:47)[0m[0m
+[0m[[0minfo[0m] [0m[32mA Hand[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has no cards *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Hand.length(Hand.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$13$$anonfun$apply$mcV$sp$14.apply$mcV$sp(ProjectTest.scala:56)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$13$$anonfun$apply$mcV$sp$14.apply(ProjectTest.scala:56)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$13$$anonfun$apply$mcV$sp$14.apply(ProjectTest.scala:56)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  after cards have been dealt[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 5 cards *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Hand.length(Hand.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$15$$anonfun$apply$mcV$sp$16.apply$mcV$sp(ProjectTest.scala:61)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$15$$anonfun$apply$mcV$sp$16.apply(ProjectTest.scala:61)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$15$$anonfun$apply$mcV$sp$16.apply(ProjectTest.scala:61)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  during normal gameplay[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can play a card *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Hand.playCard(Hand.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$18.apply$mcV$sp(ProjectTest.scala:66)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$18.apply(ProjectTest.scala:66)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$17$$anonfun$apply$mcV$sp$18.apply(ProjectTest.scala:66)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  after round completed[0m[0m
+[0m[[0minfo[0m] [0m[31m  - is has no cards *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Hand.length(Hand.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$19$$anonfun$apply$mcV$sp$20.apply$mcV$sp(ProjectTest.scala:71)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$19$$anonfun$apply$mcV$sp$20.apply(ProjectTest.scala:71)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$3$$anonfun$apply$mcV$sp$19$$anonfun$apply$mcV$sp$20.apply(ProjectTest.scala:71)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA Player[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has name *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.name(Player.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$22.apply$mcV$sp(ProjectTest.scala:80)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$22.apply(ProjectTest.scala:80)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$22.apply(ProjectTest.scala:80)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has teammate *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.teammate(Player.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$23.apply$mcV$sp(ProjectTest.scala:84)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$23.apply(ProjectTest.scala:82)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$23.apply(ProjectTest.scala:82)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has empty hand *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.hand(Player.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$24.apply$mcV$sp(ProjectTest.scala:87)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$24.apply(ProjectTest.scala:87)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$24.apply(ProjectTest.scala:87)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has playing schema *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.schema(Player.scala:10)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$25.apply$mcV$sp(ProjectTest.scala:91)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$25.apply(ProjectTest.scala:89)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$25.apply(ProjectTest.scala:89)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has position *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.position(Player.scala:11)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$26.apply$mcV$sp(ProjectTest.scala:95)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$26.apply(ProjectTest.scala:93)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$26.apply(ProjectTest.scala:93)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - is dealer *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.isDealer(Player.scala:12)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$27.apply$mcV$sp(ProjectTest.scala:98)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$27.apply(ProjectTest.scala:98)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$21$$anonfun$apply$mcV$sp$27.apply(ProjectTest.scala:98)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its ready to play state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 5 cards in hand *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.hand(Player.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$28$$anonfun$apply$mcV$sp$29.apply$mcV$sp(ProjectTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$28$$anonfun$apply$mcV$sp$29.apply(ProjectTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$28$$anonfun$apply$mcV$sp$29.apply(ProjectTest.scala:103)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can play card *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.canPlayCard(Player.scala:13)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$28$$anonfun$apply$mcV$sp$30.apply$mcV$sp(ProjectTest.scala:106)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$28$$anonfun$apply$mcV$sp$30.apply(ProjectTest.scala:106)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$28$$anonfun$apply$mcV$sp$30.apply(ProjectTest.scala:106)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  once the first turn is over[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 4 cards in hand *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.hand(Player.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$31$$anonfun$apply$mcV$sp$32.apply$mcV$sp(ProjectTest.scala:111)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$31$$anonfun$apply$mcV$sp$32.apply(ProjectTest.scala:111)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$31$$anonfun$apply$mcV$sp$32.apply(ProjectTest.scala:111)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  during normal gameplay[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can play card *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.canPlayCard(Player.scala:13)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$34.apply$mcV$sp(ProjectTest.scala:116)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$34.apply(ProjectTest.scala:116)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$34.apply(ProjectTest.scala:116)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can play trump *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.canPlayCard(Player.scala:13)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$35.apply$mcV$sp(ProjectTest.scala:119)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$35.apply(ProjectTest.scala:119)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$35.apply(ProjectTest.scala:119)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can follow suit *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Player.canPlayCard(Player.scala:13)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$36.apply$mcV$sp(ProjectTest.scala:122)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$36.apply(ProjectTest.scala:122)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$33$$anonfun$apply$mcV$sp$36.apply(ProjectTest.scala:122)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA team[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 2 players *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Team.size(Team.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$37$$anonfun$apply$mcV$sp$38.apply$mcV$sp(ProjectTest.scala:131)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$37$$anonfun$apply$mcV$sp$38.apply(ProjectTest.scala:131)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$37$$anonfun$apply$mcV$sp$38.apply(ProjectTest.scala:131)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 0 points *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Team.points(Team.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$37$$anonfun$apply$mcV$sp$39.apply$mcV$sp(ProjectTest.scala:134)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$37$$anonfun$apply$mcV$sp$39.apply(ProjectTest.scala:134)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$37$$anonfun$apply$mcV$sp$39.apply(ProjectTest.scala:134)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  during normal gameplay[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 7 or fewer points *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Team.points(Team.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$41.apply$mcV$sp(ProjectTest.scala:139)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$41.apply(ProjectTest.scala:139)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$41.apply(ProjectTest.scala:139)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has the deal *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Team.hasDeal(Team.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$42.apply$mcV$sp(ProjectTest.scala:142)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$42.apply(ProjectTest.scala:142)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$42.apply(ProjectTest.scala:142)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has between 0 and 5 tricks *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Team.tricks(Team.scala:10)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$43.apply$mcV$sp(ProjectTest.scala:145)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$43.apply(ProjectTest.scala:145)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$5$$anonfun$apply$mcV$sp$40$$anonfun$apply$mcV$sp$43.apply(ProjectTest.scala:145)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA Trick[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its intial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has a leading player *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trick.leader(Trick.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$44$$anonfun$apply$mcV$sp$45.apply$mcV$sp(ProjectTest.scala:155)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$44$$anonfun$apply$mcV$sp$45.apply(ProjectTest.scala:153)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$44$$anonfun$apply$mcV$sp$45.apply(ProjectTest.scala:153)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has no cards *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trick.cards(Trick.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$44$$anonfun$apply$mcV$sp$46.apply$mcV$sp(ProjectTest.scala:158)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$44$$anonfun$apply$mcV$sp$46.apply(ProjectTest.scala:158)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$44$$anonfun$apply$mcV$sp$46.apply(ProjectTest.scala:158)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  after first card has been played[0m[0m
+[0m[[0minfo[0m] [0m[31m  - is the suit of trump *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trick.cards(Trick.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$47$$anonfun$apply$mcV$sp$48.apply$mcV$sp(ProjectTest.scala:164)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$47$$anonfun$apply$mcV$sp$48.apply(ProjectTest.scala:162)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$47$$anonfun$apply$mcV$sp$48.apply(ProjectTest.scala:162)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its normal state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has been trumped *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trick.isTrumped(Trick.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$49$$anonfun$apply$mcV$sp$50.apply$mcV$sp(ProjectTest.scala:169)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$49$$anonfun$apply$mcV$sp$50.apply(ProjectTest.scala:169)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$49$$anonfun$apply$mcV$sp$50.apply(ProjectTest.scala:169)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  after last player has played a card[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can declare winning player of the trick *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trick.winner(Trick.scala:10)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$51$$anonfun$apply$mcV$sp$52.apply$mcV$sp(ProjectTest.scala:175)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$51$$anonfun$apply$mcV$sp$52.apply(ProjectTest.scala:173)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$51$$anonfun$apply$mcV$sp$52.apply(ProjectTest.scala:173)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - can declare the winning team of the trick *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trick.winningTeam(Trick.scala:11)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$51$$anonfun$apply$mcV$sp$53.apply$mcV$sp(ProjectTest.scala:179)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$51$$anonfun$apply$mcV$sp$53.apply(ProjectTest.scala:177)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$6$$anonfun$apply$mcV$sp$51$$anonfun$apply$mcV$sp$53.apply(ProjectTest.scala:177)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA Round[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has 2 teams *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Round.teams(Round.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$55.apply$mcV$sp(ProjectTest.scala:188)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$55.apply(ProjectTest.scala:188)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$55.apply(ProjectTest.scala:188)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has played 0 tricks *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Round.tricks(Round.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$56.apply$mcV$sp(ProjectTest.scala:191)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$56.apply(ProjectTest.scala:191)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$56.apply(ProjectTest.scala:191)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has score of dealing team *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Round.highScore(Round.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$57.apply$mcV$sp(ProjectTest.scala:195)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$57.apply(ProjectTest.scala:193)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$54$$anonfun$apply$mcV$sp$57.apply(ProjectTest.scala:193)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  during normal gameplay[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has dealing team score up to 5 tricks *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Round.highScore(Round.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$58$$anonfun$apply$mcV$sp$59.apply$mcV$sp(ProjectTest.scala:200)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$58$$anonfun$apply$mcV$sp$59.apply(ProjectTest.scala:200)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$7$$anonfun$apply$mcV$sp$58$$anonfun$apply$mcV$sp$59.apply(ProjectTest.scala:200)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA Trump[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - is not set *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trump.suit(Trump.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$8$$anonfun$apply$mcV$sp$60$$anonfun$apply$mcV$sp$61.apply$mcV$sp(ProjectTest.scala:209)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$8$$anonfun$apply$mcV$sp$60$$anonfun$apply$mcV$sp$61.apply(ProjectTest.scala:209)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$8$$anonfun$apply$mcV$sp$60$$anonfun$apply$mcV$sp$61.apply(ProjectTest.scala:209)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  during normal gameplay[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has suit *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Trump.suit(Trump.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$8$$anonfun$apply$mcV$sp$62$$anonfun$apply$mcV$sp$63.apply$mcV$sp(ProjectTest.scala:215)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$8$$anonfun$apply$mcV$sp$62$$anonfun$apply$mcV$sp$63.apply(ProjectTest.scala:213)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$8$$anonfun$apply$mcV$sp$62$$anonfun$apply$mcV$sp$63.apply(ProjectTest.scala:213)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA Scoreboard[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - all scores are zero *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Scoreboard.scores(Scoreboard.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$64$$anonfun$apply$mcV$sp$65.apply$mcV$sp(ProjectTest.scala:224)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$64$$anonfun$apply$mcV$sp$65.apply(ProjectTest.scala:223)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$64$$anonfun$apply$mcV$sp$65.apply(ProjectTest.scala:223)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its normal state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has high score >= 0 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Scoreboard.highScore(Scoreboard.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$67.apply$mcV$sp(ProjectTest.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$67.apply(ProjectTest.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$67.apply(ProjectTest.scala:230)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - high score is not greater than 7 *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.Scoreboard.highScore(Scoreboard.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$68.apply$mcV$sp(ProjectTest.scala:233)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$68.apply(ProjectTest.scala:233)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$9$$anonfun$apply$mcV$sp$66$$anonfun$apply$mcV$sp$68.apply(ProjectTest.scala:233)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32mA GameArea[0m[0m
+[0m[[0minfo[0m] [0m[32m  in its initial state[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has scoreboard *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.GameArea.scoreboard(GameArea.scala:7)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$70.apply$mcV$sp(ProjectTest.scala:243)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$70.apply(ProjectTest.scala:241)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$70.apply(ProjectTest.scala:241)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - has round *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.GameArea.round(GameArea.scala:8)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$71.apply$mcV$sp(ProjectTest.scala:247)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$71.apply(ProjectTest.scala:245)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$69$$anonfun$apply$mcV$sp$71.apply(ProjectTest.scala:245)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[32m  after round complete[0m[0m
+[0m[[0minfo[0m] [0m[31m  - updates scorebaord *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.GameArea.updateScorebaord(GameArea.scala:9)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$73.apply$mcV$sp(ProjectTest.scala:252)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$73.apply(ProjectTest.scala:252)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$73.apply(ProjectTest.scala:252)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - displays scoreboard *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.GameArea.displayScoreboard(GameArea.scala:10)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$74.apply$mcV$sp(ProjectTest.scala:255)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$74.apply(ProjectTest.scala:255)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$74.apply(ProjectTest.scala:255)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m
+[0m[[0minfo[0m] [0m[31m  - starts another round *** FAILED ***[0m[0m
+[0m[[0minfo[0m] [0m[31m    scala.NotImplementedError: an implementation is missing[0m[0m
+[0m[[0minfo[0m] [0m[31m    at scala.Predef$.$qmark$qmark$qmark(Predef.scala:225)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.GameArea.startNewRound(GameArea.scala:11)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$75.apply$mcV$sp(ProjectTest.scala:258)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$75.apply(ProjectTest.scala:258)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at euchre.ProjectTester$$anonfun$10$$anonfun$apply$mcV$sp$72$$anonfun$apply$mcV$sp$75.apply(ProjectTest.scala:258)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer$$anonfun$apply$1.apply$mcV$sp(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$class.outcomeOf(OutcomeOf.scala:85)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:22)[0m[0m
+[0m[[0minfo[0m] [0m[31m    at org.scalatest.Transformer.apply(Transformer.scala:20)[0m[0m
+[0m[[0minfo[0m] [0m[31m    ...[0m[0m

@@ -18,8 +18,8 @@ class ProjectTester extends UnitSpec {
         deck.deal should be (true)
       }
       it("can show top card") {
-        val aCard = new Card
-        deck.showTopCard should be (aCard)
+        val aCard = new Card('A', "Heart")
+        deck.showTopCard should be (aCard) // cannot compare new objects...
       }
       it("can shuffle") {
         deck.shuffle should be (true)
@@ -39,7 +39,7 @@ class ProjectTester extends UnitSpec {
   }
 
   describe("A Card") {
-    val card = new Card
+    val card = new Card('A', "Heart")
     it("has value") {
       assert(card.value == ('A', 'K', 'Q', 'J', '0', '9', '8', '7'))
     }
