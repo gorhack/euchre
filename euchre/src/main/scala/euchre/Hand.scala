@@ -12,4 +12,5 @@ class Hand {
   }
   def length: Int = cards.length
   def playCard: Boolean = ??? // send card to trick
+  override def toString() = cards.toString()
 }

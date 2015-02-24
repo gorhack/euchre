@@ -9,7 +9,8 @@ class Player(private var _hand: Hand, private var _schema: Schema) {
   private var _name = ""
   // possible names:
   // Kyle, John, Katelyn, David, Zac, Kristen
-  private var names = List("Kyle", "John", "Katelyn", "David", "Kristen")
+  private val names = List("Kyle", "John", "Katelyn", "David", "Kristen",
+                          "Connor", "Helen", "Peter", "Paige")
   private var _isDealer = false
   private var _canPlayCard = false
   def init = {
@@ -26,4 +27,5 @@ class Player(private var _hand: Hand, private var _schema: Schema) {
   def position: PlayerOrder = ???
   def isDealer: Boolean = _isDealer
   def canPlayCard: Boolean = _canPlayCard
+  override def toString() = name
 }

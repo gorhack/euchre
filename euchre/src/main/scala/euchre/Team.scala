@@ -20,8 +20,8 @@ class Team(private var p1: Player, private var p2: Player) {
   }
   override def toString():String = {
     return (
-      "Player 1: " + p1.name + "\n" +
-      "Player 2: " + p2.name + "\n" +
-      "Team Points: " + points.toString)
+      p1.name +
+      " and " + p2.name +
+      " with " + points.toString + " point(s)")
   }
 }
