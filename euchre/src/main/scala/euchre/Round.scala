@@ -9,7 +9,7 @@ class Round {
   private var _highScore:(Team, Int) = (null, 0)
   def teams: Array[Team] = ???
   def highScore: (Team, Int) = _highScore
-  def tricks: List[Trick] = _tricks
+  def tricks = _tricks
   def trump: String = _trump
   def trump_(t:String): Unit = (_trump = t)
 

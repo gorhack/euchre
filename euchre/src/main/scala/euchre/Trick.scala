@@ -12,6 +12,7 @@ class Trick {
   private var _winningTeam: Team = null
   def leader: Player = _leader
   def cards: List[Card] = _cards
+  def cards_(c:List[Card]) = (_cards = c)
   def isTrumped: Boolean = _isTrumped
   def winner: Player = _winner
   def winningTeam: Team = _winningTeam
@@ -23,4 +24,5 @@ class Trick {
     _winner = null
     _winningTeam = null
   }
+  override def toString() = _cards.toString()
 }

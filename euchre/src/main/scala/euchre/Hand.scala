@@ -3,8 +3,7 @@
  */
 package euchre
 
-class Hand {
-  private var _cards:List[Card] = List.empty
+class Hand(private var _cards: List[Card]) {
   def cards = _cards
   def cards_=(s:List[Card]): Unit = { _cards = s }
   def init = {
@@ -12,5 +11,5 @@ class Hand {
   }
   def length: Int = cards.length
   def playCard: Boolean = ??? // send card to trick
-  override def toString() = cards.toString()
+  override def toString() = "Hand: " + _cards.toString()
 }

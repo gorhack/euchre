@@ -16,15 +16,16 @@ class GameMaster(private var _state: String) {
   def state_=(s:String): Unit = (_state = s)
 
   var deck = new Deck()
-  var gameArea = new GameArea(scoreboard)
-  var p1 = new Player(new Hand(), new Schema())
-  var p2 = new Player(new Hand(), new Schema())
-  var p3 = new Player(new Hand(), new Schema())
-  var p4 = new Player(new Hand(), new Schema())
+
+  var p1 = new Player(new Hand(List.empty), new Schema())
+  var p2 = new Player(new Hand(List.empty), new Schema())
+  var p3 = new Player(new Hand(List.empty), new Schema())
+  var p4 = new Player(new Hand(List.empty), new Schema())
   var playerOrder = new PlayerOrder(p1, p3, p2, p4)
   var t1 = new Team(p1, p2)
   var t2 = new Team(p3, p4)
   var scoreboard = new Scoreboard(playerOrder, t1, t2)
+  var gameArea = new GameArea(scoreboard, t1, t2, playerOrder, deck)
   changeState
 
   def changeState():Unit = {
@@ -42,6 +43,7 @@ class GameMaster(private var _state: String) {
           p.hand.init
         }
         p1.name = name
+        p1.isLead_(true)
         // Round
         // Scoreboard
         scoreboard.init
@@ -63,11 +65,15 @@ class GameMaster(private var _state: String) {
       }
       case "Play" => {
         println("Playing...")
-        // TODO:// Deal cards
+        // Deal cards
+        deck.shuffle
+        gameArea.deal
         // TODO:// Set up game area
         // TODO:// Set up dealer
-        // TODO:// Start round
+        gameArea.setLead
+        // TODO:// Set up round
         // TODO:// Play tricks
+        gameArea.playCards
         // TODO:// Win tricks
         // TODO:// Win round
       }
