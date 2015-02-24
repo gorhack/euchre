@@ -19,13 +19,18 @@ class Deck {
     new Card('8', "Heart"), new Card('8', "Diamond"), new Card('8', "Club"), new Card('8', "Spade"),
     new Card('7', "Heart"), new Card('7', "Diamond"), new Card('7', "Club"), new Card('7', "Spade")
   )
-  var deck = newDeck
-  def init: List[Card] = { deck }
-  def length = { deck.size }
-  def deal: Boolean = { true }
-  def shuffle: Boolean = {
-    Random.shuffle(deck)
+  var currentDeck: List[Card] = List.empty
+  def init = {
+    currentDeck = newDeck
+  }
+  def length = { currentDeck.size }
+  def deal: Boolean = {
+
     true
   }
-  def showTopCard: Card = { deck.head }
+  def shuffle: Boolean = {
+    Random.shuffle(currentDeck)
+    true
+  }
+  def showTopCard: Card = { currentDeck.head }
 }

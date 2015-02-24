@@ -9,5 +9,6 @@ object Main {
 //    val controller = new Controller(view, model)
 //
 //    view.init(controller)
+    val game = new GameMaster("Initial")
 	}
 }

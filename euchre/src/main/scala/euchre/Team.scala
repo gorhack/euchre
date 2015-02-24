@@ -3,9 +3,25 @@
  */
 package euchre
 
-class Team {
-  def size: Int = ???
-  def points: Int = ???
-  def hasDeal: Boolean = ???
-  def tricks: Int = ???
+class Team(private var p1: Player, private var p2: Player) {
+  private var _tricks = 0
+  private var _points = 0
+  private var _hasDeal = false
+  def team = List(p1, p2)
+  def size: Int = team.length
+  def points: Int = _points
+  def hasDeal: Boolean = _hasDeal
+  def tricks: Int = _tricks
+
+  def init = {
+    _tricks = 0
+    _points = 0
+    _hasDeal = false
+  }
+  override def toString():String = {
+    return (
+      "Player 1: " + p1.name + "\n" +
+      "Player 2: " + p2.name + "\n" +
+      "Team Points: " + points.toString)
+  }
 }

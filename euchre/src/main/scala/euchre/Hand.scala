@@ -4,6 +4,12 @@
 package euchre
 
 class Hand {
-  def length: Int = ???
-  def playCard: Boolean = ???
+  private var _cards:List[Card] = List.empty
+  def cards = _cards
+  def cards_=(s:List[Card]): Unit = { _cards = s }
+  def init = {
+    _cards = List.empty
+  }
+  def length: Int = cards.length
+  def playCard: Boolean = ??? // send card to trick
 }

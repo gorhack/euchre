@@ -3,10 +3,10 @@
  */
 package euchre
 
-class GameArea {
-  def scoreboard: Scoreboard = ???
-  def round: Round = ???
-  def updateScorebaord: Boolean = ???
-  def displayScoreboard: Boolean = ???
-  def startNewRound: Boolean = ???
+class GameArea(var _scoreboard: Scoreboard) {
+  private var _round = new Round()
+  def round: Round = _round
+  def updateScorebaord: Scoreboard = _scoreboard
+  def displayScoreboard: Scoreboard = _scoreboard
+  def startNewRound = _round.init
 }
