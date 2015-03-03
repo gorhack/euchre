@@ -23,13 +23,17 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   }
   // give players cards
   def deal = {
-    deck.shuffle
     for (p <- _playerOrder.players) {
       for (i <- 0 until 5) {
         p.hand_(new Hand(p.hand.cards :+ deck.deal))
       }
-      println(p.name + "'s Hand: " + p.hand.cards)
+      println(p.name + "'s Hand: " + p.hand.sortHand)
     }
+  }
+  def setTrump = {
+    val t = deck.showTopCard.suit
+    round.trump_(t)
+    println("Trump for the round is " + t + "s")
   }
   // play cards to trick
   def playCards = {

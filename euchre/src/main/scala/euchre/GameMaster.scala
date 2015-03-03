@@ -66,9 +66,9 @@ class GameMaster(private var _state: String) {
       case "Play" => {
         println("Playing...")
         // Deal cards
-        deck.shuffle
         gameArea.deal
-        // TODO:// Set up game area
+        // Set trump for round
+        gameArea.setTrump
         // TODO:// Set up dealer
         gameArea.setLead
         // TODO:// Set up round

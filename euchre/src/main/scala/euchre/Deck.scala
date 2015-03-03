@@ -29,9 +29,5 @@ class Deck {
     currentDeck = currentDeck.tail
     topCard
   }
-  def shuffle = {
-    // TODO:// Fix shuffle problems
-    Random.shuffle(currentDeck)
-  }
   def showTopCard: Card = { currentDeck.head }
 }
