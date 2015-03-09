@@ -3,6 +3,8 @@
  */
 package euchre
 
+import java.awt.Color
+
 import util.Random
 
 class Deck {
@@ -10,14 +12,14 @@ class Deck {
    * Deck contains 32 cards
    */
   private val newDeck = List(
-    new Card("A", "Heart"), new Card("A", "Diamond"), new Card("A", "Club"), new Card("A", "Spade"),
-    new Card("K", "Heart"), new Card("K", "Diamond"), new Card("K", "Club"), new Card("K", "Spade"),
-    new Card("Q", "Heart"), new Card("Q", "Diamond"), new Card("Q", "Club"), new Card("Q", "Spade"),
-    new Card("J", "Heart"), new Card("J", "Diamond"), new Card("J", "Club"), new Card("J", "Spade"),
-    new Card("10", "Heart"), new Card("10", "Diamond"), new Card("10", "Club"), new Card("10", "Spade"),
-    new Card("9", "Heart"), new Card("9", "Diamond"), new Card("9", "Club"), new Card("9", "Spade"),
-    new Card("8", "Heart"), new Card("8", "Diamond"), new Card("8", "Club"), new Card("8", "Spade"),
-    new Card("7", "Heart"), new Card("7", "Diamond"), new Card("7", "Club"), new Card("7", "Spade")
+    new Card("A", 14, "Heart", Color.red), new Card("A", 14, "Diamond", Color.red), new Card("A", 14, "Club", Color.black), new Card("A", 14, "Spade", Color.black),
+    new Card("K", 13, "Heart", Color.red), new Card("K", 13, "Diamond", Color.red), new Card("K", 13, "Club", Color.black), new Card("K", 13, "Spade", Color.black),
+    new Card("Q", 12, "Heart", Color.red), new Card("Q", 12, "Diamond", Color.red), new Card("Q", 12, "Club", Color.black), new Card("Q", 12, "Spade", Color.black),
+    new Card("J", 11, "Heart", Color.red), new Card("J", 11, "Diamond", Color.red), new Card("J", 11, "Club", Color.black), new Card("J", 11, "Spade", Color.black),
+    new Card("10", 10, "Heart", Color.red), new Card("10", 10, "Diamond", Color.red), new Card("10", 10, "Club", Color.black), new Card("10", 10, "Spade", Color.black),
+    new Card("9", 9, "Heart", Color.red), new Card("9", 9, "Diamond", Color.red), new Card("9", 9, "Club", Color.black), new Card("9", 9, "Spade", Color.black),
+    new Card("8", 8, "Heart", Color.red), new Card("8", 8, "Diamond", Color.red), new Card("8", 8, "Club", Color.black), new Card("8", 8, "Spade", Color.black),
+    new Card("7", 7, "Heart", Color.red), new Card("7", 7, "Diamond", Color.red), new Card("7", 7, "Club", Color.black), new Card("7", 7, "Spade", Color.black)
   )
   var currentDeck: List[Card] = List.empty
   def init = {

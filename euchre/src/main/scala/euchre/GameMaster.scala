@@ -67,8 +67,10 @@ class GameMaster(private var _state: String) {
         println("Playing...")
         // Deal cards
         gameArea.deal
+        println()
         // Set trump for round
         gameArea.setTrump
+        println()
         // TODO:// Set up dealer
         gameArea.setLead
         // TODO:// Set up round

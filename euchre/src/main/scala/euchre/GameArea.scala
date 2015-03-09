@@ -44,13 +44,26 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
         trick.cards_(trick.cards :+ p.playCard("",""))
       }
       println("Trick " + (t + 1) + ": " + trick)
-      decideWinnerOfTrick
+      decideWinnerOfTrick(trick)
       round.tricks :+ trick
     }
   }
   // decide winner of tricks
-  def decideWinnerOfTrick = {
+  def decideWinnerOfTrick(trick: Trick) = {
     // TODO:// Decide actual winner
+    var highCard: Card = trick.cards.head
+    for (c <- trick.cards) {
+      if (highCard.suit == round.trump) {
+        if (c.suit == round.trump) {
+          if (c.value > highCard.value) {
+            highCard = c
+          }
+        }
+      }
+      else if (c.suit == round.trump) {
+
+      }
+    }
     _t1.points_(_t1.points + 1)
     updateScorebaord
   }

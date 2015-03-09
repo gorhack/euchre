@@ -1,5 +1,7 @@
 package euchre
 
+import java.awt.Color
+
 import org.scalatest.{Matchers, FunSpec}
 
 abstract class UnitSpec extends FunSpec with Matchers
@@ -52,7 +54,7 @@ class ProjectTester extends UnitSpec {
   }
 
   describe("A Card") {
-    val card = new Card("A", "Heart")
+    val card = new Card("A", 14, "Heart", Color.red)
     it("has value") {
       assert(card.value == ("A", "K", "Q", "J", "10", "9", "8", "7"))
     }
