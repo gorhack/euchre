@@ -39,6 +39,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   // play cards to trick
   def playCards = {
     for (t <- 0 until 5) {
+      // there are 5 tricks
       var trick = new Trick()
       for (p <- _playerOrder.players) {
         // TODO:// Follow rules...
@@ -99,6 +100,8 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     }
     // set winning player to have lead
     winningPlayer.isLead_(true)
+    // set new player order
+    _playerOrder.setPlayerOrder
     if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
       _t1.points_(_t1.points + 1)
     }
