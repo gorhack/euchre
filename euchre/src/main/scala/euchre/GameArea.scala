@@ -19,7 +19,9 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   }
   // set dealer
   def setLead = {
-
+    // Player 1 is always the dealer
+    _playerOrder.players(0).isLead_(true)
+    _playerOrder.setPlayerOrder
   }
   // give players cards
   def deal = {
@@ -42,7 +44,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       // there are 5 tricks
       var trick = new Trick()
       for (p <- _playerOrder.players) {
-        // TODO:// Follow rules...
+        // TODO:// Follow rules... ie follow suit of leader or trump
         trick.cards_(trick.cards :+ p.playCard("",""))
       }
       println("Trick " + (t + 1) + ": " + trick)
@@ -103,16 +105,19 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     // set new player order
     _playerOrder.setPlayerOrder
     if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
-      _t1.points_(_t1.points + 1)
+      _round.roundScore_(_round.roundScore._1 + 1, _round.roundScore._2)
+      //_t1.points_(_t1.points + 1)
     }
     else {
-      _t2.points_(_t2.points + 1)
+      _round.roundScore_(_round.roundScore._1, _round.roundScore._2 + 1)
+      //_t2.points_(_t2.points + 1)
     }
-    updateScorebaord
+    updateRoundScoreboard
   }
   // update scoreboard
-  def updateScoreboard = {
-    _scoreboard.scores_(_t1.points, _t2.points)
-    println(_scoreboard.toString())
+  def updateRoundScoreboard = {
+    println("Score is " + _round.roundScore._1 + " to " + _round.roundScore._2)
+    //_scoreboard.scores_(_t1.points, _t2.points)
+    //println(_scoreboard.toString())
   }
 }
