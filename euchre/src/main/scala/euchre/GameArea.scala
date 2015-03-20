@@ -31,9 +31,10 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     }
   }
   def setTrump = {
-    val t = deck.showTopCard.suit
-    round.trump_(t)
-    println("Trump for the round is " + t + "s")
+    val t = deck.showTopCard
+    round.trump_(t.suit)
+    round.color_(t.color)
+    println("Trump for the round is " + round.trump + "s")
   }
   // play cards to trick
   def playCards = {
@@ -50,21 +51,60 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   }
   // decide winner of tricks
   def decideWinnerOfTrick(trick: Trick) = {
-    // TODO:// Decide actual winner
     var highCard: Card = trick.cards.head
+    val bowers = "J " + round.color.toString
+    var leadSuit: String = highCard.suit
     for (c <- trick.cards) {
-      if (highCard.suit == round.trump) {
+      if (c.displayValue + ' ' + c.color == bowers) {
+        // card is either bower
+        if (c.suit == round.trump) {
+          // card is right bower
+          highCard = c
+        }
+        else if (highCard.suit == round.trump && highCard.displayValue == 'J') {
+          // card is left bower, high card is right bower
+        }
+        else {
+          highCard = c
+        }
+      }
+      else if (highCard.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
         if (c.suit == round.trump) {
           if (c.value > highCard.value) {
+            // if card is trump and higher than the current 'high' trump card
             highCard = c
           }
         }
       }
-      else if (c.suit == round.trump) {
-
+      else if (c.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
+        // card is trump and current 'high' card is not
+        highCard = c
+      }
+      else {
+        // card is not trump and current 'high' card is also not trump
+        // card must follow suit
+        if (c.value > highCard.value && c.suit == leadSuit && highCard.displayValue + ' ' + highCard.color != bowers) {
+          // both card and 'high' card are not trump, card is higher
+          highCard = c
+        }
       }
     }
-    _t1.points_(_t1.points + 1)
+
+    val indexOfWinner = trick.cards.indexOf(highCard)
+    val winningPlayer = _playerOrder.players(indexOfWinner)
+    println("Winner: " + winningPlayer.toString() + " with a " + highCard.toString())
+    for (p <- _playerOrder.players) {
+      // no players have lead
+      p.isLead_(false)
+    }
+    // set winning player to have lead
+    winningPlayer.isLead_(true)
+    if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
+      _t1.points_(_t1.points + 1)
+    }
+    else {
+      _t2.points_(_t2.points + 1)
+    }
     updateScorebaord
   }
   // update scoreboard

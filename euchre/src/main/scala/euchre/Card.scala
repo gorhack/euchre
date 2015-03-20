@@ -7,10 +7,8 @@ import java.awt.Color
  */
 class Card(val _displayValue: String, val _value: Int, val _suit: String, val _color: Color) {
   // displayValue, value, suit, color
-  override def toString() = _displayValue + ',' + _suit
-  final def > = {
-    // TODO:// How to determine if a card's value is greater or less than another
-  }
+  override def toString() = _displayValue + ' ' + _suit
+
   def displayValue: String = { _displayValue }
   def value: Int = { _value }
   def suit: String = { _suit }
