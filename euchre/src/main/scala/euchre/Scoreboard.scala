@@ -8,9 +8,9 @@ class Scoreboard(var _playerOrder: PlayerOrder, var t1: Team, var t2: Team) {
   private var _highScore = (null, 0)
   def scores: (Int, Int) = _scores
   def scores_(s:(Int, Int)) = {_scores = s}
-  def highScore: (Team, Int) = {
-    if (_scores._1 > _scores._2) (t1, _scores._1)
-    else (t1, _scores._1)
+  def highScore: (Int, Int) = {
+    if (_scores._1 > _scores._2) (0, _scores._1)
+    else (1, _scores._2)
   }
   def init = {
     _scores = (0, 0)

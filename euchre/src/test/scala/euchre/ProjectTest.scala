@@ -150,7 +150,7 @@ class ProjectTester extends UnitSpec {
         t1.points should be <= 7
       }
       it("has the deal") {
-        t1.hasLead should be (true)
+        t1.hasDeal should be (true)
       }
       it("has between 0 and 5 tricks") {
         t1.tricks should be <= 5

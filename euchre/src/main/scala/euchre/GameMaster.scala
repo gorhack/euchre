@@ -32,6 +32,7 @@ class GameMaster(private var _state: String) {
     state match {
       case "Initial" => {
         println("Starting a new game...")
+
         val name = StdIn.readLine("What is your name? ")
         println("Thanks for playing Euchre, " + name + ". Setting up your game now.")
         // Deck
@@ -66,21 +67,57 @@ class GameMaster(private var _state: String) {
       case "Play" => {
         println("Playing...")
         // Deal cards
-        gameArea.deal
-        println()
-        // Set trump for round
-        gameArea.setTrump
-        println()
-        gameArea.setLead
-        // TODO:// Set up round
-        // TODO:// Play tricks
-        gameArea.playCards
-        // TODO:// Win tricks
-        // TODO:// Win round
-      }
-      case "Round Complete" =>
-        _state = "Quit"
+        var count = 0
+        while (scoreboard.highScore._2 < 10 &&
+          (scoreboard.scores._1 < 10 && scoreboard.scores._2 < 10)) {
+          if (count % 2 == 0) {
+            t1.hasDeal_(true)
+            t2.hasDeal_(false)
+          }
+          else {
+            t2.hasDeal_(true)
+            t1.hasDeal_(false)
+          }
+          gameArea.deal
+          println()
+          // Set trump for round
+          gameArea.setTrump
+          println()
+          gameArea.setLead
+          // TODO:// Set up round
+          // TODO:// Play tricks
+          var score = gameArea.playCards
+          // TODO:// Win tricks
+          // TODO:// Win round
+          gameArea.updateScoreboard(score)
+
+          count += 1
+
+          // reset necessary game parts
+          deck.init
+          // Hand
+          for (p <- playerOrder.players) {
+            p.hand.init
+          }
+          println()
+        }
+        _state = "Game Complete"
         changeState()
+      }
+      case "Game Complete" => {
+        var winningTeam: String = ""
+        if (scoreboard.highScore._1 == 0) {
+          winningTeam = "Team 1"
+        }
+        else {
+          winningTeam = "Team 2"
+        }
+        println("Congrats " + winningTeam + " for winning today's game.")
+        println()
+        val playAgain = StdIn.readLine("Play Again? (Y/N)")
+        _state = if (playAgain.equals("Y")) "Initial" else "Quit"
+        changeState()
+      }
       case "Quit" => println("Thanks for playing!")
       case default => {
         _state = "Initial"

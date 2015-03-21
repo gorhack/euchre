@@ -39,18 +39,18 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     println("Trump for the round is " + round.trump + "s")
   }
   // play cards to trick
-  def playCards = {
+  def playCards: (Int, Int) = {
     for (t <- 0 until 5) {
       // there are 5 tricks
       var trick = new Trick()
       for (p <- _playerOrder.players) {
-        // TODO:// Follow rules... ie follow suit of leader or trump
         trick.cards_(trick.cards :+ p.playCard(p.isLead,trick,_round))
       }
       println("Trick " + (t + 1) + ": " + trick)
       decideWinnerOfTrick(trick)
       round.tricks :+ trick
     }
+    _round.roundScore
   }
 
   // determine high card in trick
@@ -119,10 +119,44 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     }
     updateRoundScoreboard
   }
-  // update scoreboard
+  // update round scoreboard
   def updateRoundScoreboard = {
-    println("Score is " + _round.roundScore._1 + " to " + _round.roundScore._2)
-    //_scoreboard.scores_(_t1.points, _t2.points)
-    //println(_scoreboard.toString())
+    println("Round score is " + _round.roundScore._1 + " to " + _round.roundScore._2)
+  }
+
+  // update game scoreboard
+  def updateScoreboard(score: (Int, Int)) = {
+    var t1Points = _scoreboard.scores._1
+    var t2Points = _scoreboard.scores._2
+
+    if (score._1 == 0 && _t1.hasDeal) {
+      // have deal and sweep
+      t2Points += 2
+    }
+    else if (score._1 >= 3 && _t2.hasDeal) {
+      // euchre
+      t1Points += 2
+    }
+    else if (score._1 >= 3 && _t1.hasDeal) {
+      // have lead and win
+      t1Points += 1
+    }
+    else if (score._2 == 0 && _t2.hasDeal) {
+      // have deal and sweep
+      t1Points += 2
+    }
+    else if (score._2 >= 3 && _t1.hasDeal) {
+      // euchre
+      t2Points += 2
+    }
+    else if (score._2 >= 3 && _t2.hasDeal) {
+      // have lead and win
+      t2Points += 1
+    }
+
+    _scoreboard.scores_(t1Points, t2Points)
+    // reset round scoreboard
+    _round.roundScore_(0,0)
+    println(_scoreboard.toString())
   }
 }
