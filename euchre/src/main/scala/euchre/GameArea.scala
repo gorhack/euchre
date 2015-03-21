@@ -45,15 +45,16 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       var trick = new Trick()
       for (p <- _playerOrder.players) {
         // TODO:// Follow rules... ie follow suit of leader or trump
-        trick.cards_(trick.cards :+ p.playCard("",""))
+        trick.cards_(trick.cards :+ p.playCard(p.isLead,trick,_round))
       }
       println("Trick " + (t + 1) + ": " + trick)
       decideWinnerOfTrick(trick)
       round.tricks :+ trick
     }
   }
-  // decide winner of tricks
-  def decideWinnerOfTrick(trick: Trick) = {
+
+  // determine high card in trick
+  def determineHighCard(trick: Trick): Card = {
     var highCard: Card = trick.cards.head
     val bowers = "J " + round.color.toString
     var leadSuit: String = highCard.suit
@@ -92,7 +93,11 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
         }
       }
     }
-
+    highCard
+  }
+  // determine winner of trick
+  def decideWinnerOfTrick(trick: Trick) = {
+    val highCard = determineHighCard(trick)
     val indexOfWinner = trick.cards.indexOf(highCard)
     val winningPlayer = _playerOrder.players(indexOfWinner)
     println("Winner: " + winningPlayer.toString() + " with a " + highCard.toString())
