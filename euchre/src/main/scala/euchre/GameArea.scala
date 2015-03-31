@@ -13,16 +13,6 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   def displayScoreboard: Scoreboard = _scoreboard
   def scoreboard_(s:Scoreboard):Unit = (_scoreboard = s)
   def startNewRound = _round.init
-  // set scoreboard
-  def setScoreboard = {
-
-  }
-  // set dealer
-  def setLead = {
-    // Player 1 is always the dealer
-    _playerOrder.players(0).isLead_(true)
-    _playerOrder.setPlayerOrder
-  }
   // give players cards
   def deal = {
     for (p <- _playerOrder.players) {
@@ -38,9 +28,38 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     round.color_(t.color)
     println("Trump for the round is " + round.trump + "s")
   }
+  // play card to trick
+  def playCard() = {
+    println(_round.tricks.length)
+    if (_round.tricks.length == 0) {
+      _round.tricks_(_round.tricks :+ new Trick())
+    }
+    println(_round.tricks.length)
+    var currentTrick = _round.tricks.last
+    var numCards = currentTrick.cards.length
+    currentTrick.cards_(currentTrick.cards :+
+      _playerOrder.players(numCards).playCard(_playerOrder.players(numCards).isLead,currentTrick,_round))
+    println(currentTrick)
+    if (numCards == 3) {
+      decideWinnerOfTrick(currentTrick)
+    }
+  }
   // play cards to trick
   def playCards: (Int, Int) = {
-    for (t <- 0 until 5) {
+    if (_round.tricks.length != 0 && _round.tricks.last.cards.length != 4) {
+      // in the middle of a round, make sure last trick is complete
+      var currentTrick = _round.tricks.last
+      for (p <- currentTrick.cards.length until 4) {
+        // there are 4 players
+        currentTrick.cards_(currentTrick.cards :+
+          _playerOrder.players(p).playCard(_playerOrder.players(p).isLead,currentTrick,_round))
+      }
+      println("The Current Trick: " + currentTrick)
+      decideWinnerOfTrick(currentTrick)
+      return _round.roundScore
+    }
+
+    for (t <- round.tricks.length until 5) {
       // there are 5 tricks
       var trick = new Trick()
       for (p <- _playerOrder.players) {
@@ -48,8 +67,9 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       }
       println("Trick " + (t + 1) + ": " + trick)
       decideWinnerOfTrick(trick)
-      round.tricks :+ trick
+      _round.tricks_(_round.tricks :+ trick)
     }
+    _round.tricks_(List.empty)
     _round.roundScore
   }
 
@@ -157,6 +177,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     _scoreboard.scores_(t1Points, t2Points)
     // reset round scoreboard
     _round.roundScore_(0,0)
+    println()
     println(_scoreboard.toString())
   }
 }

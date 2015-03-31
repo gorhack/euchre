@@ -24,5 +24,6 @@ class PlayerOrder(p1: Player, p2: Player, p3: Player, p4: Player) {
     }
     players_(newPlayerOrder)
   }
+
   override def toString() = p1.name + ", " + p2.name + ", " + p3.name + ", then " + p4.name
 }

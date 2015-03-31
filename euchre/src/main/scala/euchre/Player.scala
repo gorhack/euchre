@@ -29,6 +29,7 @@ class Player(private var _hand: Hand, private var _schema: Schema) {
   def isLead: Boolean = _isLead
   def isLead_(l:Boolean) = (_isLead = l)
   def canPlayCard: Boolean = _canPlayCard
+  def canPlayCard_(p:Boolean) = (_canPlayCard = p)
   def playCard(lead: Boolean, trick: Trick, round: Round): Card = {
     // TODO:// decide actual card to play based on schema
 

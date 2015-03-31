@@ -9,11 +9,13 @@ class GameMaster(private var _state: String) {
 
   //    Valid states:
   //     Initial
-  //     Dealt
   //     Play
-  //     Round Complete
+  //     Game Complete
+  //     Quit
   def state = _state
   def state_=(s:String): Unit = (_state = s)
+
+  var name = ""
 
   var deck = new Deck()
 
@@ -26,14 +28,16 @@ class GameMaster(private var _state: String) {
   var t2 = new Team(p3, p4)
   var scoreboard = new Scoreboard(playerOrder, t1, t2)
   var gameArea = new GameArea(scoreboard, t1, t2, playerOrder, deck)
+
   changeState
 
   def changeState():Unit = {
     state match {
       case "Initial" => {
         println("Starting a new game...")
-
-        val name = StdIn.readLine("What is your name? ")
+        if (name == "") {
+          name = StdIn.readLine("What is your name? ")
+        }
         println("Thanks for playing Euchre, " + name + ". Setting up your game now.")
         // Deck
         deck.init
@@ -45,12 +49,12 @@ class GameMaster(private var _state: String) {
         }
         p1.name = name
         p1.isLead_(true)
-        // Round
         // Scoreboard
         scoreboard.init
         // Team
         t1.init
         t2.init
+        gameArea.startNewRound
         println(" Your game of Euchre is set up and ready to go! Here are the details:")
         println(" Your team: " + t1.toString())
         println(" The other team: " + t2.toString())
@@ -61,37 +65,75 @@ class GameMaster(private var _state: String) {
       }
       case "Deal" => {
         println("Dealing cards...")
-        _state = "Play"
+        gameArea.deal
+        _state = "Run"
+        changeState()
+      }
+      case "Run" => {
+        var command = StdIn.readLine(
+          """What would you like to do? (Enter 1-4)
+            | 1. Advance Player Order
+            | 2. Step through game (complete 1 player move)
+            | 3. Step through round (complete 1 round)
+            | 4. Run full game
+          """.stripMargin)
+        command match {
+          case "1" => {
+            // Advance Player Order
+            playerOrder.players(0).isLead_(false)
+            playerOrder.players(1).isLead_(true)
+
+            playerOrder.setPlayerOrder
+            println("New Player Order: " + playerOrder.players.deep.mkString(" "))
+            println()
+          }
+          case "2" => {
+            // Step through game (complete 1 player move)
+            gameArea.playCard
+          }
+          case "3" => {
+            // Step through round (complete 1 round)
+            var s = gameArea.playCards
+            gameArea.updateScoreboard(s)
+
+            // reset necessary game parts
+            deck.init
+            // Hand
+            for (p <- playerOrder.players) {
+              p.hand.init
+            }
+            playerOrder.players(0).isLead_(false)
+            playerOrder.players(1).isLead_(true)
+            playerOrder.setPlayerOrder
+
+            println()
+            if (scoreboard.highScore._2 < 10) gameArea.deal
+            else _state = "Game Complete"
+          }
+          case "4" => {
+            // Run through full game
+            _state = "Play"
+          }
+          case default => {
+            // Invalid enter, running through full game
+            _state = "Play"
+          }
+        }
         changeState()
       }
       case "Play" => {
         println("Playing...")
         // Deal cards
-        var count = 0
-        while (scoreboard.highScore._2 < 10 &&
-          (scoreboard.scores._1 < 10 && scoreboard.scores._2 < 10)) {
-          if (count % 2 == 0) {
-            t1.hasDeal_(true)
-            t2.hasDeal_(false)
-          }
-          else {
-            t2.hasDeal_(true)
-            t1.hasDeal_(false)
-          }
-          gameArea.deal
+        while (scoreboard.highScore._2 < 10) {
           println()
           // Set trump for round
           gameArea.setTrump
+          playerOrder.players(0).isLead_(true)
           println()
-          gameArea.setLead
-          // TODO:// Set up round
-          // TODO:// Play tricks
+          // Play cards
           var score = gameArea.playCards
-          // TODO:// Win tricks
-          // TODO:// Win round
+          // Display Scoreboard
           gameArea.updateScoreboard(score)
-
-          count += 1
 
           // reset necessary game parts
           deck.init
@@ -99,7 +141,12 @@ class GameMaster(private var _state: String) {
           for (p <- playerOrder.players) {
             p.hand.init
           }
+          playerOrder.players(0).isLead_(false)
+          playerOrder.players(1).isLead_(true)
+          playerOrder.setPlayerOrder
+
           println()
+          if (scoreboard.highScore._2 < 10) gameArea.deal
         }
         _state = "Game Complete"
         changeState()
@@ -118,7 +165,10 @@ class GameMaster(private var _state: String) {
         _state = if (playAgain.equals("Y")) "Initial" else "Quit"
         changeState()
       }
-      case "Quit" => println("Thanks for playing!")
+      case "Quit" => {
+        println("Thanks for playing!")
+        System.exit(0)
+      }
       case default => {
         _state = "Initial"
         changeState()
