@@ -152,14 +152,14 @@ class GameMaster(private var _state: String) {
         changeState()
       }
       case "Game Complete" => {
-        var winningTeam: String = ""
+        var winMessage: String = ""
         if (scoreboard.highScore._1 == 0) {
-          winningTeam = "Team 1"
+          winMessage = "Congrats, you win!"
         }
         else {
-          winningTeam = "Team 2"
+          winMessage = "Sorry, you lose. Team 2 won."
         }
-        println("Congrats " + winningTeam + " for winning today's game.")
+        println(winMessage)
         println()
         val playAgain = StdIn.readLine("Play Again? (Y/N)")
         _state = if (playAgain.equals("Y")) "Initial" else "Quit"
