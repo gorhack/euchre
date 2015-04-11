@@ -34,11 +34,13 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       // if new round add a trick
       _round.tricks_(_round.tricks :+ new Trick())
     }
-    var currentTrick = _round.tricks.last
-    var numCards = currentTrick.cards.length
+    val currentTrick = _round.tricks.last
+    val numCards = currentTrick.cards.length
     // play a card
-    currentTrick.cards_(currentTrick.cards :+
-      _playerOrder.players(numCards).playCard(_playerOrder.players(numCards).isLead,currentTrick,_round))
+    val currentPlayer = _playerOrder.players(numCards)
+    currentTrick.cards_(currentTrick.cards :+ currentPlayer.playCard(currentPlayer.isLead,currentTrick,_round))
+
+    println("Trick: " + currentTrick.cards)
     if (numCards == 3) {
       // if the last player has played, decide winner and update round scoreboard
       println(currentTrick)
@@ -66,7 +68,8 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   }
   // play cards to trick
   def playCards = {
-    if (_round.tricks.length != 0 && _round.tricks.last.cards.length != 4) {
+    val numTricks = _round.tricks.length
+    if (numTricks != 0 && _round.tricks.last.cards.length != 4) {
       // in the middle of a round, make sure last trick is complete
       var currentTrick = _round.tricks.last
       for (p <- currentTrick.cards.length until 4) {
@@ -75,7 +78,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       }
     }
 
-    for (t <- _round.tricks.length until 5) {
+    for (t <- numTricks until 5) {
       // there are 5 tricks
       for (p <- 0 until 4) {
         // there are 4 players

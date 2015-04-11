@@ -11,7 +11,6 @@ class View {
     val textArea = new TextArea
 
     def main(controller: Controller): Unit = {
-
       val frame = new MainFrame
 
       frame.title = "Euchre"
@@ -28,21 +27,33 @@ class View {
             // clear all contents on screen
           })
 
-          contents += new MenuItem(Action("Simulate Round") {
+          contents += new MenuItem(Action("Advance Player Order") {
+            controller.advancePlayerOrder()
+          })
 
+          contents += new MenuItem(Action("Play Card") {
+            controller.playCard()
+          })
+
+          contents += new MenuItem(Action("Simulate Round") {
+            controller.playRound()
+          })
+
+          contents += new MenuItem(Action("Simulate Game") {
+            controller.playGame()
           })
           contents += new Menu("Computer Settings") {
             var schemas = controller.schemas
             var playerOrder = controller.playerOrder
 
             for (player <- 0 until playerOrder.length)
-            contents += new Menu(playerOrder(player).toString()) {
-              for (i <- 0 until schemas.length) {
-                contents += new MenuItem(Action(schemas(i)) {
-                  // Set schema of player
-                })
+              contents += new Menu(playerOrder(player).toString()) {
+                for (i <- 0 until schemas.length) {
+                  contents += new MenuItem(Action(schemas(i)) {
+                    // Set schema of player
+                  })
+                }
               }
-            }
           }
           contents += new Separator
 

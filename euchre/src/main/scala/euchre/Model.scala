@@ -33,6 +33,42 @@ class Model {
     _t1.init
     _t2.init
     _gameArea.startNewRound
+
+    _gameArea.deal
+    _gameArea.setTrump
+
+    println(" Your game of Euchre is set up and ready to go! Here are the details:")
+    println(" Your team: " + _t1.toString())
+    println(" The other team: " + _t2.toString())
+    println(" The playing order is: " + _playerOrder.toString())
+    println("Now we are ready to play!")
+  }
+
+  def advancePlayerOrder(): Unit = {
+    _gameArea.advancePlayerOrder()
+    println("New Player Order: " + _playerOrder.players.deep.mkString(" "))
+  }
+
+  def playCard(): Unit = {
+    _gameArea.playCard
+    if (_scoreboard.highScore._2 >= 10) {
+      gameOver()
+    }
+  }
+
+  def playRound(): Unit = {
+    _gameArea.playCards
+    if (_scoreboard.highScore._2 >= 10) {
+      gameOver()
+    }
+  }
+
+  def playGame(): Unit = {
+    while (_scoreboard.highScore._2 < 10) {
+      // Play cards
+      _gameArea.playCards
+    }
+    gameOver()
   }
 
   def playerOrder: Array[Player] = {
@@ -41,5 +77,9 @@ class Model {
   // set up schema
   def schemas: List[String] = {
     _schema.schemas
+  }
+
+  def gameOver(): Unit = {
+    println("Game Over")
   }
 }

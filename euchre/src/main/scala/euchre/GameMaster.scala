@@ -138,7 +138,7 @@ class GameMaster(private var _state: String) {
         println(winMessage)
         println()
         val playAgain = StdIn.readLine("Play Again? (Y/N)")
-        _state = if (playAgain.equals("Y")) "Initial" else "Quit"
+        _state = if (playAgain.equals("Y") || playAgain.equals("y")) "Initial" else "Quit"
         changeState()
       }
       case "Quit" => {
