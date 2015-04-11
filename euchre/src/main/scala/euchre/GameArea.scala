@@ -19,7 +19,8 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       for (i <- 0 until 5) {
         p.hand_(new Hand(p.hand.cards :+ deck.deal))
       }
-      println(p.name + "'s Hand: " + p.hand.sortHand)
+      p.hand.sortHand
+      println(p.name + "'s " + p.hand.toString())
     }
   }
   def setTrump = {
@@ -40,7 +41,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     val currentPlayer = _playerOrder.players(numCards)
     currentTrick.cards_(currentTrick.cards :+ currentPlayer.playCard(currentPlayer.isLead,currentTrick,_round))
 
-    println("Trick: " + currentTrick.cards)
+    println(currentTrick.toString())
     if (numCards == 3) {
       // if the last player has played, decide winner and update round scoreboard
       println(currentTrick)
@@ -148,12 +149,10 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
       team1Score+=1
       _round.roundScore_(team1Score, team2Score)
-      //_t1.points_(_t1.points + 1)
     }
     else {
       team2Score+=1
       _round.roundScore_(team1Score, team2Score)
-      //_t2.points_(_t2.points + 1)
     }
   }
 

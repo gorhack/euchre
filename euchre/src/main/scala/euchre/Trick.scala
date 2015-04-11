@@ -24,5 +24,5 @@ class Trick {
     _winner = null
     _winningTeam = null
   }
-  override def toString() = _cards.toString()
+  override def toString() = "Trick: (" + _cards.mkString(", ") + ")"
 }

@@ -12,5 +12,5 @@ class Hand(private var _cards: List[Card]) {
   def sortHand = { _cards.sortBy(r => (r.suit, r.value))}
   def length: Int = cards.length
   def playCard: Boolean = ??? // send card to trick
-  override def toString() = "Hand: " + _cards.toString()
+  override def toString() = "Hand: (" + _cards.mkString(", ") + ")"
 }
