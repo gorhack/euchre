@@ -9,6 +9,7 @@ class PlayerOrder(p1: Player, p2: Player, p3: Player, p4: Player) {
   def players_(p:Array[Player]): Unit = (_players = p)
 
   def setPlayerOrder = {
+    // find the leader, reset player order based on the leader
     var leader = p1
     var indexOfLeader = 0
     for (p <- _players) {

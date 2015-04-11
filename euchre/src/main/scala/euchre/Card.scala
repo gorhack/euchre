@@ -4,6 +4,12 @@ import java.awt.Color
 
 /**
  * Created by kyle on 2/11/15.
+ *
+ * Card class creates card object that contains:
+ *   display value (8, 9, 10, J, Q, K, etc)
+ *   value (8, 9, 10, 11, 12, 13, etc)
+ *   suit (Diamond, Heart, Spade, Club)
+ *   color (black, red)
  */
 class Card(val _displayValue: String, val _value: Int, val _suit: String, val _color: Color) {
   // displayValue, value, suit, color

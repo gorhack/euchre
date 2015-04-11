@@ -49,11 +49,13 @@ class GameMaster(private var _state: String) {
         }
         p1.name = name
         p1.isLead_(true)
+        playerOrder.setPlayerOrder
         // Scoreboard
         scoreboard.init
         // Team
         t1.init
         t2.init
+        gameArea.round.init
         gameArea.startNewRound
         println(" Your game of Euchre is set up and ready to go! Here are the details:")
         println(" Your team: " + t1.toString())
@@ -66,6 +68,7 @@ class GameMaster(private var _state: String) {
       case "Deal" => {
         println("Dealing cards...")
         gameArea.deal
+        gameArea.setTrump
         _state = "Run"
         changeState()
       }
@@ -87,7 +90,7 @@ class GameMaster(private var _state: String) {
           }
           case "2" => {
             // Step through game (complete 1 player move)
-            gameArea.playCard
+            gameArea.playCard //TODO: does not use true false flag
 
             if (scoreboard.highScore._2 >= 10) {
               _state = "Game Complete"
@@ -96,7 +99,7 @@ class GameMaster(private var _state: String) {
           }
           case "3" => {
             // Step through round (complete 1 round)
-            gameArea.playCards
+            gameArea.playRound //TODO: does not use true false flag
 
             if (scoreboard.highScore._2 >= 10) {
               _state = "Game Complete"
@@ -120,7 +123,7 @@ class GameMaster(private var _state: String) {
         while (scoreboard.highScore._2 < 10) {
           println()
           // Play cards
-          gameArea.playCards
+          gameArea.playRound //TODO: does not use true false flag
 
           println()
         }

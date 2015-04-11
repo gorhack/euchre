@@ -23,10 +23,13 @@ class Deck {
   )
   var currentDeck: List[Card] = List.empty
   def init = {
+    // shuffle a new deck
     currentDeck = Random.shuffle(newDeck)
   }
   def length = { currentDeck.size }
   def deal: Card = {
+    // deal the deck from the top, return the top card so it can be added to a hand
+    //TODO: make deck a sequence
     val topCard = currentDeck.head
     currentDeck = currentDeck.tail
     topCard

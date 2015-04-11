@@ -27,6 +27,7 @@ class Model {
       p.hand.init
     }
     _p1.isLead_(true)
+    _playerOrder.setPlayerOrder
     // Scoreboard
     _scoreboard.init
     // Team
@@ -50,23 +51,19 @@ class Model {
   }
 
   def playCard(): Unit = {
-    _gameArea.playCard
-    if (_scoreboard.highScore._2 >= 10) {
+    if (_gameArea.playCard) {
       gameOver()
     }
   }
 
   def playRound(): Unit = {
-    _gameArea.playCards
-    if (_scoreboard.highScore._2 >= 10) {
+    if (_gameArea.playRound) {
       gameOver()
     }
   }
 
   def playGame(): Unit = {
-    while (_scoreboard.highScore._2 < 10) {
-      // Play cards
-      _gameArea.playCards
+    while (!_gameArea.playRound) {
     }
     gameOver()
   }

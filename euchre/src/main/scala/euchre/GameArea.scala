@@ -6,6 +6,10 @@ package euchre
 class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
                private var _t2: Team, private var _playerOrder: PlayerOrder,
                 private var deck: Deck) {
+  /*
+   * Sets the defaults and makes local pointers
+   */
+
   private var _round = new Round()
   def round: Round = _round
   def round_(r:Round):Unit = (_round = r)
@@ -13,38 +17,57 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   def displayScoreboard: Scoreboard = _scoreboard
   def scoreboard_(s:Scoreboard):Unit = (_scoreboard = s)
   def startNewRound = _round.init
-  // give players cards
+
+  /*
+   * Deal cards to players
+   */
   def deal = {
     for (p <- _playerOrder.players) {
       for (i <- 0 until 5) {
+        // players each have 5 cards in hand
         p.hand_(new Hand(p.hand.cards :+ deck.deal))
       }
       p.hand.sortHand
+      // print the hand to the console
       println(p.name + "'s " + p.hand.toString())
     }
   }
+
+  /*
+   * Sets the trump for the round
+   */
   def setTrump = {
     val t = deck.showTopCard
     round.trump_(t.suit)
     round.color_(t.color)
     println("Trump for the round is " + round.trump + "s")
   }
-  // play card to trick
-  def playCard = {
+
+  /*
+   * The next player in the player order plays a card
+   */
+  def playCard: Boolean = {
+    // do not play card if game is over
+    if (_scoreboard.highScore._2 >= 10) return true
+
     if (_round.tricks.length == 0) {
       // if new round add a trick
       _round.tricks_(_round.tricks :+ new Trick())
     }
+
+    // local values for the current truck and number of cards in the trick
     val currentTrick = _round.tricks.last
     val numCards = currentTrick.cards.length
-    // play a card
+    // local value for the current player up in the player order
+    // based on the number of cards played in the current trick
     val currentPlayer = _playerOrder.players(numCards)
+
+    // have the current player play a card
     currentTrick.cards_(currentTrick.cards :+ currentPlayer.playCard(currentPlayer.isLead,currentTrick,_round))
 
     println(currentTrick.toString())
     if (numCards == 3) {
       // if the last player has played, decide winner and update round scoreboard
-      println(currentTrick)
       decideWinnerOfTrick(currentTrick)
       updateRoundScoreboard
       if (_round.tricks.length == 5) {
@@ -66,9 +89,19 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
         _round.tricks_(_round.tricks :+ new Trick())
       }
     }
+
+    // check if end of game. return true if end of game, otherwise false
+    if (_scoreboard.highScore._2 >= 10) true
+    else false
   }
-  // play cards to trick
-  def playCards = {
+  /*
+   * Play or finish a round
+   */
+  def playRound: Boolean = {
+    // do not play round if game is over
+    if (_scoreboard.highScore._2 >= 10) return true
+
+    // local val for the number of tricks currently in the round
     val numTricks = _round.tricks.length
     if (numTricks != 0 && _round.tricks.last.cards.length != 4) {
       // in the middle of a round, make sure last trick is complete
@@ -79,6 +112,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       }
     }
 
+    // play a total of 5 tricks in the round
     for (t <- numTricks until 5) {
       // there are 5 tricks
       for (p <- 0 until 4) {
@@ -86,16 +120,27 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
         playCard
       }
     }
+
+    // check if end of game. return true if end of game, otherwise false
+    if (_scoreboard.highScore._2 >= 10) true
+    else false
   }
 
-  // determine high card in trick
+  /*
+   * Determine the high card in a trick
+   */
   def determineHighCard(trick: Trick): Card = {
+    // set default high card to the first card
     var highCard: Card = trick.cards.head
+    // establish the bowers (highest trump in game)
     val bowers = "J " + round.color.toString
+    // the lead suit is the suit of the first card played, which is currently the high card
     var leadSuit: String = highCard.suit
     for (c <- trick.cards) {
+      /*
+       * First case: Current card is one of the bowers
+       */
       if (c.displayValue + ' ' + c.color == bowers) {
-        // card is either bower
         if (c.suit == round.trump) {
           // card is right bower
           highCard = c
@@ -107,6 +152,10 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
           highCard = c
         }
       }
+
+      /*
+       * Second case: Both current card and high card are trump, but not a bowers
+       */
       else if (highCard.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
         if (c.suit == round.trump) {
           if (c.value > highCard.value) {
@@ -115,6 +164,10 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
           }
         }
       }
+
+      /*
+       * Third case: Current card is trump and the high card is not trump
+       */
       else if (c.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
         // card is trump and current 'high' card is not
         highCard = c
@@ -130,12 +183,18 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     }
     highCard
   }
-  // determine winner of trick
+
+  /*
+   * Determine the winner of a trick
+   */
   def decideWinnerOfTrick(trick: Trick) = {
+    // local variables for high card, index of winner, and winning player
     val highCard = determineHighCard(trick)
     val indexOfWinner = trick.cards.indexOf(highCard)
     val winningPlayer = _playerOrder.players(indexOfWinner)
     println("Winner: " + winningPlayer.toString() + " with a " + highCard.toString())
+
+    // reset the leader
     for (p <- _playerOrder.players) {
       // no players have lead
       p.isLead_(false)
@@ -144,6 +203,8 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     winningPlayer.isLead_(true)
     // set new player order
     _playerOrder.setPlayerOrder
+
+    // update the round score with the correct winning team
     var team1Score = _round.roundScore._1
     var team2Score = _round.roundScore._2
     if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
@@ -156,7 +217,9 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     }
   }
 
-  // advance player order
+  /*
+   * Advance the player order
+   */
   def advancePlayerOrder(): Unit = {
     // do not advance player order mid trick
     if (_round.tricks.length == 0) {
@@ -174,12 +237,17 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     }
   }
 
-  // update round scoreboard
+  /*
+   * Update round scoreboard
+   */
   def updateRoundScoreboard = {
+    // win a point in the round by winning a trick
     println("Round score is " + _round.roundScore._1 + " to " + _round.roundScore._2)
   }
 
-  // update game scoreboard
+  /*
+   * Update game scoreboard
+   */
   def updateScoreboard(score: (Int, Int)) = {
     var t1Points = _scoreboard.scores._1
     var t2Points = _scoreboard.scores._2
