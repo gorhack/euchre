@@ -12,7 +12,7 @@ class Round {
   private var _highScore:(Team, Int) = (null, 0)
   private var _roundScore: (Int, Int) = (0, 0)
   def teams: Array[Team] = ???
-  def highScore: (Team, Int) = _highScore
+  //def highScore: (Team, Int) = _highScore
   def tricks:List[Trick] = _tricks
   def tricks_(t:List[Trick]): Unit = (_tricks = t)
   def trump: String = _trump
@@ -26,6 +26,6 @@ class Round {
     _trump = ""
     _color = Color.blue
     _tricks = List.empty
-    _highScore = (null, 0)
+    //_highScore = (null, 0)
   }
 }

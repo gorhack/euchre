@@ -9,7 +9,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   private var _round = new Round()
   def round: Round = _round
   def round_(r:Round):Unit = (_round = r)
-  def updateScorebaord: Scoreboard = _scoreboard
+  def updateScoreboard: Scoreboard = _scoreboard
   def displayScoreboard: Scoreboard = _scoreboard
   def scoreboard_(s:Scoreboard):Unit = (_scoreboard = s)
   def startNewRound = _round.init
@@ -29,48 +29,59 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     println("Trump for the round is " + round.trump + "s")
   }
   // play card to trick
-  def playCard() = {
-    println(_round.tricks.length)
+  def playCard = {
     if (_round.tricks.length == 0) {
+      // if new round add a trick
       _round.tricks_(_round.tricks :+ new Trick())
     }
-    println(_round.tricks.length)
     var currentTrick = _round.tricks.last
     var numCards = currentTrick.cards.length
+    // play a card
     currentTrick.cards_(currentTrick.cards :+
       _playerOrder.players(numCards).playCard(_playerOrder.players(numCards).isLead,currentTrick,_round))
-    println(currentTrick)
     if (numCards == 3) {
+      // if the last player has played, decide winner and update round scoreboard
+      println(currentTrick)
       decideWinnerOfTrick(currentTrick)
+      updateRoundScoreboard
+      if (_round.tricks.length == 5) {
+        // if all 5 tricks have been played update scoreboard and reset for new round
+        updateScoreboard(_round.roundScore)
+        startNewRound
+        deck.init
+        deal
+        setTrump
+        // reset player order, advance player order by 1
+        for (p <- _playerOrder.players) {
+          p.isLead_(false)
+        }
+        _playerOrder.players(1).isLead_(true)
+        _playerOrder.setPlayerOrder
+      }
+      else {
+        // if not all 5 tricks have been played start a new trick
+        _round.tricks_(_round.tricks :+ new Trick())
+      }
     }
   }
   // play cards to trick
-  def playCards: (Int, Int) = {
+  def playCards = {
     if (_round.tricks.length != 0 && _round.tricks.last.cards.length != 4) {
       // in the middle of a round, make sure last trick is complete
       var currentTrick = _round.tricks.last
       for (p <- currentTrick.cards.length until 4) {
         // there are 4 players
-        currentTrick.cards_(currentTrick.cards :+
-          _playerOrder.players(p).playCard(_playerOrder.players(p).isLead,currentTrick,_round))
+        playCard
       }
-      println("The Current Trick: " + currentTrick)
-      decideWinnerOfTrick(currentTrick)
-      return _round.roundScore
     }
 
-    for (t <- round.tricks.length until 5) {
+    for (t <- _round.tricks.length until 5) {
       // there are 5 tricks
-      var trick = new Trick()
-      for (p <- _playerOrder.players) {
-        trick.cards_(trick.cards :+ p.playCard(p.isLead,trick,_round))
+      for (p <- 0 until 4) {
+        // there are 4 players
+        playCard
       }
-      println("Trick " + (t + 1) + ": " + trick)
-      decideWinnerOfTrick(trick)
-      _round.tricks_(_round.tricks :+ trick)
     }
-    _round.tricks_(List.empty)
-    _round.roundScore
   }
 
   // determine high card in trick
@@ -129,16 +140,38 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     winningPlayer.isLead_(true)
     // set new player order
     _playerOrder.setPlayerOrder
+    var team1Score = _round.roundScore._1
+    var team2Score = _round.roundScore._2
     if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
-      _round.roundScore_(_round.roundScore._1 + 1, _round.roundScore._2)
+      team1Score+=1
+      _round.roundScore_(team1Score, team2Score)
       //_t1.points_(_t1.points + 1)
     }
     else {
-      _round.roundScore_(_round.roundScore._1, _round.roundScore._2 + 1)
+      team2Score+=1
+      _round.roundScore_(team1Score, team2Score)
       //_t2.points_(_t2.points + 1)
     }
-    updateRoundScoreboard
   }
+
+  // advance player order
+  def advancePlayerOrder(): Unit = {
+    // do not advance player order mid trick
+    if (_round.tricks.length == 0) {
+      _round.tricks_(_round.tricks :+ new Trick())
+    }
+    if (_round.tricks.last.cards.length == 0) {
+
+      _playerOrder.players(0).isLead_(false)
+      _playerOrder.players(1).isLead_(true)
+
+      _playerOrder.setPlayerOrder
+    }
+    else {
+      println("Cannot advance player order mid trick.")
+    }
+  }
+
   // update round scoreboard
   def updateRoundScoreboard = {
     println("Round score is " + _round.roundScore._1 + " to " + _round.roundScore._2)

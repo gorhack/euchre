@@ -80,35 +80,28 @@ class GameMaster(private var _state: String) {
         command match {
           case "1" => {
             // Advance Player Order
-            playerOrder.players(0).isLead_(false)
-            playerOrder.players(1).isLead_(true)
+            gameArea.advancePlayerOrder()
 
-            playerOrder.setPlayerOrder
             println("New Player Order: " + playerOrder.players.deep.mkString(" "))
             println()
           }
           case "2" => {
             // Step through game (complete 1 player move)
             gameArea.playCard
+
+            if (scoreboard.highScore._2 >= 10) {
+              _state = "Game Complete"
+              changeState()
+            }
           }
           case "3" => {
             // Step through round (complete 1 round)
-            var s = gameArea.playCards
-            gameArea.updateScoreboard(s)
+            gameArea.playCards
 
-            // reset necessary game parts
-            deck.init
-            // Hand
-            for (p <- playerOrder.players) {
-              p.hand.init
+            if (scoreboard.highScore._2 >= 10) {
+              _state = "Game Complete"
+              changeState()
             }
-            playerOrder.players(0).isLead_(false)
-            playerOrder.players(1).isLead_(true)
-            playerOrder.setPlayerOrder
-
-            println()
-            if (scoreboard.highScore._2 < 10) gameArea.deal
-            else _state = "Game Complete"
           }
           case "4" => {
             // Run through full game
@@ -126,27 +119,10 @@ class GameMaster(private var _state: String) {
         // Deal cards
         while (scoreboard.highScore._2 < 10) {
           println()
-          // Set trump for round
-          gameArea.setTrump
-          playerOrder.players(0).isLead_(true)
-          println()
           // Play cards
-          var score = gameArea.playCards
-          // Display Scoreboard
-          gameArea.updateScoreboard(score)
-
-          // reset necessary game parts
-          deck.init
-          // Hand
-          for (p <- playerOrder.players) {
-            p.hand.init
-          }
-          playerOrder.players(0).isLead_(false)
-          playerOrder.players(1).isLead_(true)
-          playerOrder.setPlayerOrder
+          gameArea.playCards
 
           println()
-          if (scoreboard.highScore._2 < 10) gameArea.deal
         }
         _state = "Game Complete"
         changeState()

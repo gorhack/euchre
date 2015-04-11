@@ -14,18 +14,36 @@ class View {
 
       val frame = new MainFrame
 
-      frame.title = "My GUI"
+      frame.title = "Euchre"
       frame.contents = textArea
+      controller.init
 
       frame.menuBar = new MenuBar {
 
-        contents += new Menu("Menu1") {
+        contents += new Menu("File") {
 
-          contents += new MenuItem(Action("Hello") {
-            textArea.text = "Hello World"
+          contents += new MenuItem(Action("New Game") {
+            // init
+            controller.init
+            // clear all contents on screen
           })
 
-          contents += new MenuItem("todo")
+          contents += new MenuItem(Action("Simulate Round") {
+
+          })
+          contents += new Menu("Computer Settings") {
+            var schemas = controller.schemas
+            var playerOrder = controller.playerOrder
+
+            for (player <- 0 until playerOrder.length)
+            contents += new Menu(playerOrder(player).toString()) {
+              for (i <- 0 until schemas.length) {
+                contents += new MenuItem(Action(schemas(i)) {
+                  // Set schema of player
+                })
+              }
+            }
+          }
           contents += new Separator
 
           contents += new MenuItem(Action("Exit") {
