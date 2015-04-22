@@ -36,15 +36,27 @@ class Controller(private var view: View, private var model: Model) {
     model.schemas
   }
 
-  def playerCards: Array[Hand] = {
-    model.playerCards
+  def playerCards(_player: Int): String = {
+    model.playerCards(_player)
   }
 
   def scoreboard: Scoreboard = {
     model.scoreboard
   }
 
-  def trick: Trick = {
+  def roundScoreboard: String = {
+    model.roundScoreboard
+  }
+
+  def trump: String = {
+    model.trump
+  }
+
+  def playerName(_player: Int): String = {
+    model.playerName(_player)
+  }
+
+  def trick: String = {
     model.trick
   }
 }

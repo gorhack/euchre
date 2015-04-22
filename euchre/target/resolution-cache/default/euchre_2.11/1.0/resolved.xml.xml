@@ -4,10 +4,10 @@
 		module="euchre_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20150221190656"
+		publication="20150422090313"
 	>
 		<description>
-		euchre
+		Euchre
 		</description>
 	</info>
 	<configurations>
@@ -34,6 +34,7 @@
 	<dependencies>
 		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.5" conf="scala-tool->default,optional(default)"/>
 		<dependency org="org.scala-lang" name="scala-library" rev="2.11.5" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-swing" rev="2.11+" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.11" rev="2.2.4" conf="test->default(compile)"/>
 	</dependencies>
 </ivy-module>

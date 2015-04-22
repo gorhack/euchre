@@ -71,28 +71,53 @@ class Model {
   def playerOrder: Array[Player] = {
     _playerOrder.players
   }
+
   // set up schema
   def schemas: List[String] = {
     _schema.schemas
   }
 
-  def playerCards: Array[Hand] = {
-    Array(_p1.hand, _p2.hand, _p3.hand, _p4.hand)
+  def playerCards(_player: Int): String = {
+    _player match {
+      case 0 => _p1.hand.toString()
+      case 1 => _p2.hand.toString()
+      case 2 => _p3.hand.toString()
+      case 3 => _p4.hand.toString()
+      case default => "Error retrieving player card: " + _player
+    }
   }
 
   def scoreboard: Scoreboard = {
     _scoreboard
   }
 
-  def trick: Trick = {
+  def roundScoreboard: String = {
+    "The score for this round is " + _gameArea.round.roundScore._1 + " to " + _gameArea.round.roundScore._2
+  }
+
+  def trick: String = {
     val tricks = _gameArea.round.tricks
     if (tricks.size != 0 && tricks.last.cards.size != 0) {
-      tricks.last
+      tricks.last.toString()
     }
     else if (tricks.size > 1 && tricks.last.cards.size == 0) {
-      tricks(tricks.length-2)
+      tricks(tricks.length-2).toString()
     }
-    else new Trick()
+    else "ly no new tricks."
+  }
+
+  def trump: String = {
+    "Trump for the round is " + _gameArea.round.trump + "s"
+  }
+
+  def playerName(_player: Int): String = {
+    _player match {
+      case 0 => _p1.name
+      case 1 => _p2.name
+      case 2 => _p3.name
+      case 3 => _p4.name
+      case default => "Error retrieving player name: " + _player
+    }
   }
 
   def gameOver(): String = {

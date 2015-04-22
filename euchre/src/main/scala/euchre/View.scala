@@ -19,22 +19,22 @@ class View {
 
       var labels = Array(
         new TextArea{background = Color.cyan},
-        new TextArea{background = Color.gray},
-        new TextArea{background = Color.red},
+        new TextArea{background = Color.cyan},
+        new TextArea{background = Color.lightGray},
         new TextArea{background = Color.lightGray})
 
       for((label,i) <- labels.zipWithIndex) {
-        label.text = "Player " + (i + 1) + "'s " + controller.playerCards(i).toString()
+        label.text = controller.playerName(i) + "'s " + controller.playerCards(i)
       }
 
       var textArea = new TextArea {
-        text = "Welcome to Euchre\n"
+        text = "Welcome to Euchre\n\n" + controller.roundScoreboard + "\n\n\n" + controller.trump
         background = Color.green
       }
 
       val layoutRar = Array(BorderPanel.Position.North,
-                            BorderPanel.Position.East,
                             BorderPanel.Position.South,
+                            BorderPanel.Position.East,
                             BorderPanel.Position.West)
 
       frame.contents = new BorderPanel {
@@ -61,17 +61,23 @@ class View {
           contents += new MenuItem(Action("Play Card") {
             controller.playCard()
             for((label,i) <- labels.zipWithIndex) {
-              label.text = "Player " + i + "'s " + controller.playerCards(i).toString()
+              label.text = controller.playerName(i) + "'s " + controller.playerCards(i)
             }
-            textArea.text = controller.scoreboard.toString() + "\n\n\nCurrent " + controller.trick.toString()
+            textArea.text = controller.scoreboard.toString() + 
+                            "\n\n" + controller.roundScoreboard +
+                            "\n\n" + controller.trump + 
+                            "\n\nCurrent " + controller.trick
           })
 
           contents += new MenuItem(Action("Simulate Round") {
             controller.playRound()
             for((label,i) <- labels.zipWithIndex) {
-              label.text = "Player " + i + "'s " + controller.playerCards(i).toString()
+              label.text = controller.playerName(i) + "'s " + controller.playerCards(i)
             }
-            textArea.text = controller.scoreboard.toString()
+            textArea.text = controller.scoreboard.toString() + 
+                            "\n\n" + controller.roundScoreboard +
+                            "\n\n" + controller.trump + 
+                            "\n\nCurrent " + controller.trick
           })
 
           contents += new MenuItem(Action("Simulate Game") {
