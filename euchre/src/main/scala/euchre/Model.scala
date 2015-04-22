@@ -76,7 +76,31 @@ class Model {
     _schema.schemas
   }
 
-  def gameOver(): Unit = {
-    println("Game Over")
+  def playerCards: Array[Hand] = {
+    Array(_p1.hand, _p2.hand, _p3.hand, _p4.hand)
+  }
+
+  def scoreboard: Scoreboard = {
+    _scoreboard
+  }
+
+  def trick: Trick = {
+    val tricks = _gameArea.round.tricks
+    if (tricks.size != 0 && tricks.last.cards.size != 0) {
+      tricks.last
+    }
+    else if (tricks.size > 1 && tricks.last.cards.size == 0) {
+      tricks(tricks.length-2)
+    }
+    else new Trick()
+  }
+
+  def gameOver(): String = {
+    if (scoreboard.highScore._1 == 0) {
+      "Congrats, you win!"
+    }
+    else {
+      "Sorry, you lose. Team 2 won."
+    }
   }
 }

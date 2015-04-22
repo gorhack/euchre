@@ -35,4 +35,16 @@ class Controller(private var view: View, private var model: Model) {
   def schemas: List[String] = {
     model.schemas
   }
+
+  def playerCards: Array[Hand] = {
+    model.playerCards
+  }
+
+  def scoreboard: Scoreboard = {
+    model.scoreboard
+  }
+
+  def trick: Trick = {
+    model.trick
+  }
 }
