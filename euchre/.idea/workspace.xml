@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9ce3759-06ef-4577-bcb3-f9a8a41e04ea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameMaster.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameMaster.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardFollowSuit$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardFollowSuit$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardFollowSuit$1$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardFollowSuit$1$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardFollowSuit$1$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardFollowSuit$1$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardLead$1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$determineHighCardLead$1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$playCard$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player$$anonfun$playCard$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/euchre/ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$20$$anonfun$apply$mcV$sp$22.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/euchre/ProjectTester$$anonfun$4$$anonfun$apply$mcV$sp$20$$anonfun$apply$mcV$sp$22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/euchre/ProjectTester.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/euchre/ProjectTester.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Schema.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Schema.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Canvas.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Canvas.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/View.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/View.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Euchre SBT Project, CS403.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,37 +24,17 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="Player.scala" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Player.scala">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Euchre SBT Project, CS403" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Schema.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schema.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -117,6 +80,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Player.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Player.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6958763">
+              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -153,13 +126,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Round.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Canvas.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/View.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
       </list>
     </option>
   </component>
@@ -209,8 +182,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -319,7 +293,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -678,25 +651,25 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30517712" sideWeight="0.49713466" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39918256" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30517712" sideWeight="0.5028653" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.49713466" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32288828" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32561308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32966024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16762178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4332425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922825" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4332425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39918256" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32288828" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32966024" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1074,14 +1047,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/View.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="85" selection-start-line="105" selection-start-column="85" selection-end-line="105" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Hand.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1090,10 +1055,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Model.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/View.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="132" column="85" selection-start-line="132" selection-start-column="85" selection-end-line="132" selection-end-column="85" />
+          <caret line="105" column="85" selection-start-line="105" selection-start-column="85" selection-end-line="105" selection-end-column="85" />
           <folding />
         </state>
       </provider>
@@ -1106,18 +1071,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Model.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="132" column="85" selection-start-line="132" selection-start-column="85" selection-end-line="132" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Player.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.6958763">
+          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
           <folding />
         </state>
       </provider>

@@ -6,17 +6,8 @@ import scala.util.Random
  * Created by kyle on 2/11/15.
  */
 class Schema(private var _schema: String) {
-// Schemas:
-//  1. Aggressive: Always play highest card in hand if possible to win trick
-//  2. Passive: Play lowest card to allow teammate to win tricks - play highest cards last
-//  3. Semi-Aggressive: Always play highest card in hand unless partner is winning the trick
-//  4. Aggressive-Lead: When partner leads, always play highest card if possible to increase
-//     chance of taking trick. Always lead with highest cards.
-//  5. Passive-Lead: Always lead with low cards to allow partner to take tricks.
-//  6. Aggressive-Trump: Always trump to take trick when possible
-//  7. Passive-Fail: Always fail off to allow teammate to take trick.
 
-// Alternate easier schema:
+// Schemas:
 // 1. (COMPLETE) Aggressive: Play highest card available. Trump with highest trump when available.
 // 2. Semi-Aggressive: Play highest card available. Trump with lowest trump when available.
 // 3. Passive: Play lowest card available. Trump with lowest trump when available.
@@ -39,63 +30,79 @@ class Schema(private var _schema: String) {
   /*
    * Play card with schema
    */
-  def playCard(_playSchema: String): Unit = {
+  def playCard(_player: Player, _playSchema: String, lead: Boolean, trick: Trick, round: Round): Card = {
     _playSchema match {
-      case "Passive" => passiveSchema
-      case "Semi-Aggressive" => semiAggressiveSchema
-      case "Aggressive-Lead" => aggressiveLeadSchema
-      case "Aggressive-Fail" => aggressiveFailSchema
-      case "Passive-Fail" => passiveFailSchema
-      case _ => aggressiveSchema
+      case "Passive" => passiveSchema(_player, lead, trick, round)
+      case "Semi-Aggressive" => semiAggressiveSchema(_player, lead, trick, round)
+      case "Aggressive-Lead" => aggressiveLeadSchema(_player, lead, trick, round)
+      case "Aggressive-Fail" => aggressiveFailSchema(_player, lead, trick, round)
+      case "Passive-Fail" => passiveFailSchema(_player, lead, trick, round)
+      case _ => aggressiveSchema(_player, lead, trick, round)
     }
   }
   // Aggressive: Play highest card available. Trump with highest trump when available.
-  def aggressiveSchema: Unit = {
-    println("Now using aggressive playing schema")
+  def aggressiveSchema(_player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+    println("Playing with aggressive schema")
+
+    var playingCard: Card = _player.hand.cards.head
+    // leading player, play highest card
+    if (lead) {
+      playingCard = determineHighCardLead(_player, round)
+    }
+    else {
+      if (trick.cards.head.displayValue == 'J' && trick.cards.head.color == round.color) {
+        playingCard = determineHighCardFollowSuit(_player, round, round.trump)
+      }
+      else {
+        playingCard = determineHighCardFollowSuit(_player, round, trick.cards.head.suit)
+      }
+    }
+    _player.hand.cards_=(_player.hand.cards.filter(_ != playingCard))
+    playingCard
   }
 
   // Passive: Play lowest card available. Trump with lowest trump when available.
-  def passiveSchema: Unit = {
-    println("Now using passive playing schema")
-    aggressiveSchema
+  def passiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+    println("Playing with passive schema")
+    aggressiveSchema(player, lead, trick, round)
   }
 
   // Semi-Aggressive: Play highest card available. Trump with lowest trump when available.
-  def semiAggressiveSchema: Unit = {
-    println("Now using semi-aggressive playing schema")
-    aggressiveSchema
+  def semiAggressiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+    println("Playing with semi-aggressive schema")
+    aggressiveSchema(player, lead, trick, round)
   }
 
   // Aggressive-Lead: Play highest card available. Do not trump until the end.
-  def aggressiveLeadSchema: Unit = {
-    println("Now using aggressive-lead playing schema")
-    aggressiveSchema
+  def aggressiveLeadSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+    println("Playing with aggressive-lead schema")
+    aggressiveSchema(player, lead, trick, round)
   }
 
   // Aggressive-Trump: Play lowest card available. Trump with highest trump when available.
-  def aggressiveFailSchema: Unit = {
-    println("Now using aggressive-fail playing schema")
-    aggressiveSchema
+  def aggressiveFailSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+    println("Playing with aggressive-fail schema")
+    aggressiveSchema(player, lead, trick, round)
   }
 
   // Passive-Fail: Play lowest card available. Do not trump until the end.
-  def passiveFailSchema: Unit = {
-    println("Now using passive-fail playing schema")
-    aggressiveSchema
+  def passiveFailSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+    println("Playing with passive-fail schema")
+    aggressiveSchema(player, lead, trick, round)
   }
 
   /*
    * Schema helper functions
    */
-/*
+
   // Determine the highest card in hand
   // determine high card in hand
-  def determineHighCardFollowSuit(suit: String): Card = {
+  def determineHighCardFollowSuit(player: Player, round: Round, suit: String): Card = {
     // go through hand, select card with highest value of suit
     var returnCard: Card = null
     val bowers = "J " + round.color.toString
     var hasTrump = false
-    for (c <- hand.cards) {
+    for (c <- player.hand.cards) {
       if (c.suit == round.trump || c.displayValue + ' ' + c.color == bowers) {
         hasTrump = true
       }
@@ -121,7 +128,7 @@ class Schema(private var _schema: String) {
     }
     if (returnCard == null) {
       if (hasTrump) {
-        for (c <- hand.cards) {
+        for (c <- player.hand.cards) {
           if (c.displayValue + ' ' + c.color == bowers) {
             returnCard = c
           }
@@ -136,8 +143,8 @@ class Schema(private var _schema: String) {
         }
       }
       else {
-        returnCard = hand.cards.head
-        for (c <- hand.cards) {
+        returnCard = player.hand.cards.head
+        for (c <- player.hand.cards) {
           if (c.value < returnCard.value) {
             returnCard = c
           }
@@ -146,10 +153,10 @@ class Schema(private var _schema: String) {
     }
     returnCard
   }
-  def determineHighCardLead: Card = {
-    var highCard: Card = hand.cards.head
+  def determineHighCardLead(player: Player, round: Round): Card = {
+    var highCard: Card = player.hand.cards.head
     val bowers = "J " + round.color.toString
-    for (c <- hand.cards) {
+    for (c <- player.hand.cards) {
       if (c.displayValue + ' ' + c.color == bowers) {
         // card is either bower
         highCard = c
@@ -176,5 +183,5 @@ class Schema(private var _schema: String) {
     }
     highCard
   }
-*/
+
 }
