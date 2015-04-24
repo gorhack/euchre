@@ -19,10 +19,10 @@ class GameMaster(private var _state: String) {
 
   var deck = new Deck()
 
-  var p1 = new Player(new Hand(List.empty), new Schema())
-  var p2 = new Player(new Hand(List.empty), new Schema())
-  var p3 = new Player(new Hand(List.empty), new Schema())
-  var p4 = new Player(new Hand(List.empty), new Schema())
+  var p1 = new Player(new Hand(List.empty), new Schema(""))
+  var p2 = new Player(new Hand(List.empty), new Schema(""))
+  var p3 = new Player(new Hand(List.empty), new Schema(""))
+  var p4 = new Player(new Hand(List.empty), new Schema(""))
   var playerOrder = new PlayerOrder(p1, p3, p2, p4)
   var t1 = new Team(p1, p2)
   var t2 = new Team(p3, p4)

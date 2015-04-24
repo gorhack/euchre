@@ -6,17 +6,17 @@ package euchre
 class Model {
   var _deck = new Deck()
 
-  var _p1 = new Player(new Hand(List.empty), new Schema())
-  var _p2 = new Player(new Hand(List.empty), new Schema())
-  var _p3 = new Player(new Hand(List.empty), new Schema())
-  var _p4 = new Player(new Hand(List.empty), new Schema())
+  var _p1 = new Player(new Hand(List.empty), new Schema(""))
+  var _p2 = new Player(new Hand(List.empty), new Schema(""))
+  var _p3 = new Player(new Hand(List.empty), new Schema(""))
+  var _p4 = new Player(new Hand(List.empty), new Schema(""))
   var _playerOrder = new PlayerOrder(_p1, _p3, _p2, _p4)
   var _t1 = new Team(_p1, _p2)
   var _t2 = new Team(_p3, _p4)
   var _scoreboard = new Scoreboard(_playerOrder, _t1, _t2)
   var _gameArea = new GameArea(_scoreboard, _t1, _t2, _playerOrder, _deck)
 
-  var _schema = new Schema
+  var _schema = new Schema("")
 
   def init: Unit = {
     _deck.init
@@ -127,5 +127,10 @@ class Model {
     else {
       "Sorry, you lose. Team 2 won."
     }
+  }
+
+  def setSchema(_player: Player, _schema: Schema): Unit = {
+    println(_player.toString() + "'s playing schema changed to " + _schema.toString())
+    _player.schema.schema_=(_schema.toString())
   }
 }

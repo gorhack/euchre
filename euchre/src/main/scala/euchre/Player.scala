@@ -22,16 +22,18 @@ class Player(private var _hand: Hand, private var _schema: Schema) {
   }
   def name: String = _name
   def name_=(n:String): Unit = { _name = n }
-  def teammate: Player = ???
   def hand = _hand
   def hand_(h:Hand) = { _hand = h }
   def schema: Schema = _schema
+  def schema_(s:Schema) = (_schema = s)
   def isLead: Boolean = _isLead
   def isLead_(l:Boolean) = (_isLead = l)
   def canPlayCard: Boolean = _canPlayCard
   def canPlayCard_(p:Boolean) = (_canPlayCard = p)
   def playCard(lead: Boolean, trick: Trick, round: Round): Card = {
     // TODO:// decide actual card to play based on schema
+
+
 
     // determine high card in hand
     def determineHighCardFollowSuit(suit: String): Card = {

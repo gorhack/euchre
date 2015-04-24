@@ -9,9 +9,10 @@ import scala.swing.{TextArea, Panel}
 import java.awt.{ Graphics2D, Color }
 
 class Canvas extends TextArea {
-    var centerColor = Color.yellow
+  var centerColor = Color.yellow
 
   //var darts = List[Dart]()
+  var hand = List[Card]() // Hand
 
   override def paintComponent(g: Graphics2D) {
 
@@ -25,6 +26,9 @@ class Canvas extends TextArea {
     g.fillOval(20, 20, 60, 60)
     g.setColor(centerColor)
     g.fillOval(40, 40, 20, 20)
+
+    // Draw things that change on top of background
+
 
     // Draw things that change on top of background
   //      for (dart <- darts) {

@@ -55,14 +55,19 @@ class View {
           })
 
           contents += new MenuItem(Action("Advance Player Order") {
+            // advance player order
+            // TODO:// Display the player order, or represent the current player up visually
             controller.advancePlayerOrder()
           })
 
           contents += new MenuItem(Action("Play Card") {
+            // have the current player play a card
             controller.playCard()
+            // update the players' hands
             for((label,i) <- labels.zipWithIndex) {
               label.text = controller.playerName(i) + "'s " + controller.playerCards(i)
             }
+            // update the game area
             textArea.text = controller.scoreboard.toString() + 
                             "\n\n" + controller.roundScoreboard +
                             "\n\n" + controller.trump + 
@@ -71,9 +76,11 @@ class View {
 
           contents += new MenuItem(Action("Simulate Round") {
             controller.playRound()
+            // update the players' hands
             for((label,i) <- labels.zipWithIndex) {
               label.text = controller.playerName(i) + "'s " + controller.playerCards(i)
             }
+            // update the game area
             textArea.text = controller.scoreboard.toString() + 
                             "\n\n" + controller.roundScoreboard +
                             "\n\n" + controller.trump + 
@@ -81,10 +88,13 @@ class View {
           })
 
           contents += new MenuItem(Action("Simulate Game") {
+            // complete the game
             controller.playGame()
+            // update the game area text
             textArea.text = controller.scoreboard.toString()
           })
           contents += new Menu("Computer Settings") {
+            // update player schemas
             var schemas = controller.schemas
             var playerOrder = controller.playerOrder
 
@@ -93,6 +103,7 @@ class View {
                 for (i <- 0 until schemas.length) {
                   contents += new MenuItem(Action(schemas(i)) {
                     // Set schema of player
+                    controller.setSchema(playerOrder(player), new Schema(schemas(i)))
                   })
                 }
               }
@@ -106,7 +117,7 @@ class View {
         } // end File menu
       } // end MenuBar
 
-      frame.size = new Dimension(1000,1000)
+      frame.size = new Dimension(1200,400)
       frame.centerOnScreen
       frame.visible = true
     }

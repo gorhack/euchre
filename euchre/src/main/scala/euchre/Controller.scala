@@ -59,4 +59,8 @@ class Controller(private var view: View, private var model: Model) {
   def trick: String = {
     model.trick
   }
+
+  def setSchema(_player: Player, _schema: Schema): Unit = {
+    model.setSchema(_player, _schema)
+  }
 }
