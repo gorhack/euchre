@@ -99,7 +99,7 @@ class GameMaster(private var _state: String) {
           }
           case "3" => {
             // Step through round (complete 1 round)
-            gameArea.playRound //TODO: does not use true false flag
+            gameArea.playRound(500) //TODO: does not use true false flag
 
             if (scoreboard.highScore._2 >= 10) {
               _state = "Game Complete"
@@ -123,7 +123,7 @@ class GameMaster(private var _state: String) {
         while (scoreboard.highScore._2 < 10) {
           println()
           // Play cards
-          gameArea.playRound //TODO: does not use true false flag
+          gameArea.playRound(500) //TODO: does not use true false flag
 
           println()
         }

@@ -18,9 +18,9 @@ class Controller(private var view: View, private var model: Model) {
     model.playCard()
   }
 
-  def playRound(): Unit = {
+  def playRound(delay: Int): Unit = {
     println("Play Round")
-    model.playRound()
+    model.playRound(delay)
   }
 
   def playGame(): Unit = {
@@ -28,7 +28,7 @@ class Controller(private var view: View, private var model: Model) {
     model.playGame()
   }
 
-  def playerOrder: Array[Player] = {
+  def playerOrder: PlayerOrder = {
     model.playerOrder
   }
 

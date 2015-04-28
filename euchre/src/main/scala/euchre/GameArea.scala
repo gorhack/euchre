@@ -97,7 +97,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   /*
    * Play or finish a round
    */
-  def playRound: Boolean = {
+  def playRound(delay: Int): Boolean = {
     // do not play round if game is over
     if (_scoreboard.highScore._2 >= 10) return true
 
@@ -118,6 +118,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       for (p <- 0 until 4) {
         // there are 4 players
         playCard
+        Thread.sleep(delay)
       }
     }
 

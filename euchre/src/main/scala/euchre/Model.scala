@@ -56,20 +56,20 @@ class Model {
     }
   }
 
-  def playRound(): Unit = {
-    if (_gameArea.playRound) {
+  def playRound(delay: Int): Unit = {
+    if (_gameArea.playRound(delay)) {
       gameOver()
     }
   }
 
   def playGame(): Unit = {
-    while (!_gameArea.playRound) {
+    while (!_gameArea.playRound(500)) {
     }
     gameOver()
   }
 
-  def playerOrder: Array[Player] = {
-    _playerOrder.players
+  def playerOrder: PlayerOrder = {
+    _playerOrder
   }
 
   // set up schema
@@ -98,10 +98,10 @@ class Model {
   def trick: String = {
     val tricks = _gameArea.round.tricks
     if (tricks.size != 0 && tricks.last.cards.size != 0) {
-      tricks.last.toString()
+      " " + tricks.last.toString()
     }
     else if (tricks.size > 1 && tricks.last.cards.size == 0) {
-      tricks(tricks.length-2).toString()
+      " " + tricks(tricks.length-2).toString()
     }
     else "ly no new tricks."
   }

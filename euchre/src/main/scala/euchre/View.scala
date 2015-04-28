@@ -5,14 +5,12 @@ package euchre
  */
 
 import java.awt.Color
-
+import concurrent.Future
 import scala.swing._
 
 class View {
-  object view {
-
-    def main(controller: Controller): Unit = {
-      val frame = new MainFrame
+    def init(controller: Controller): Unit = {
+      lazy val frame = new MainFrame
 
       frame.title = "Euchre"
       controller.init
@@ -52,12 +50,18 @@ class View {
             // init
             controller.init
             // clear all contents on screen
+            // TODO:// when new game update names available
           })
 
           contents += new MenuItem(Action("Advance Player Order") {
             // advance player order
             // TODO:// Display the player order, or represent the current player up visually
             controller.advancePlayerOrder()
+            textArea.text = controller.scoreboard.toString() +
+                            "\n\n" + controller.roundScoreboard +
+                            "\n\n" + controller.trump +
+                            "\n\n" + "Round Player Order: " + controller.playerOrder.toString() +
+                            "\n\nCurrent" + controller.trick
           })
 
           contents += new MenuItem(Action("Play Card") {
@@ -70,21 +74,24 @@ class View {
             // update the game area
             textArea.text = controller.scoreboard.toString() + 
                             "\n\n" + controller.roundScoreboard +
-                            "\n\n" + controller.trump + 
-                            "\n\nCurrent " + controller.trick
+                            "\n\n" + controller.trump +
+                            "\n\n" + "Round Player Order: " + controller.playerOrder.toString() +
+                            "\n\nCurrent" + controller.trick
           })
 
           contents += new MenuItem(Action("Simulate Round") {
-            controller.playRound()
+            controller.playRound(1000)
+            // TODO:// add sleep timer
             // update the players' hands
             for((label,i) <- labels.zipWithIndex) {
               label.text = controller.playerName(i) + "'s " + controller.playerCards(i)
             }
             // update the game area
-            textArea.text = controller.scoreboard.toString() + 
+            textArea.text = controller.scoreboard.toString() +
                             "\n\n" + controller.roundScoreboard +
-                            "\n\n" + controller.trump + 
-                            "\n\nCurrent " + controller.trick
+                            "\n\n" + controller.trump +
+                            "\n\n" + "Round Player Order: " + controller.playerOrder.toString() +
+                            "\n\nCurrent" + controller.trick
           })
 
           contents += new MenuItem(Action("Simulate Game") {
@@ -98,12 +105,12 @@ class View {
             var schemas = controller.schemas
             var playerOrder = controller.playerOrder
 
-            for (player <- 0 until playerOrder.length)
-              contents += new Menu(playerOrder(player).toString()) {
+            for (player <- 0 until playerOrder.players.length)
+              contents += new Menu(playerOrder.players(player).toString()) {
                 for (i <- 0 until schemas.length) {
                   contents += new MenuItem(Action(schemas(i)) {
                     // Set schema of player
-                    controller.setSchema(playerOrder(player), new Schema(schemas(i)))
+                    controller.setSchema(playerOrder.players(player), new Schema(schemas(i)))
                   })
                 }
               }
@@ -121,9 +128,4 @@ class View {
       frame.centerOnScreen
       frame.visible = true
     }
-  }
-
-  def init(controller: Controller) = {
-    view.main(controller)
-  }
 }
