@@ -7,6 +7,7 @@ package euchre
 import java.awt.{TextArea, Color}
 import scala.swing.Swing.EmptyIcon
 import scala.swing._
+import scala.swing.BorderPanel.Position._
 
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
@@ -21,7 +22,7 @@ class GuiView extends View {
     controller = Some(_controller)
     controller.get.init
     frame.menuBar = createMenu
-    frame.size = new Dimension(1210,1100)
+    frame.size = new Dimension(1210,500)
     frame.centerOnScreen
     frame.visible = true
   }
@@ -34,20 +35,17 @@ class GuiView extends View {
 
     createUserArea
 
-    val layoutRar = Array(BorderPanel.Position.North,
-      BorderPanel.Position.South,
-      BorderPanel.Position.East,
-      BorderPanel.Position.West)
+    val layoutRar = Array(North, South, East, West)
 
-    contents = new GridPanel(3, 1) {
-      contents += createTitle
-      contents += new BorderPanel {
-        layout += gameArea -> BorderPanel.Position.Center
+    contents = new BorderPanel {
+      layout += createTitle -> North
+      layout += new BorderPanel {
+        layout += gameArea -> Center
         for ((uArea, i) <- userArea.zipWithIndex) {
           layout += uArea -> layoutRar(i)
         }
-      }
-      contents += new GridPanel(1,3) {
+      } -> Center
+      layout += new GridPanel(1,3) {
         contents += new Button {
           text = "Play Card"
         }
@@ -57,7 +55,7 @@ class GuiView extends View {
         contents += new Button {
           text = "Play Game"
         }
-      }
+      } -> South
     }
   }
 
