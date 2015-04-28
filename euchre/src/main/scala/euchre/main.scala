@@ -13,7 +13,7 @@ object Main {
 		 * uncomment for GUI
 		 */
 		val model = new Model()
-		val view = new View
+		val view = new GuiView
 		val controller = new Controller(view, model)
 		view.init(controller)
 	}
