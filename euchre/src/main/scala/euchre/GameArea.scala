@@ -7,9 +7,8 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
                private var _t2: Team, private var _pOrder: PlayerOrder,
                 private var deck: Deck) {
   /*
-   * Sets the defaults and makes local pointers
+   * Sets the defaults and makes getters and setters
    */
-
   private var _game = Array.empty[(Round, Int)]
   def game = _game
   def game_(g: Array[(Round, Int)]): Unit = (_game = g)

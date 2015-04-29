@@ -204,8 +204,10 @@ class GuiView extends View {
     gameOver = true
     // update the game area text
     gameArea.text = s
-    for (uArea <- userArea) uArea.text = ""
-
+    for (uArea <- userArea) {
+      uArea.text = ""
+      uArea.icon = EmptyIcon
+    }
   }
 
   def displayGameArea(_scoreboard: Scoreboard, _round: Round, _playerOrder: PlayerOrder, _trick: String): Unit = {

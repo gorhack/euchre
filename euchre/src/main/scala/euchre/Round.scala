@@ -12,6 +12,9 @@ class Round {
   private var _highScore:(Team, Int) = (null, 0)
   private var _roundScore: (Int, Int) = (0, 0)
 
+  /*
+   * Getters and Setters
+   */
   def tricks:List[Trick] = _tricks
   def tricks_(t:List[Trick]): Unit = (_tricks = t)
   def trump: String = _trump

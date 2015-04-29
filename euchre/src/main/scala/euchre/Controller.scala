@@ -40,6 +40,9 @@ class Controller(private var view: View, private var model: Model) {
     else "ly no new tricks."
   }
 
+  /*
+   * Play Card
+   */
   def playCard(): Boolean = {
     // if the game is over, update view to display winner
     var gameOver = model.playCard()
@@ -55,6 +58,9 @@ class Controller(private var view: View, private var model: Model) {
     gameOver
   }
 
+  /*
+   * Play Round
+   */
   def playRound(delay: Int): Boolean = {
     var gameOver = false
 
@@ -86,6 +92,9 @@ class Controller(private var view: View, private var model: Model) {
     gameOver
   }
 
+  /*
+   * Play Full Game
+   */
   def playGame(delay: Int): Unit = {
     while (!playRound(delay)) {
     }

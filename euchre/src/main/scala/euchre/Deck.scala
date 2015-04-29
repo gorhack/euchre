@@ -21,7 +21,7 @@ class Deck {
     new Card("8", 8, "Heart", Color.red), new Card("8", 8, "Diamond", Color.red), new Card("8", 8, "Club", Color.black), new Card("8", 8, "Spade", Color.black),
     new Card("7", 7, "Heart", Color.red), new Card("7", 7, "Diamond", Color.red), new Card("7", 7, "Club", Color.black), new Card("7", 7, "Spade", Color.black)
   )
-  var currentDeck: List[Card] = List.empty
+  private var currentDeck: List[Card] = List.empty
   def init = {
     // shuffle a new deck
     currentDeck = Random.shuffle(newDeck)

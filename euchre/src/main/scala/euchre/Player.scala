@@ -20,6 +20,10 @@ class Player(private var _hand: Hand, private var _schema: Schema) {
     _canPlayCard = false
     _schema.init
   }
+
+  /*
+   * Getters and Setters
+   */
   def name: String = _name
   def name_=(n:String): Unit = { _name = n }
   def hand = _hand
