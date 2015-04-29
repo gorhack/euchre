@@ -46,25 +46,28 @@ class Model {
     println("Now we are ready to play!")
   }
 
+  // game info
   def scoreboard: Scoreboard = _scoreboard
   def round: Round = _gameArea.round
+
+  // player order methods
   def playerOrder: PlayerOrder = _playerOrder
   def playerOrder_(p: PlayerOrder): Unit = (_playerOrder = p)
-  def indexOfCurrentPlayer = _gameArea.indexOfCurrentPlayer
-
   def advancePlayerOrder(): Unit = {
     _gameArea.advancePlayerOrder()
     playerOrder_(_gameArea.playerOrder)
   }
+  def indexOfCurrentPlayer = _gameArea.indexOfCurrentPlayer
 
-  def playCard(): Boolean = {
-    _gameArea.playCard
+  // schema methods
+  def schemas: List[String] = _schema.schemas // set up schema
+  def setSchema(_player: Player, _schema: Schema): Unit = {
+    println(_player.toString() + "'s playing schema changed to " + _schema.toString())
+    _player.schema.schema_=(_schema.toString())
   }
 
-  // set up schema
-  def schemas: List[String] = {
-    _schema.schemas
-  }
+  // current player plays a card
+  def playCard(): Boolean = _gameArea.playCard
 
   def playerCards(_player: Int): String = {
     _player match {
@@ -74,25 +77,6 @@ class Model {
       case 3 => _p4.hand.toString()
       case default => "Error retrieving player card: " + _player
     }
-  }
-
-  def roundScoreboard: String = {
-    "The score for this round is " + _gameArea.round.roundScore._1 + " to " + _gameArea.round.roundScore._2
-  }
-
-  def trick: String = {
-    val tricks = _gameArea.round.tricks
-    if (tricks.size != 0 && tricks.last.cards.size != 0) {
-      " " + tricks.last.toString()
-    }
-    else if (tricks.size > 1 && tricks.last.cards.size == 0) {
-      " " + tricks(tricks.length-2).toString()
-    }
-    else "ly no new tricks."
-  }
-
-  def trump: String = {
-    "Trump for the round is " + _gameArea.round.trump + "s"
   }
 
   def playerName(_player: Int): String = {
@@ -106,6 +90,7 @@ class Model {
   }
 
   def gameOver(): String = {
+    // update view with the correct winner
     if (scoreboard.highScore._1 == 0) {
       "<html>Congrats, you win!" +
         "<br><br>The Score is " + _scoreboard.toString() + "</html>"
@@ -114,10 +99,5 @@ class Model {
       "<html>Sorry, you lose. Team 2 won." +
         "<br><br>The Score is " + _scoreboard.toString() + "</html>"
     }
-  }
-
-  def setSchema(_player: Player, _schema: Schema): Unit = {
-    println(_player.toString() + "'s playing schema changed to " + _schema.toString())
-    _player.schema.schema_=(_schema.toString())
   }
 }

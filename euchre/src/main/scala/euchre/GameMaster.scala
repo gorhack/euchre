@@ -6,7 +6,7 @@ import scala.io.StdIn
  * Created by kyle on 2/23/15.
  */
 class GameMaster(private var _state: String) {
-
+  // TODO:// extend from View as the "textView"
   //    Valid states:
   //     Initial
   //     Play
@@ -100,9 +100,7 @@ class GameMaster(private var _state: String) {
           }
           case "3" => {
             // Step through round (complete 1 round)
-
-
-            if (scoreboard.highScore._2 >= 10) {
+            while (!gameArea.playCard) {
               _state = "Game Complete"
               changeState()
             }
