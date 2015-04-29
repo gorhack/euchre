@@ -4,25 +4,33 @@
 package euchre
 
 class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
-               private var _t2: Team, private var _playerOrder: PlayerOrder,
+               private var _t2: Team, private var _pOrder: PlayerOrder,
                 private var deck: Deck) {
   /*
    * Sets the defaults and makes local pointers
    */
 
+  private var _game = Array.empty[(Round, Int)]
+  def game = _game
+  def game_(g: Array[(Round, Int)]): Unit = (_game = g)
   private var _round = new Round()
   def round: Round = _round
-  def round_(r:Round):Unit = (_round = r)
+  def round_(r:Round): Unit = (_round = r)
   def updateScoreboard: Scoreboard = _scoreboard
   def displayScoreboard: Scoreboard = _scoreboard
   def scoreboard_(s:Scoreboard):Unit = (_scoreboard = s)
   def startNewRound = _round.init
+  private var _playerOrder = _pOrder
+  def playerOrder = _playerOrder
+  def playerOrder_(p: PlayerOrder): Unit = (_playerOrder = p)
+
+  var indexOfCurrentPlayer = playerOrder.indexOfCurrentPlayer
 
   /*
    * Deal cards to players
    */
   def deal = {
-    for (p <- _playerOrder.players) {
+    for (p <- playerOrder.players) {
       for (i <- 0 until 5) {
         // players each have 5 cards in hand
         p.hand_(new Hand(p.hand.cards :+ deck.deal))
@@ -55,12 +63,14 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       _round.tricks_(_round.tricks :+ new Trick())
     }
 
+    playerOrder.indexOfCurrentPlayer_((playerOrder.indexOfCurrentPlayer + 1) % 4)
+
     // local values for the current truck and number of cards in the trick
     val currentTrick = _round.tricks.last
     val numCards = currentTrick.cards.length
     // local value for the current player up in the player order
     // based on the number of cards played in the current trick
-    val currentPlayer = _playerOrder.players(numCards)
+    val currentPlayer = playerOrder.players(numCards)
 
     // have the current player play a card
     currentTrick.cards_(currentTrick.cards :+ currentPlayer.playCard(currentPlayer.isLead,currentTrick,_round))
@@ -68,57 +78,28 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     println(currentTrick.toString())
     if (numCards == 3) {
       // if the last player has played, decide winner and update round scoreboard
-      decideWinnerOfTrick(currentTrick)
+      val winningTeam = decideWinnerOfTrick(currentTrick)
       updateRoundScoreboard
       if (_round.tricks.length == 5) {
         // if all 5 tricks have been played update scoreboard and reset for new round
         updateScoreboard(_round.roundScore)
+        game_(game :+ (_round, winningTeam))
         startNewRound
         deck.init
         deal
         setTrump
         // reset player order, advance player order by 1
-        for (p <- _playerOrder.players) {
+        for (p <- playerOrder.players) {
           p.isLead_(false)
         }
-        _playerOrder.players(1).isLead_(true)
-        _playerOrder.setPlayerOrder
+        indexOfCurrentPlayer += 1
+        playerOrder.players((indexOfCurrentPlayer) % 4).isLead_(true)
+        playerOrder.setPlayerOrder
+        playerOrder.indexOfCurrentPlayer_((indexOfCurrentPlayer) % 4)
       }
       else {
         // if not all 5 tricks have been played start a new trick
         _round.tricks_(_round.tricks :+ new Trick())
-      }
-    }
-
-    // check if end of game. return true if end of game, otherwise false
-    if (_scoreboard.highScore._2 >= 10) true
-    else false
-  }
-  /*
-   * Play or finish a round
-   */
-  def playRound(delay: Int): Boolean = {
-    // do not play round if game is over
-    if (_scoreboard.highScore._2 >= 10) return true
-
-    // local val for the number of tricks currently in the round
-    val numTricks = _round.tricks.length
-    if (numTricks != 0 && _round.tricks.last.cards.length != 4) {
-      // in the middle of a round, make sure last trick is complete
-      var currentTrick = _round.tricks.last
-      for (p <- currentTrick.cards.length until 4) {
-        // there are 4 players
-        playCard
-      }
-    }
-
-    // play a total of 5 tricks in the round
-    for (t <- numTricks until 5) {
-      // there are 5 tricks
-      for (p <- 0 until 4) {
-        // there are 4 players
-        playCard
-        Thread.sleep(delay)
       }
     }
 
@@ -188,7 +169,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
   /*
    * Determine the winner of a trick
    */
-  def decideWinnerOfTrick(trick: Trick) = {
+  def decideWinnerOfTrick(trick: Trick): Int = {
     // local variables for high card, index of winner, and winning player
     val highCard = determineHighCard(trick)
     val indexOfWinner = trick.cards.indexOf(highCard)
@@ -203,7 +184,9 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     // set winning player to have lead
     winningPlayer.isLead_(true)
     // set new player order
-    _playerOrder.setPlayerOrder
+    playerOrder.setPlayerOrder
+    playerOrder.indexOfCurrentPlayer_((playerOrder.indexOfCurrentPlayer + indexOfWinner) % 4)
+
 
     // update the round score with the correct winning team
     var team1Score = _round.roundScore._1
@@ -211,10 +194,12 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     if (winningPlayer == _t1.team(0) || winningPlayer == _t1.team(1)) {
       team1Score+=1
       _round.roundScore_(team1Score, team2Score)
+      0
     }
     else {
       team2Score+=1
       _round.roundScore_(team1Score, team2Score)
+      1
     }
   }
 
@@ -223,18 +208,15 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
    */
   def advancePlayerOrder(): Unit = {
     // do not advance player order mid trick
-    if (_round.tricks.length == 0) {
-      _round.tricks_(_round.tricks :+ new Trick())
-    }
-    if (_round.tricks.last.cards.length == 0) {
-
-      _playerOrder.players(0).isLead_(false)
-      _playerOrder.players(1).isLead_(true)
-
-      _playerOrder.setPlayerOrder
+    if (game.length == 0 || game.last._1.tricks.isEmpty) {
+      indexOfCurrentPlayer += 1
+      println(indexOfCurrentPlayer)
+      playerOrder.indexOfCurrentPlayer_(indexOfCurrentPlayer)
+      playerOrder.advancePlayerOrder
+      println("New Player Order: " + playerOrder.toString())
     }
     else {
-      println("Cannot advance player order mid trick.")
+      println("Cannot advance player order mid round.")
     }
   }
 

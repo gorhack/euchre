@@ -8,8 +8,8 @@ abstract class View {
   var controller: Option[Controller] = None
 
   def init(controller: Controller)
-  def displayPlayerOrder(_playerOrder: PlayerOrder)
-  def displayCurrentPlayer(_player: Player)
-  def displayTrick(_trick: Trick)
-  def displayWinner(_player: Player) // winner of trick
+  def displayPlayers()
+  def setNextPlayer(_indexOfCurrentPlayer: Int)
+  def displayGameArea(_scoreboard: Scoreboard, _round: Round, _playerOrder: PlayerOrder, _trick: String)
+  def displayWinner(_gameOver: String) // winner of trick
 }

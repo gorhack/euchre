@@ -17,5 +17,5 @@ class Scoreboard(var _playerOrder: PlayerOrder, var t1: Team, var t2: Team) {
     _scores = (0, 0)
     _highScore = (null, 0)
   }
-  override def toString() = "The score is " + scores._1 + " to " + scores._2
+  override def toString() = "The Score is " + scores._1 + " to " + scores._2
 }

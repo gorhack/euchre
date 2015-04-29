@@ -6,17 +6,17 @@ package euchre
 class Model {
   var _deck = new Deck()
 
-  var _p1 = new Player(new Hand(List.empty), new Schema(""))
-  var _p2 = new Player(new Hand(List.empty), new Schema(""))
-  var _p3 = new Player(new Hand(List.empty), new Schema(""))
-  var _p4 = new Player(new Hand(List.empty), new Schema(""))
-  var _playerOrder = new PlayerOrder(_p1, _p3, _p2, _p4)
-  var _t1 = new Team(_p1, _p2)
-  var _t2 = new Team(_p3, _p4)
-  var _scoreboard = new Scoreboard(_playerOrder, _t1, _t2)
-  var _gameArea = new GameArea(_scoreboard, _t1, _t2, _playerOrder, _deck)
+  private var _p1 = new Player(new Hand(List.empty), new Schema(""))
+  private var _p2 = new Player(new Hand(List.empty), new Schema(""))
+  private var _p3 = new Player(new Hand(List.empty), new Schema(""))
+  private var _p4 = new Player(new Hand(List.empty), new Schema(""))
+  private var _playerOrder = new PlayerOrder(_p1, _p3, _p2, _p4)
+  private var _t1 = new Team(_p1, _p2)
+  private var _t2 = new Team(_p3, _p4)
+  private var _scoreboard = new Scoreboard(_playerOrder, _t1, _t2)
+  private var _gameArea = new GameArea(_scoreboard, _t1, _t2, _playerOrder, _deck)
 
-  var _schema = new Schema("")
+  private var _schema = new Schema("")
 
   def init: Unit = {
     _deck.init
@@ -28,6 +28,7 @@ class Model {
     }
     _p1.isLead_(true)
     _playerOrder.setPlayerOrder
+    _playerOrder.indexOfCurrentPlayer_(0)
     // Scoreboard
     _scoreboard.init
     // Team
@@ -45,31 +46,19 @@ class Model {
     println("Now we are ready to play!")
   }
 
+  def scoreboard: Scoreboard = _scoreboard
+  def round: Round = _gameArea.round
+  def playerOrder: PlayerOrder = _playerOrder
+  def playerOrder_(p: PlayerOrder): Unit = (_playerOrder = p)
+  def indexOfCurrentPlayer = _gameArea.indexOfCurrentPlayer
+
   def advancePlayerOrder(): Unit = {
     _gameArea.advancePlayerOrder()
-    println("New Player Order: " + _playerOrder.players.deep.mkString(" "))
+    playerOrder_(_gameArea.playerOrder)
   }
 
-  def playCard(): Unit = {
-    if (_gameArea.playCard) {
-      gameOver()
-    }
-  }
-
-  def playRound(delay: Int): Unit = {
-    if (_gameArea.playRound(delay)) {
-      gameOver()
-    }
-  }
-
-  def playGame(): Unit = {
-    while (!_gameArea.playRound(500)) {
-    }
-    gameOver()
-  }
-
-  def playerOrder: PlayerOrder = {
-    _playerOrder
+  def playCard(): Boolean = {
+    _gameArea.playCard
   }
 
   // set up schema
@@ -85,10 +74,6 @@ class Model {
       case 3 => _p4.hand.toString()
       case default => "Error retrieving player card: " + _player
     }
-  }
-
-  def scoreboard: Scoreboard = {
-    _scoreboard
   }
 
   def roundScoreboard: String = {
@@ -122,10 +107,12 @@ class Model {
 
   def gameOver(): String = {
     if (scoreboard.highScore._1 == 0) {
-      "Congrats, you win!"
+      "<html>Congrats, you win!" +
+        "<br><br>The Score is " + _scoreboard.toString() + "</html>"
     }
     else {
-      "Sorry, you lose. Team 2 won."
+      "<html>Sorry, you lose. Team 2 won." +
+        "<br><br>The Score is " + _scoreboard.toString() + "</html>"
     }
   }
 

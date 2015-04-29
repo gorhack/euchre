@@ -50,6 +50,7 @@ class GameMaster(private var _state: String) {
         p1.name = name
         p1.isLead_(true)
         playerOrder.setPlayerOrder
+        playerOrder.indexOfCurrentPlayer_(0)
         // Scoreboard
         scoreboard.init
         // Team
@@ -99,7 +100,7 @@ class GameMaster(private var _state: String) {
           }
           case "3" => {
             // Step through round (complete 1 round)
-            gameArea.playRound(500) //TODO: does not use true false flag
+
 
             if (scoreboard.highScore._2 >= 10) {
               _state = "Game Complete"
@@ -120,11 +121,7 @@ class GameMaster(private var _state: String) {
       case "Play" => {
         println("Playing...")
         // Deal cards
-        while (scoreboard.highScore._2 < 10) {
-          println()
-          // Play cards
-          gameArea.playRound(500) //TODO: does not use true false flag
-
+        while (!playRound(300)) {
           println()
         }
         _state = "Game Complete"
@@ -153,5 +150,40 @@ class GameMaster(private var _state: String) {
         changeState()
       }
     }
+  }
+
+  def playRound(delay: Int): Boolean = {
+    // do not play round if game is over
+    if (scoreboard.highScore._2 >= 10) return true
+
+    // local val for the number of tricks currently in the round
+    val numTricks = gameArea.round.tricks.length
+    if (numTricks != 0 && gameArea.round.tricks.last.cards.length != 4) {
+      // in the middle of a round, make sure last trick is complete
+      var currentTrick = gameArea.round.tricks.last
+      for (p <- currentTrick.cards.length until 4) {
+        // there are 4 players
+        gameArea.playCard
+        Thread.sleep(300)
+      }
+
+      // check if end of game. return true if end of game, otherwise false
+      if (scoreboard.highScore._2 >= 10) true
+      else false
+    }
+
+    // play a total of 5 tricks in the round
+    for (t <- numTricks until 5) {
+      // there are 5 tricks
+      for (p <- 0 until 4) {
+        // there are 4 players
+        gameArea.playCard
+        Thread.sleep(300)
+      }
+    }
+
+    // check if end of game. return true if end of game, otherwise false
+    if (scoreboard.highScore._2 >= 10) true
+    else false
   }
 }

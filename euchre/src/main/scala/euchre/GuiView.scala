@@ -5,26 +5,44 @@ package euchre
  */
 
 import java.awt.{TextArea, Color}
+import javax.swing.ImageIcon
 import scala.swing.Swing.EmptyIcon
 import scala.swing._
 import scala.swing.BorderPanel.Position._
 
 import scala.concurrent.Future
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.swing.event.ButtonClicked
 
 class GuiView extends View {
   private implicit val baseTime = System.currentTimeMillis()
+  private val delay = 1000
+  private var gameOver = false
 
   var gameArea = new Label("Welcome to Euchre", EmptyIcon, Alignment.Center)
   var userArea = new Array[Label](4)
+  var initialPlayerOrder = new Array[Player](4)
+
+  val playCardButton = new Button {text = "Play Card"}
+  val playRoundButton = new Button {text = "Play Round"}
+  val playGameButton = new Button {text = "Play Game"}
 
   def init(_controller: Controller): Unit = {
+    gameOver = false
     controller = Some(_controller)
     controller.get.init
+    initialPlayerOrder = controller.get.playerOrder.players
     frame.menuBar = createMenu
     frame.size = new Dimension(1210,500)
     frame.centerOnScreen
     frame.visible = true
+
+    // wait for "loading screen"
+    Thread.sleep(delay)
+    // load game
+    displayPlayers()
+    setNextPlayer(controller.get.playerOrder.indexOfCurrentPlayer)
+    displayGameArea(controller.get.scoreboard, controller.get.round, controller.get.playerOrder, controller.get.trick)
   }
 
   private val frame = new MainFrame {
@@ -35,7 +53,7 @@ class GuiView extends View {
 
     createUserArea
 
-    val layoutRar = Array(North, South, East, West)
+    val layoutRar = Array(North, East, South, West)
 
     contents = new BorderPanel {
       layout += createTitle -> North
@@ -43,19 +61,30 @@ class GuiView extends View {
         layout += gameArea -> Center
         for ((uArea, i) <- userArea.zipWithIndex) {
           layout += uArea -> layoutRar(i)
-        }
-      } -> Center
+        }} -> Center
       layout += new GridPanel(1,3) {
-        contents += new Button {
-          text = "Play Card"
+        contents += playCardButton
+        contents += playRoundButton
+        contents += playGameButton} -> South
+    }
+
+    listenTo(playCardButton)
+    listenTo(playRoundButton)
+    listenTo(playGameButton)
+
+    reactions += {
+      case ButtonClicked(component) if component == playCardButton =>
+        val f = Future {
+          controller.get.playCard()
         }
-        contents += new Button {
-          text = "Play Round"
+      case ButtonClicked(component) if component == playRoundButton =>
+        val f = Future {
+          controller.get.playRound(delay)
         }
-        contents += new Button {
-          text = "Play Game"
+      case ButtonClicked(component) if component == playGameButton =>
+        val f = Future {
+          controller.get.playGame(delay)
         }
-      } -> South
     }
   }
 
@@ -74,14 +103,11 @@ class GuiView extends View {
 
   def createUserArea: Unit = {
     // set user areas
-    userArea = Array(new Label("", EmptyIcon, Alignment.Center),
-                    new Label("", EmptyIcon, Alignment.Center),
-                    new Label("", EmptyIcon, Alignment.Center),
-                    new Label("", EmptyIcon, Alignment.Center))
-    userArea(0).background = Color.cyan
-    userArea(1).background = Color.cyan
-    userArea(2).background = Color.LIGHT_GRAY
-    userArea(3).background = Color.LIGHT_GRAY
+    userArea = Array.fill[Label](4)(new Label("", EmptyIcon, Alignment.Center))
+    userArea(0).foreground = Color.cyan
+    userArea(2).foreground = Color.cyan
+    userArea(1).foreground = Color.green
+    userArea(3).foreground = Color.green
   }
 
   def createMenu: MenuBar = {
@@ -90,53 +116,47 @@ class GuiView extends View {
 
         contents += new MenuItem(Action("New Game") {
           // init
-          controller.get.init
-          // clear all contents on screen
-          // TODO:// when new game update names available
+          gameArea.text = "Welcome to Euchre...starting new game"
+          for (uArea <- userArea) uArea.text = ""
+          val f = Future {
+            controller.get.init
+            init(controller.get)
+          }
         })
 
         contents += new MenuItem(Action("Advance Player Order") {
           // advance player order
-          // TODO:// Display the player order, or represent the current player up visually
-          controller.get.advancePlayerOrder()
-          gameArea.text = displayGameArea()
+          if (!gameOver) {
+            val f = Future {
+              controller.get.advancePlayerOrder()
+            }
+          }
         })
 
         contents += new MenuItem(Action("Play Card") {
           // have the current player play a card
-          val f = Future {
-            controller.get.playCard()
+          if (!gameOver) {
+            val f = Future {
+              controller.get.playCard()
+            }
           }
-
-          // update the players' hands
-          for ((uArea, i) <- userArea.zipWithIndex) {
-            uArea.text = controller.get.playerName(i) + "'s " + controller.get.playerCards(i)
-          }
-          // update the game area
-          gameArea.text = displayGameArea()
         })
 
         contents += new MenuItem(Action("Simulate Round") {
-          val f = Future {
-            controller.get.playRound(500)
+          if (!gameOver) {
+            val f = Future {
+              controller.get.playRound(delay)
+            }
           }
-          // TODO:// add sleep timer
-          // update the players' hands
-          for ((uArea, i) <- userArea.zipWithIndex) {
-            uArea.text = controller.get.playerName(i) + "'s " + controller.get.playerCards(i)
-          }
-          // update the game area
-          gameArea.text = displayGameArea()
         })
 
         contents += new MenuItem(Action("Simulate Game") {
           // complete the game
-          val f = Future {
-            controller.get.playGame()
+          if (!gameOver) {
+            val f = Future {
+              controller.get.playGame(delay)
+            }
           }
-
-          // update the game area text
-          gameArea.text = controller.get.scoreboard.toString()
         })
 
         contents += new Menu("Computer Settings") {
@@ -144,12 +164,12 @@ class GuiView extends View {
           var schemas = controller.get.schemas
           var playerOrder = controller.get.playerOrder
 
-          for (player <- 0 until playerOrder.players.length)
-            contents += new Menu(playerOrder.players(player).toString()) {
+          for (player <- 0 until initialPlayerOrder.length)
+            contents += new Menu(initialPlayerOrder(player).toString()) {
               for (i <- 0 until schemas.length) {
                 contents += new MenuItem(Action(schemas(i)) {
                   // Set schema of player
-                  controller.get.setSchema(playerOrder.players(player), new Schema(schemas(i)))
+                  controller.get.setSchema(initialPlayerOrder(player), new Schema(schemas(i)))
                 })
               }
             }
@@ -164,27 +184,36 @@ class GuiView extends View {
     } // end MenuBar
   }
 
-  def displayPlayerOrder(_playerOrder: PlayerOrder): Unit = {
+  def displayPlayers(): Unit = {
+    // update the players' hands
+    for ((uArea, i) <- userArea.zipWithIndex) {
+      uArea.text = initialPlayerOrder(i) + "'s " + initialPlayerOrder(i).hand
+    }
+  }
+
+  def setNextPlayer(_indexOfCurrentPlayer: Int): Unit = {
+    for ((p, i) <- userArea.zipWithIndex) {
+      if (i == _indexOfCurrentPlayer % 4) {
+        p.icon = new ImageIcon("star.png")
+      }
+      else p.icon = EmptyIcon
+    }
+  }
+
+  def displayWinner(s: String): Unit = {
+    gameOver = true
+    // update the game area text
+    gameArea.text = s
+    for (uArea <- userArea) uArea.text = ""
 
   }
 
-  def displayCurrentPlayer(_player: Player): Unit = {
-
-  }
-
-  def displayTrick(_trick: Trick): Unit = {
-
-  }
-
-  def displayWinner(_player: Player): Unit = {
-
-  }
-
-  def displayGameArea(): String = {
-      "<html><br><br>" + controller.get.scoreboard.toString() +
-      "<br><br>" + controller.get.roundScoreboard +
-      "<br><br>" + controller.get.trump +
-      "<br><br>" + "Round Player Order: " + controller.get.advancePlayerOrder().toString() +
-      "<br><br>Current" + controller.get.trick + "<br><br></html>"
+  def displayGameArea(_scoreboard: Scoreboard, _round: Round, _playerOrder: PlayerOrder, _trick: String): Unit = {
+    // update game area
+    gameArea.text = "<html><br><br>" + _scoreboard.toString() +
+                    "<br><br>Round Score is: " + _round.roundScore._1 + " to " + _round.roundScore._2 +
+                    "<br><br>Round Tump is: " + _round.trump.toString() +
+                    "<br><br>Round Player Order: " + _playerOrder.toString() +
+                    "<br><br>Current" + _trick + "<br><br></html>"
   }
 }
