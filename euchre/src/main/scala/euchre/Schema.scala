@@ -16,7 +16,7 @@ class Schema(private var _schema: String) {
 // 6. Passive-Fail: Play lowest card available. Do not trump until the end.
 
   def schemas = List("Aggressive", "Passive ", "Semi-Aggressive",
-                    "Aggressive-Lead", "Aggressive-Fail",
+                    "Aggressive-Trump", "Aggressive-Fail",
                     "Passive-Fail")
   def init = {
     // Randomly assign a schema
@@ -34,154 +34,307 @@ class Schema(private var _schema: String) {
     _playSchema match {
       case "Passive" => passiveSchema(_player, lead, trick, round)
       case "Semi-Aggressive" => semiAggressiveSchema(_player, lead, trick, round)
-      case "Aggressive-Lead" => aggressiveLeadSchema(_player, lead, trick, round)
+      case "Aggressive-Trump" => aggressiveLeadSchema(_player, lead, trick, round)
       case "Aggressive-Fail" => aggressiveFailSchema(_player, lead, trick, round)
       case "Passive-Fail" => passiveFailSchema(_player, lead, trick, round)
       case _ => aggressiveSchema(_player, lead, trick, round)
     }
   }
   // Aggressive: Play highest card available. Trump with highest trump when available.
-  def aggressiveSchema(_player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
+  def aggressiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
     println("Playing with aggressive schema")
 
-    var playingCard: Card = _player.hand.cards.head
+    var playingCard: Card = player.hand.cards.head
     // leading player, play highest card
     if (lead) {
-      playingCard = determineHighCardLead(_player, round)
+      playingCard = determineHighCardLead(player, round)
     }
     else {
-      if (trick.cards.head.displayValue == 'J' && trick.cards.head.color == round.color) {
-        playingCard = determineHighCardFollowSuit(_player, round, round.trump)
-      }
-      else {
-        playingCard = determineHighCardFollowSuit(_player, round, trick.cards.head.suit)
-      }
+      // follow suit, play highest card. Will trump with highest card if able to.
+      playingCard = determineHighCardFollowSuit(player, round, trick.cards.head.suit)
     }
-    _player.hand.cards_=(_player.hand.cards.filter(_ != playingCard))
+    // remove card from player's hand
+    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
     playingCard
   }
 
   // Passive: Play lowest card available. Trump with lowest trump when available.
   def passiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
     println("Playing with passive schema")
-    aggressiveSchema(player, lead, trick, round)
+
+    var playingCard: Card = player.hand.cards.head
+    // leading player, play highest card
+    if (lead) {
+      playingCard = determineLowCardLead(player, round)
+    }
+    else {
+      // follow suit, play lowest card. Will trump with lowest card if able to.
+      playingCard = determineLowCardFollowSuit(player, round, trick.cards.head.suit)
+    }
+    // remove card played from player's hand
+    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
+    playingCard
   }
 
   // Semi-Aggressive: Play highest card available. Trump with lowest trump when available.
   def semiAggressiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
     println("Playing with semi-aggressive schema")
-    aggressiveSchema(player, lead, trick, round)
+
+    var playingCard: Card = player.hand.cards.head
+    // leading player, play highest card
+    if (lead) {
+      playingCard = determineHighCardLead(player, round)
+    }
+    else {
+      // follow suit, play highest card. Will trump with lowest card if able to.
+      playingCard = determineHighCardFollowSuit(player, round, trick.cards.head.suit)
+    }
+    // remove card played from player's hand
+    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
+    playingCard
   }
 
   // Aggressive-Lead: Play highest card available. Do not trump until the end.
   def aggressiveLeadSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
     println("Playing with aggressive-lead schema")
-    aggressiveSchema(player, lead, trick, round)
+
+    var playingCard: Card = player.hand.cards.head
+    // leading player, play highest card
+    if (lead) {
+      playingCard = determineHighCardLead(player, round)
+    }
+    else {
+        // follow suit, play highest card.
+        playingCard = determineHighCardFollowSuit(player, round, trick.cards.head.suit)
+    }
+    // remove card played from player's hand
+    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
+    playingCard
   }
 
   // Aggressive-Trump: Play lowest card available. Trump with highest trump when available.
   def aggressiveFailSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
     println("Playing with aggressive-fail schema")
-    aggressiveSchema(player, lead, trick, round)
+
+    var playingCard: Card = player.hand.cards.head
+    // leading player, play highest card
+    if (lead) {
+      playingCard = determineLowCardLead(player, round)
+    }
+    else {
+        // follow suit, play lowest card. Will trump with highest card if able to.
+        playingCard = determineLowCardFollowSuit(player, round, trick.cards.head.suit)
+    }
+    // remove card played from player's hand
+    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
+    playingCard
   }
 
   // Passive-Fail: Play lowest card available. Do not trump until the end.
   def passiveFailSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
     println("Playing with passive-fail schema")
-    aggressiveSchema(player, lead, trick, round)
+
+    var playingCard: Card = player.hand.cards.head
+    // leading player, play highest card
+    if (lead) {
+      playingCard = determineLowCardLead(player, round)
+    }
+    else {
+      // follow suit, play lowest card.
+      playingCard = determineLowCardFollowSuit(player, round, trick.cards.head.suit)
+    }
+    // remove card from player's hand
+    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
+    playingCard
   }
 
   /*
    * Schema helper functions
    */
 
-  // Determine the highest card in hand
-  // determine high card in hand
+  // return highest card of suit, or return lowest card
   def determineHighCardFollowSuit(player: Player, round: Round, suit: String): Card = {
     // go through hand, select card with highest value of suit
     var returnCard: Card = null
     val bowers = "J " + round.color.toString
     var hasTrump = false
     for (c <- player.hand.cards) {
+      // go through every card in hand
       if (c.suit == round.trump || c.displayValue + ' ' + c.color == bowers) {
+        // check if have trump
         hasTrump = true
       }
       if (c.suit == suit) {
+        // card can follow suit
         if (returnCard == null) {
+          // set return card if can follow suit
           returnCard = c
         }
         if (returnCard != null) {
-          if (c.displayValue == 'J') {
-            // need to trump, have right bower
-            returnCard = c
-          }
-          else if (c.value > returnCard.value && returnCard.displayValue + ' ' + returnCard.color != bowers) {
-            // not trump, compare value
+          if (c.value > returnCard.value && c.displayValue + ' ' + c.color != bowers) {
+            // card is a higher value than current returnCard
             returnCard = c
           }
         }
-      }
-      else if (c.color == round.color && c.displayValue == 'J' && round.trump == suit) {
-        // need to trump, have left bower
-        returnCard = c
       }
     }
     if (returnCard == null) {
-      if (hasTrump) {
-        for (c <- player.hand.cards) {
-          if (c.displayValue + ' ' + c.color == bowers) {
-            returnCard = c
-          }
-          if (c.suit == round.trump) {
-            if (returnCard == null) {
-              returnCard = c
-            }
-            else if (c.value < returnCard.value && returnCard.displayValue + ' ' + returnCard.color != bowers) {
-              returnCard = c
-            }
-          }
-        }
+      if (hasTrump && (player.schema.toString() == "Aggressive")) {
+        // could not follow suit, high trump schema
+        returnCard = playHighestTrumpCard(player, round)
+      }
+      else if (hasTrump && (player.schema.toString() == "Semi-Aggressive")) {
+        // could not follow suit, low trump schema
+        returnCard = playLowestTrumpCard(player, round)
       }
       else {
-        returnCard = player.hand.cards.head
-        for (c <- player.hand.cards) {
-          if (c.value < returnCard.value) {
-            returnCard = c
-          }
-        }
+        // fail off with lowest card
+        returnCard = playLowestFailCard(player, round)
       }
     }
     returnCard
   }
-  def determineHighCardLead(player: Player, round: Round): Card = {
-    var highCard: Card = player.hand.cards.head
+  // return lowest card of suit, or return lowest card
+  def determineLowCardFollowSuit(player: Player, round: Round, suit: String): Card = {
+    // go through hand, select card with lowest value of suit
+    var returnCard: Card = null
     val bowers = "J " + round.color.toString
+    var hasTrump = false
     for (c <- player.hand.cards) {
-      if (c.displayValue + ' ' + c.color == bowers) {
-        // card is either bower
-        highCard = c
+      // go through every card in hand
+      if (c.suit == round.trump || c.displayValue + ' ' + c.color == bowers) {
+        // check if have trump
+        hasTrump = true
       }
-      else if (highCard.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
-        if (c.suit == round.trump) {
-          if (c.value > highCard.value) {
-            // if card is trump and higher than the current 'high' trump card
-            highCard = c
+      if (c.suit == suit) {
+        // card can follow suit
+        if (returnCard == null) {
+          // set return card if can follow suit
+          returnCard = c
+        }
+        if (returnCard != null) {
+          if (c.value < returnCard.value && c.displayValue + ' ' + c.color != bowers) {
+            // card is a lower value than current returnCard
+            returnCard = c
           }
         }
       }
-      else if (c.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
-        // card is trump and current 'high' card is not
-        highCard = c
+    }
+    if (returnCard == null) {
+      if (hasTrump && (player.schema.toString() == "Aggressive-Trump")) {
+        // could not follow suit, high trump schema
+        returnCard = playHighestTrumpCard(player, round)
+      }
+      else if (hasTrump && (player.schema.toString() == "Passive")) {
+        returnCard = playLowestTrumpCard(player, round)
       }
       else {
-        // card is not trump and current 'high' card is also not trump
-        if (c.value > highCard.value && highCard.displayValue + ' ' + highCard.color != bowers) {
-          // both card and 'high' card are not trump, card is higher
-          highCard = c
-        }
+        // fail off with lowest card
+        returnCard = playLowestFailCard(player, round)
       }
+    }
+    returnCard
+  }
+  // returns highest card
+  def determineHighCardLead(player: Player, round: Round): Card = {
+    var highCard: Card = player.hand.cards.head
+    val bowers = "J " + round.color.toString
+    var hasBower = false
+    for (c <- player.hand.cards) {
+      if (c.displayValue + ' ' + c.color == bowers) {
+        // card is either bower, skip
+        hasBower = true
+      }
+      if (c.value > highCard.value && highCard.displayValue + ' ' + highCard.color != bowers) {
+        // both card and 'high' card are not trump, card is higher
+        highCard = c
+      }
+    }
+    // all cards in hand are trump
+    if (player.hand.cards.count(_.suit == round.trump) == 5  ||
+       (player.hand.cards.count(_.suit == round.trump) == 4 && hasBower)) {
+      highCard = allTrumpLead(player, round)
     }
     highCard
   }
-
+  // returns lowest card
+  def determineLowCardLead(player: Player, round: Round): Card = {
+    var lowCard: Card = player.hand.cards.head
+    val bowers = "J " + round.color.toString
+    var hasBower = false
+    for (c <- player.hand.cards) {
+      if (c.displayValue + ' ' + c.color == bowers) {
+        // card is either bower, skip
+        hasBower = true
+      }
+      // card is not trump and current 'low' card is also not trump
+      if (c.value < lowCard.value) {
+        // both card and 'low' card are not trump, card is lower
+        lowCard = c
+      }
+    }
+    // all cards in hand are trump
+    if (player.hand.cards.count(_.suit == round.trump) == 5  ||
+      (player.hand.cards.count(_.suit == round.trump) == 4 && hasBower)) {
+      lowCard = allTrumpLead(player, round)
+    }
+    lowCard
+  }
+  // return lowest non-trump card or first card
+  def playLowestFailCard(player: Player, round: Round): Card = {
+    var returnCard = player.hand.cards.head
+    val noTrumpHand = player.hand.cards.filter(_.suit != round.trump)
+    if (noTrumpHand.length == 0 ||
+        (noTrumpHand.length == 1 && noTrumpHand.head.displayValue == 'J' && noTrumpHand.head.color == round.color)) {
+      // only have trump left
+      returnCard = playHighestTrumpCard(player, round)
+    }
+    for (c <- noTrumpHand) {
+      if (c.value < returnCard.value) {
+        returnCard = c
+      }
+    }
+    returnCard
+  }
+  // return lowest trump card or first card
+  def playLowestTrumpCard(player: Player, round: Round): Card = {
+    var returnCard = player.hand.cards.head
+    val trumpHand = player.hand.cards.filter(_.suit == round.trump)
+    if (trumpHand.length == 0 && player.hand.cards.filter(_.displayValue == 'J').filter(_.color == round.color).length == 0) {
+      // no trump in hand
+      returnCard = playLowestFailCard(player, round)
+    }
+    for (c <- trumpHand) {
+      if (c.value < returnCard.value) {
+        returnCard = c
+      }
+    }
+    returnCard
+  }
+  // return highest trump card or first card
+  def playHighestTrumpCard(player: Player, round: Round): Card = {
+    var returnCard = player.hand.cards.head
+    val trumpHand = player.hand.cards.filter(_.suit == round.trump)
+    if (trumpHand.length == 0 && player.hand.cards.filter(_.displayValue == 'J').filter(_.color == round.color).length == 0) {
+      // no trump in hand
+      returnCard = playLowestFailCard(player, round)
+    }
+    for (c <- trumpHand) {
+      if (c.value > returnCard.value) {
+        returnCard = c
+      }
+    }
+    if (player.hand.cards.filter(_.displayValue == 'J').count(_.color == round.color) == 1) {
+        // has bower
+        returnCard = player.hand.cards.filter(_.displayValue == 'J').filter(_.color == round.color).head
+    }
+    returnCard
+  }
+  // play correct leading card when hand contains 5 trump
+  def allTrumpLead(player: Player, round: Round): Card = {
+    if (player.schema.toString() == "Aggressive" || player.schema.toString() == "Aggressive-Trump" || player.schema.toString() == "Aggressive-Fail") {
+      playHighestTrumpCard(player, round)
+    }
+    else playLowestTrumpCard(player, round)
+  }
 }
