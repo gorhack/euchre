@@ -8,7 +8,7 @@ import scala.util.Random
 class Schema(private var _schema: String) {
 
 // Schemas:
-// 1. (COMPLETE) Aggressive: Play highest card available. Trump with highest trump when available.
+// 1. Aggressive: Play highest card available. Trump with highest trump when available.
 // 2. Semi-Aggressive: Play highest card available. Trump with lowest trump when available.
 // 3. Passive: Play lowest card available. Trump with lowest trump when available.
 // 4. Aggressive-Trump: Play lowest card available. Trump with highest trump when available.
@@ -31,120 +31,31 @@ class Schema(private var _schema: String) {
    * Play card with schema
    */
   def playCard(_player: Player, _playSchema: String, lead: Boolean, trick: Trick, round: Round): Card = {
-    _playSchema match {
-      case "Passive" => passiveSchema(_player, lead, trick, round)
-      case "Semi-Aggressive" => semiAggressiveSchema(_player, lead, trick, round)
-      case "Aggressive-Trump" => aggressiveLeadSchema(_player, lead, trick, round)
-      case "Aggressive-Fail" => aggressiveFailSchema(_player, lead, trick, round)
-      case "Passive-Fail" => passiveFailSchema(_player, lead, trick, round)
-      case _ => aggressiveSchema(_player, lead, trick, round)
-    }
-  }
-  // Aggressive: Play highest card available. Trump with highest trump when available.
-  def aggressiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
-    println("Playing with aggressive schema")
+    var playingCard: Card = _player.hand.cards.head
+    println("Playing with " + _playSchema + " schema")
 
-    var playingCard: Card = player.hand.cards.head
-    // leading player, play highest card
-    if (lead) {
-      playingCard = determineHighCardLead(player, round)
+    if (_playSchema == "Aggressive" || _playSchema == "Semi-Aggressive" || _playSchema == "Aggressive-Fail") {
+      // leading player, play highest card
+      if (lead) {
+        playingCard = determineHighCardLead(_player, round)
+      }
+      else {
+        // follow suit, play highest card. Will trump with highest card if able to.
+        playingCard = determineHighCardFollowSuit(_player, round, trick.cards.head.suit)
+      }
     }
     else {
-      // follow suit, play highest card. Will trump with highest card if able to.
-      playingCard = determineHighCardFollowSuit(player, round, trick.cards.head.suit)
+      if (lead) {
+        playingCard = determineLowCardLead(_player, round)
+      }
+      else {
+        // follow suit, play highest card. Will trump with highest card if able to.
+        playingCard = determineLowCardFollowSuit(_player, round, trick.cards.head.suit)
+      }
     }
+
     // remove card from player's hand
-    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
-    playingCard
-  }
-
-  // Passive: Play lowest card available. Trump with lowest trump when available.
-  def passiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
-    println("Playing with passive schema")
-
-    var playingCard: Card = player.hand.cards.head
-    // leading player, play highest card
-    if (lead) {
-      playingCard = determineLowCardLead(player, round)
-    }
-    else {
-      // follow suit, play lowest card. Will trump with lowest card if able to.
-      playingCard = determineLowCardFollowSuit(player, round, trick.cards.head.suit)
-    }
-    // remove card played from player's hand
-    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
-    playingCard
-  }
-
-  // Semi-Aggressive: Play highest card available. Trump with lowest trump when available.
-  def semiAggressiveSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
-    println("Playing with semi-aggressive schema")
-
-    var playingCard: Card = player.hand.cards.head
-    // leading player, play highest card
-    if (lead) {
-      playingCard = determineHighCardLead(player, round)
-    }
-    else {
-      // follow suit, play highest card. Will trump with lowest card if able to.
-      playingCard = determineHighCardFollowSuit(player, round, trick.cards.head.suit)
-    }
-    // remove card played from player's hand
-    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
-    playingCard
-  }
-
-  // Aggressive-Lead: Play highest card available. Do not trump until the end.
-  def aggressiveLeadSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
-    println("Playing with aggressive-lead schema")
-
-    var playingCard: Card = player.hand.cards.head
-    // leading player, play highest card
-    if (lead) {
-      playingCard = determineHighCardLead(player, round)
-    }
-    else {
-        // follow suit, play highest card.
-        playingCard = determineHighCardFollowSuit(player, round, trick.cards.head.suit)
-    }
-    // remove card played from player's hand
-    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
-    playingCard
-  }
-
-  // Aggressive-Trump: Play lowest card available. Trump with highest trump when available.
-  def aggressiveFailSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
-    println("Playing with aggressive-fail schema")
-
-    var playingCard: Card = player.hand.cards.head
-    // leading player, play highest card
-    if (lead) {
-      playingCard = determineLowCardLead(player, round)
-    }
-    else {
-        // follow suit, play lowest card. Will trump with highest card if able to.
-        playingCard = determineLowCardFollowSuit(player, round, trick.cards.head.suit)
-    }
-    // remove card played from player's hand
-    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
-    playingCard
-  }
-
-  // Passive-Fail: Play lowest card available. Do not trump until the end.
-  def passiveFailSchema(player: Player, lead: Boolean, trick: Trick, round: Round): Card = {
-    println("Playing with passive-fail schema")
-
-    var playingCard: Card = player.hand.cards.head
-    // leading player, play highest card
-    if (lead) {
-      playingCard = determineLowCardLead(player, round)
-    }
-    else {
-      // follow suit, play lowest card.
-      playingCard = determineLowCardFollowSuit(player, round, trick.cards.head.suit)
-    }
-    // remove card from player's hand
-    player.hand.cards_=(player.hand.cards.filter(_ != playingCard))
+    _player.hand.cards_=(_player.hand.cards.filter(_ != playingCard))
     playingCard
   }
 
