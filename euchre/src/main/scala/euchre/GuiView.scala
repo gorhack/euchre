@@ -24,8 +24,9 @@ class GuiView extends View {
   private val HEIGHT = 822
   private val DELAY = 200
   private var gameOver = false
-  private var SHOWHANDS = true
+  private val SHOWHANDS = true
   private val CARD_SIZE = new Dimension(71, 96)
+  private val NUMBER_OF_PLAYERS = 4
 
   // game area colors
   private val GAME_AREA_COLOR = new Color(85,167,83)
@@ -141,7 +142,7 @@ class GuiView extends View {
     trickPanel.background = GAME_AREA_COLOR
 
     // set up cards for trick
-    for (i <- 0 until 4) { trickImg(i) = new Label() { preferredSize = CARD_SIZE } }
+    for (i <- 0 until NUMBER_OF_PLAYERS) { trickImg(i) = new Label() { preferredSize = CARD_SIZE } }
 
     // add the cards to the trick panel
     trickPanel.contents += trickImg(0)
@@ -160,10 +161,10 @@ class GuiView extends View {
 
   def createUserArea: Unit = {
     // set up cards for hand
-    for (i <- 0 until 4) { handImg(i) = Array.fill[Label](5)(new Label()) }
+    for (i <- 0 until NUMBER_OF_PLAYERS) { handImg(i) = Array.fill[Label](5)(new Label()) }
 
     // add the cards to the hand panel
-    for (i <- 0 until 4) {
+    for (i <- 0 until NUMBER_OF_PLAYERS) {
       handPanel(i).contents += handImg(i)(0)
       handPanel(i).contents += handImg(i)(1)
       handPanel(i).contents += handImg(i)(2)
@@ -209,7 +210,7 @@ class GuiView extends View {
     player3Area.background = USER_AREA_COLOR
     player4Area.background = USER_AREA_COLOR
 
-    for (i <- 0 until 4) { handPanel(i).background = USER_AREA_COLOR }
+    for (i <- 0 until NUMBER_OF_PLAYERS) { handPanel(i).background = USER_AREA_COLOR }
   }
 
   def createMenu: MenuBar = {
@@ -291,10 +292,11 @@ class GuiView extends View {
 
   def displayPlayers(): Unit = {
     // set user names
-    for (i <- 0 until 4) { namePanel(i).text = initialPlayerOrder(i).name + ": " + initialPlayerOrder(i).schema}
+    for (i <- 0 until NUMBER_OF_PLAYERS) { namePanel(i).text = initialPlayerOrder(i).name + ": " + initialPlayerOrder(i).schema}
     // update hand
     if (SHOWHANDS) {
-      for (i <- 0 until 4) {
+      for (i <- 0 until NUMBER_OF_PLAYERS) {
+        // for every player...show each of the cards in their hand
         initialPlayerOrder(i).hand.cards.length match {
           case 5 => {
             for (j <- 0 until 5) {
@@ -305,43 +307,34 @@ class GuiView extends View {
             for (j <- 0 until 4) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(i).hand.cards(j).fileName)
             }
-            for (j <- 4 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(4).icon = EmptyIcon
           }
           case 3 => {
             for (j <- 0 until 3) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(i).hand.cards(j).fileName)
             }
-            for (j <- 3 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(3).icon = EmptyIcon
           }
           case 2 => {
             for (j <- 0 until 2) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(i).hand.cards(j).fileName)
             }
-            for (j <- 2 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(2).icon = EmptyIcon
           }
           case 1 => {
             for (j <- 0 until 1) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(i).hand.cards(j).fileName)
             }
-            for (j <- 1 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(1).icon = EmptyIcon
           }
           case 0 => {
-            for (j <- 0 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(0).icon = EmptyIcon
           }
         }
       }
     }
     else {
+      // show player 1's hand
       initialPlayerOrder(0).hand.cards.length match {
         case 5 => {
           for (j <- 0 until 5) {
@@ -352,41 +345,32 @@ class GuiView extends View {
           for (j <- 0 until 4) {
             handImg(0)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(0).hand.cards(j).fileName)
           }
-          for (j <- 4 until 5) {
-            handImg(0)(j).icon = EmptyIcon
-          }
+          handImg(0)(4).icon = EmptyIcon
         }
         case 3 => {
           for (j <- 0 until 3) {
             handImg(0)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(0).hand.cards(j).fileName)
           }
-          for (j <- 3 until 5) {
-            handImg(0)(j).icon = EmptyIcon
-          }
+          handImg(0)(3).icon = EmptyIcon
         }
         case 2 => {
           for (j <- 0 until 2) {
             handImg(0)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(0).hand.cards(j).fileName)
           }
-          for (j <- 2 until 5) {
-            handImg(0)(j).icon = EmptyIcon
-          }
+          handImg(0)(2).icon = EmptyIcon
         }
         case 1 => {
           for (j <- 0 until 1) {
             handImg(0)(j).icon = new ImageIcon("./cards_png/" + initialPlayerOrder(0).hand.cards(j).fileName)
           }
-          for (j <- 1 until 5) {
-            handImg(0)(j).icon = EmptyIcon
-          }
+          handImg(0)(1).icon = EmptyIcon
         }
         case 0 => {
-          for (j <- 0 until 5) {
-            handImg(0)(j).icon = EmptyIcon
-          }
+          handImg(0)(0).icon = EmptyIcon
         }
       }
-      for (i <- 1 until 4) {
+      // show back of every other player's cards
+      for (i <- 1 until NUMBER_OF_PLAYERS) {
         initialPlayerOrder(i).hand.cards.length match {
           case 5 => {
             for (j <- 0 until 5) {
@@ -397,38 +381,28 @@ class GuiView extends View {
             for (j <- 0 until 4) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/b2fv.png")
             }
-            for (j <- 4 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(4).icon = EmptyIcon
           }
           case 3 => {
             for (j <- 0 until 3) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/b2fv.png")
             }
-            for (j <- 3 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(3).icon = EmptyIcon
           }
           case 2 => {
             for (j <- 0 until 2) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/b2fv.png")
             }
-            for (j <- 2 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(2).icon = EmptyIcon
           }
           case 1 => {
             for (j <- 0 until 1) {
               handImg(i)(j).icon = new ImageIcon("./cards_png/b2fv.png")
             }
-            for (j <- 1 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(1).icon = EmptyIcon
           }
           case 0 => {
-            for (j <- 0 until 5) {
-              handImg(i)(j).icon = EmptyIcon
-            }
+            handImg(i)(0).icon = EmptyIcon
           }
         }
       }
@@ -436,8 +410,9 @@ class GuiView extends View {
   }
 
   def setNextPlayer(_indexOfCurrentPlayer: Int): Unit = {
-    for (i <- 0 until 4) {
-      if (i == (_indexOfCurrentPlayer % 4)) {
+    for (i <- 0 until NUMBER_OF_PLAYERS) {
+      // go through each player, if they are the current player add the image
+      if (i == (_indexOfCurrentPlayer % NUMBER_OF_PLAYERS)) {
         turnPanel(i).icon = new ImageIcon("./Images/p" + (i + 1) + "Turn.png")
       }
       else {
@@ -452,9 +427,9 @@ class GuiView extends View {
     scorePanel.text = s
     trumpPanel.text = ""
     trumpPanel.icon = EmptyIcon
-    for (i <- 0 until 4) { trickImg(i).icon = EmptyIcon }
+    for (i <- 0 until NUMBER_OF_PLAYERS) { trickImg(i).icon = EmptyIcon }
 
-    for (i <- 0 until 4) {
+    for (i <- 0 until NUMBER_OF_PLAYERS) {
       turnPanel(i).icon = EmptyIcon
       namePanel(i).text = ""
       for (j <- 0 until 5) {

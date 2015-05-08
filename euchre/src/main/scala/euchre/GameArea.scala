@@ -119,20 +119,20 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       if (c.displayValue + ' ' + c.color == bowers) {
         if (c.suit == round.trump) {
           // card is right bower
-          highCard = c
+          return c
         }
         else if (highCard.suit == round.trump && highCard.displayValue == 'J') {
           // card is left bower, high card is right bower
         }
         else {
-          highCard = c
+          return c
         }
       }
 
       /*
        * Second case: Both current card and high card are trump, but not a bowers
        */
-      else if (highCard.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
+      else if (highCard.suit == round.trump) {
         if (c.suit == round.trump) {
           if (c.value > highCard.value) {
             // if card is trump and higher than the current 'high' trump card
@@ -144,14 +144,14 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
       /*
        * Third case: Current card is trump and the high card is not trump
        */
-      else if (c.suit == round.trump && highCard.displayValue + ' ' + highCard.color != bowers) {
+      else if (c.suit == round.trump) {
         // card is trump and current 'high' card is not
         highCard = c
       }
       else {
         // card is not trump and current 'high' card is also not trump
         // card must follow suit
-        if (c.value > highCard.value && c.suit == leadSuit && highCard.displayValue + ' ' + highCard.color != bowers) {
+        if (c.value > highCard.value && c.suit == leadSuit) {
           // both card and 'high' card are not trump, card is higher
           highCard = c
         }
@@ -167,7 +167,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     // local variables for high card, index of winner, and winning player
     val highCard = determineHighCard(trick)
     val indexOfWinner = trick.cards.indexOf(highCard)
-    val winningPlayer = _playerOrder.players(indexOfWinner)
+    val winningPlayer = _playerOrder.players((playerOrder.indexOfCurrentPlayer + indexOfWinner) % 4)
     println("Winner: " + winningPlayer.toString() + " with a " + highCard.toString())
 
     // reset the leader
@@ -178,7 +178,7 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     // set winning player to have lead
     winningPlayer.isLead_(true)
     // set new player order
-    playerOrder.indexOfCurrentPlayer_(indexOfWinner)
+    playerOrder.indexOfCurrentPlayer_((playerOrder.indexOfCurrentPlayer + indexOfWinner) % 4)
 
 
     // update the round score with the correct winning team

@@ -89,12 +89,12 @@ class Schema(private var _schema: String) {
         }
       }
     }
-    if (returnCard == null) {
+    if (returnCard == null || round.trump == suit) {
       if (hasTrump && (player.schema.toString() == "Aggressive")) {
         // could not follow suit, high trump schema
         returnCard = playHighestTrumpCard(player, round)
       }
-      else if (hasTrump && (player.schema.toString() == "Semi-Aggressive")) {
+      else if (hasTrump && (player.schema.toString() == "Semi-Aggressive") || round.trump == suit) {
         // could not follow suit, low trump schema
         returnCard = playLowestTrumpCard(player, round)
       }
@@ -131,12 +131,12 @@ class Schema(private var _schema: String) {
         }
       }
     }
-    if (returnCard == null) {
+    if (returnCard == null || round.trump == suit) {
       if (hasTrump && (player.schema.toString() == "Aggressive-Trump")) {
         // could not follow suit, high trump schema
         returnCard = playHighestTrumpCard(player, round)
       }
-      else if (hasTrump && (player.schema.toString() == "Passive")) {
+      else if (hasTrump && (player.schema.toString() == "Passive") || round.trump == suit) {
         returnCard = playLowestTrumpCard(player, round)
       }
       else {
