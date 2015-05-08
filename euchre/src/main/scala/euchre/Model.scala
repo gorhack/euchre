@@ -92,11 +92,11 @@ class Model {
     // update view with the correct winner
     if (scoreboard.highScore._1 == 0) {
       "<html>Congrats, you win!" +
-        "<br><br>The Score is " + _scoreboard.toString() + "</html>"
+        "<br><br>" + _scoreboard.toString() + "</html>"
     }
     else {
       "<html>Sorry, you lose. Team 2 won." +
-        "<br><br>The Score is " + _scoreboard.toString() + "</html>"
+        "<br><br>" + _scoreboard.toString() + "</html>"
     }
   }
 }

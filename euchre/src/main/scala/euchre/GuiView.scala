@@ -18,11 +18,13 @@ import scala.swing.event.ButtonClicked
 
 class GuiView extends View {
   private implicit val baseTime = System.currentTimeMillis()
+
+  // constants
   private val WIDTH = 1216
   private val HEIGHT = 822
-  private val delay = 100
+  private val DELAY = 200
   private var gameOver = false
-  private var showHands = false
+  private var SHOWHANDS = true
   private val CARD_SIZE = new Dimension(71, 96)
 
   // game area colors
@@ -31,13 +33,9 @@ class GuiView extends View {
   private var scorePanel = new Label("")
   private var trumpPanel = new Label("") { preferredSize = new Dimension(284, 96) }
   private var trickImg = new Array[Label](4)
-  for (i <- 0 until 4) { trickImg(i) = new Label() { preferredSize = CARD_SIZE } }
   private var trickPanel = new GridPanel(1,4) { preferredSize = new Dimension(284, 96) }
-  trickPanel.contents += trickImg(0)
-  trickPanel.contents += trickImg(1)
-  trickPanel.contents += trickImg(2)
-  trickPanel.contents += trickImg(3)
 
+  // the game area panel
   private var gameArea = new BorderPanel() { preferredSize = new Dimension(284, 246) }
 
   // user area colors
@@ -47,23 +45,16 @@ class GuiView extends View {
   // panels for the user area
   private var namePanel = Array.fill[Label](4)(new Label())
   private var handImg = new Array[Array[Label]](4)
-  for (i <- 0 until 4) { handImg(i) = Array.fill[Label](5)(new Label()) }
   private var handPanel = Array.fill[GridPanel](4)(new GridPanel(1, 5))
-  for (i <- 0 until 4) {
-    handPanel(i).contents += handImg(i)(0)
-    handPanel(i).contents += handImg(i)(1)
-    handPanel(i).contents += handImg(i)(2)
-    handPanel(i).contents += handImg(i)(3)
-    handPanel(i).contents += handImg(i)(4)
-  }
   private var turnPanel = Array.fill[Label](4)(new Label())
 
+  // the user area panels
   private var player1Area = new BorderPanel() { preferredSize = new Dimension(WIDTH, 168) }
   private var player3Area = new BorderPanel() { preferredSize = new Dimension(WIDTH, 168) }
   private var player2Area = new BorderPanel() { preferredSize = new Dimension(405, 246) }
   private var player4Area = new BorderPanel() { preferredSize = new Dimension(405, 246) }
 
-
+  // the player order
   private var initialPlayerOrder = new Array[Player](4)
 
   private val playCardButton = new Button {text = "Play Card"}
@@ -75,14 +66,13 @@ class GuiView extends View {
     controller = Some(_controller)
     controller.get.init
     initialPlayerOrder = controller.get.playerOrder.players
-    println(initialPlayerOrder.toString())
     frame.menuBar = createMenu
-    frame.size = new Dimension(WIDTH,HEIGHT)
+    frame.size = new Dimension(WIDTH, HEIGHT)
     frame.centerOnScreen
     frame.visible = true
 
     // wait for "loading screen"
-    Thread.sleep(delay)
+    Thread.sleep(DELAY)
     // load game
     setNextPlayer(controller.get.playerOrder.indexOfCurrentPlayer)
     displayGameArea(controller.get.scoreboard, controller.get.round, controller.get.playerOrder, controller.get.trick)
@@ -93,20 +83,11 @@ class GuiView extends View {
     title = "Euchre"
 
     scorePanel.text = "Welcome to Euchre"
-    gameArea.background = GAME_AREA_COLOR
-    player1Area.background = USER_AREA_COLOR
-    player2Area.background = USER_AREA_COLOR
-    player3Area.background = USER_AREA_COLOR
-    player4Area.background = USER_AREA_COLOR
 
     createUserArea
     createGameArea
 
-    // add game area components to game area
-    gameArea.layout += scorePanel -> North
-    gameArea.layout += trumpPanel -> Center
-    gameArea.layout += trickPanel -> South
-
+    // create the main frame
     contents = new BorderPanel {
       layout += createTitle -> North
       layout += new BorderPanel {
@@ -133,19 +114,17 @@ class GuiView extends View {
         }
       case ButtonClicked(component) if component == playRoundButton =>
         val f = Future {
-          controller.get.playRound(delay)
+          controller.get.playRound(DELAY)
         }
       case ButtonClicked(component) if component == playGameButton =>
         val f = Future {
-          controller.get.playGame(delay)
+          controller.get.playGame(DELAY)
         }
     }
   }
 
   def createTitle: Panel = {
-    //new Label("Euchre Simulation, by Kyle Gorak. v1.0", EmptyIcon, Alignment.Center)
-
-    //how to create image on panel:
+    // create image on panel
     val image = javax.imageio.ImageIO.read(new java.io.File("./Images/euchreHeader.jpg")): BufferedImage
 
     var panel = new Panel {
@@ -160,9 +139,38 @@ class GuiView extends View {
   def createGameArea: Unit = {
     // set the game areas
     trickPanel.background = GAME_AREA_COLOR
+
+    // set up cards for trick
+    for (i <- 0 until 4) { trickImg(i) = new Label() { preferredSize = CARD_SIZE } }
+
+    // add the cards to the trick panel
+    trickPanel.contents += trickImg(0)
+    trickPanel.contents += trickImg(1)
+    trickPanel.contents += trickImg(2)
+    trickPanel.contents += trickImg(3)
+
+    // add game area components to game area
+    gameArea.layout += scorePanel -> North
+    gameArea.layout += trumpPanel -> Center
+    gameArea.layout += trickPanel -> South
+
+    // set background colors
+    gameArea.background = GAME_AREA_COLOR
   }
 
   def createUserArea: Unit = {
+    // set up cards for hand
+    for (i <- 0 until 4) { handImg(i) = Array.fill[Label](5)(new Label()) }
+
+    // add the cards to the hand panel
+    for (i <- 0 until 4) {
+      handPanel(i).contents += handImg(i)(0)
+      handPanel(i).contents += handImg(i)(1)
+      handPanel(i).contents += handImg(i)(2)
+      handPanel(i).contents += handImg(i)(3)
+      handPanel(i).contents += handImg(i)(4)
+    }
+
     // set up player 1
     namePanel(0).foreground = TEAM_1_COLOR
     turnPanel(0).preferredSize = new Dimension(282, 56)
@@ -194,6 +202,12 @@ class GuiView extends View {
     player4Area.layout += namePanel(3) -> North
     player4Area.layout += handPanel(3) -> Center
     player4Area.layout += turnPanel(3) -> East
+
+    // set background colors
+    player1Area.background = USER_AREA_COLOR
+    player2Area.background = USER_AREA_COLOR
+    player3Area.background = USER_AREA_COLOR
+    player4Area.background = USER_AREA_COLOR
 
     for (i <- 0 until 4) { handPanel(i).background = USER_AREA_COLOR }
   }
@@ -233,7 +247,7 @@ class GuiView extends View {
         contents += new MenuItem(Action("Simulate Round") {
           if (!gameOver) {
             val f = Future {
-              controller.get.playRound(delay)
+              controller.get.playRound(DELAY)
             }
           }
         })
@@ -242,7 +256,7 @@ class GuiView extends View {
           // complete the game
           if (!gameOver) {
             val f = Future {
-              controller.get.playGame(delay)
+              controller.get.playGame(DELAY)
             }
           }
         })
@@ -252,15 +266,18 @@ class GuiView extends View {
           var schemas = controller.get.schemas
           var playerOrder = controller.get.playerOrder
 
-          for (player <- 0 until initialPlayerOrder.length)
+          for (player <- 0 until initialPlayerOrder.length) {
             contents += new Menu(initialPlayerOrder(player).toString()) {
               for (i <- 0 until schemas.length) {
                 contents += new MenuItem(Action(schemas(i)) {
                   // Set schema of player
-                  controller.get.setSchema(initialPlayerOrder(player), new Schema(schemas(i)))
+                  val f = Future {
+                    controller.get.setSchema(initialPlayerOrder(player), new Schema(schemas(i)))
+                  }
                 })
               }
             }
+          }
         }
         contents += new Separator
 
@@ -274,9 +291,9 @@ class GuiView extends View {
 
   def displayPlayers(): Unit = {
     // set user names
-    for (i <- 0 until 4) { namePanel(i).text = initialPlayerOrder(i).name }
+    for (i <- 0 until 4) { namePanel(i).text = initialPlayerOrder(i).name + ": " + initialPlayerOrder(i).schema}
     // update hand
-    if (showHands) {
+    if (SHOWHANDS) {
       for (i <- 0 until 4) {
         initialPlayerOrder(i).hand.cards.length match {
           case 5 => {
@@ -416,7 +433,6 @@ class GuiView extends View {
         }
       }
     }
-    frame.repaint()
   }
 
   def setNextPlayer(_indexOfCurrentPlayer: Int): Unit = {
@@ -428,7 +444,6 @@ class GuiView extends View {
         turnPanel(i).icon = EmptyIcon
       }
     }
-    frame.repaint()
   }
 
   def displayWinner(s: String): Unit = {
@@ -451,8 +466,8 @@ class GuiView extends View {
   def displayGameArea(_scoreboard: Scoreboard, _round: Round, _playerOrder: PlayerOrder, _trick: String): Unit = {
     // update game area
     scorePanel.text = "<html>" + _scoreboard.toString() +
-                    "<br>Round Score is: " + _round.roundScore._1 + " to " + _round.roundScore._2 +
-                    "</html>"
+                      "<br>Round Score is: " + _round.roundScore._1 + " to " + _round.roundScore._2 +
+                      "</html>"
     trumpPanel.text = " is Trump"
     trumpPanel.icon = new ImageIcon("./cards_png/" + _round.trump.toString() + ".png")
     if (_round.tricks.size != 0 && _round.tricks.last.cards.size != 0) {

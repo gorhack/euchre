@@ -12,7 +12,6 @@ class Team(private var p1: Player, private var p2: Player) {
   def points: Int = _points
   def points_(p:Int) = (_points = p)
   def hasDeal = if (p1.isLead || p2.isLead) true else false
-  //def hasDeal_(d:Boolean): Unit = (_hasDeal = d)
   def tricks: Int = _tricks
 
   def init = {

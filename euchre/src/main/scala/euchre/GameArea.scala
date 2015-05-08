@@ -52,7 +52,6 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
    * The next player in the player order plays a card
    */
   def playCard: Boolean = {
-    // TODO:// play a card based on current player rather than number of tricks
     // do not play card if game is over
     if (_scoreboard.highScore._2 >= 10) return true
 
@@ -179,7 +178,6 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
     // set winning player to have lead
     winningPlayer.isLead_(true)
     // set new player order
-    //playerOrder.setPlayerOrder
     playerOrder.indexOfCurrentPlayer_(indexOfWinner)
 
 

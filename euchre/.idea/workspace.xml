@@ -2,19 +2,113 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9ce3759-06ef-4577-bcb3-f9a8a41e04ea" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Card.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Card.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Deck.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Deck.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/projectFilesBackup/.idea/libraries/SBT__org_scala_lang_scala_library_2_11_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/projectFilesBackup/.idea/libraries/SBT__scala_2_11_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/projectFilesBackup/.idea_modules/Euchre SBT Project, CS403.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Canvas.scala" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/star.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Canvas.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$16$$anonfun$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$16$$anonfun$4.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$16$$anonfun$5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$16.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$21$$anon$3$$anonfun$22$$anonfun$apply$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$21$$anon$3$$anonfun$22.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$21$$anon$3.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$21.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$14$$anonfun$15.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$14.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$23.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$1$$anon$20.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$19.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$2$$anonfun$apply$mcVI$sp$22.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$2.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$20.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller$$anonfun$playRound$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller$$anonfun$playRound$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller$$anonfun$playRound$2$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller$$anonfun$playRound$2$$anonfun$apply$mcVI$sp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller$$anonfun$playRound$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller$$anonfun$playRound$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea$$anonfun$decideWinnerOfTrick$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea$$anonfun$decideWinnerOfTrick$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea$$anonfun$determineHighCard$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea$$anonfun$determineHighCard$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea$$anonfun$playCard$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea$$anonfun$playCard$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GameArea.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/test-classes/euchre/ProjectTester$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/test-classes/euchre/ProjectTester$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Card.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Card.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10$$anonfun$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10$$anonfun$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12$$anonfun$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12$$anonfun$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6$$anonfun$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6$$anonfun$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8$$anonfun$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8$$anonfun$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$11.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$12.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$14.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$15.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$16.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$17.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$18.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$19.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$20.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$10.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$9.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2$$anonfun$apply$mcVI$sp$21.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2$$anonfun$apply$mcVI$sp$21.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$setNextPlayer$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$setNextPlayer$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Model.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Model.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Player.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Team.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Team.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Deck.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Deck.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala" afterPath="$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Team.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Team.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Euchre SBT Project, CS403.iws" />
@@ -42,43 +136,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProjectTest.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GuiView.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.777778">
-              <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="55" />
-              <folding>
-                <element signature="e#56#91#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameArea.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.333333">
-              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scoreboard.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scoreboard.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Scoreboard.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38011697">
-              <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GuiView.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4964539">
+              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Team.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trick.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Trick.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -97,8 +189,18 @@
       <file leaf-file-name="Controller.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Controller.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.0">
-              <caret line="53" column="42" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="42" />
+            <state vertical-scroll-proportion="-3.3333333">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trump.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Trump.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -107,38 +209,28 @@
       <file leaf-file-name="PlayerOrder.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.111111">
-              <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameMaster.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala">
+      <file leaf-file-name="Round.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Round.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Model.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Model.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.4444447">
-              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Deck.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Deck.scala">
+      <file leaf-file-name="Schema.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -168,27 +260,27 @@
         <option value="$PROJECT_DIR$/src/main/scala/Team.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/hw.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Trump.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/Team.scala" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Trick.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Hand.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Canvas.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/main.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Round.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Card.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/ImagePanel.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Deck.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/View.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Scoreboard.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/GameMaster.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/Model.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/Team.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" />
       </list>
     </option>
   </component>
@@ -208,10 +300,10 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1917" />
-    <option name="y" value="203" />
-    <option name="width" value="1440" />
-    <option name="height" value="826" />
+    <option name="x" value="-1579" />
+    <option name="y" value="-128" />
+    <option name="width" value="1079" />
+    <option name="height" value="662" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -239,8 +331,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -791,7 +883,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1917" y="203" width="1440" height="826" extended-state="6" />
+    <frame x="-1579" y="-128" width="1079" height="662" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -810,8 +902,8 @@
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32966024" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27148998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2629428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21545894" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20877193" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922825" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -825,19 +917,19 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272933" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30517712" sideWeight="0.5028653" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.49713466" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32922825" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32561308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32561308" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16762178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1880109" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1880109" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30517712" sideWeight="0.49713466" order="11" side_tool="false" content_ui="tabs" />
@@ -849,8 +941,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32288828" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32966024" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32966024" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833788" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1063,58 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Canvas.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Team.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Player.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42372882">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Hand.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Trick.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57581574">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21186441">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Card.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cards_png/Club.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1123,38 +1163,6 @@
     <entry file="file://$PROJECT_DIR$/cards_png/ck.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Trump.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20467836">
-          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Round.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32748538">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Deck.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/View.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Images/p3Turn.png">
@@ -1177,28 +1185,26 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.777778">
-          <caret line="66" column="2" selection-start-line="66" selection-start-column="2" selection-end-line="66" selection-end-column="55" />
-          <folding>
-            <element signature="e#56#91#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Controller.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.0">
-          <caret line="53" column="42" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Card.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.111111">
-          <caret line="11" column="71" selection-start-line="11" selection-start-column="71" selection-end-line="11" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Deck.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1211,34 +1217,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Model.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.4444447">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/euchre/ProjectTest.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.333333">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state vertical-scroll-proportion="-9.888889">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Hand.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Model.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6666665">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Player.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/PlayerOrder.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Round.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Scoreboard.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38011697">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Team.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Trick.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Trump.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/View.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Controller.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3333333">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4964539">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
           <folding />
         </state>
       </provider>

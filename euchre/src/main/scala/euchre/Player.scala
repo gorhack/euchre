@@ -11,7 +11,7 @@ class Player(private var _hand: Hand, private var _schema: Schema) {
   private var _name = ""
   // random filler names
   private val names = List("Kyle", "John", "Katelyn", "David", "Kristen",
-                          "Connor", "Helen", "Peter", "Paige")
+                          "Connor", "Helen", "Peter", "Paige", "Ryan")
   private var _isLead = false
   private var _canPlayCard = false
   def init = {

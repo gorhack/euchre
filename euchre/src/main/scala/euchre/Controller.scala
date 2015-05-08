@@ -12,7 +12,10 @@ class Controller(private var view: View, private var model: Model) {
   def playerName(_player: Int): String = model.playerName(_player)
   def playerCards(_player: Int): String = model.playerCards(_player)
   def schemas: List[String] = model.schemas
-  def setSchema(_player: Player, _schema: Schema): Unit = model.setSchema(_player, _schema)
+  def setSchema(_player: Player, _schema: Schema): Unit = {
+    model.setSchema(_player, _schema)
+    view.displayPlayers()
+  }
 
   // player order
   def playerOrder: PlayerOrder = model.playerOrder
