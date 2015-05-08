@@ -52,8 +52,8 @@ class Controller(private var view: View, private var model: Model) {
     // if the game is not over, update the view with played card
     else {
       view.setNextPlayer(model.playerOrder.indexOfCurrentPlayer)
-      view.displayPlayers()
       view.displayGameArea(scoreboard, round, playerOrder, trick)
+      view.displayPlayers()
     }
     gameOver
   }

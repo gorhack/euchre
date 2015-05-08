@@ -28,7 +28,6 @@ class ProjectTester extends UnitSpec {
       p.hand.init
     }
     _p1.isLead_(true)
-    _playerOrder.setPlayerOrder
     _playerOrder.indexOfCurrentPlayer_(0)
     // Scoreboard
     _scoreboard.init
@@ -49,24 +48,24 @@ class ProjectTester extends UnitSpec {
     // set the hands
 
     // A Heart, K Heart, Q Heart, 10 Heart, 9 Heart
-    _p1.hand_(new Hand(List(new Card("A", 14, "Heart", Color.red), new Card("K", 13, "Heart", Color.red),
-      new Card("Q", 12, "Heart", Color.red), new Card("10", 10, "Heart", Color.red),
-      new Card("9", 9, "Heart", Color.red))))
+    _p1.hand_(new Hand(List(new Card("A", 14, "Heart", Color.red, ""), new Card("K", 13, "Heart", Color.red, ""),
+      new Card("Q", 12, "Heart", Color.red, ""), new Card("10", 10, "Heart", Color.red, ""),
+      new Card("9", 9, "Heart", Color.red, ""))))
 
     // A Diamond, K Diamond, Q Diamond, 10 Club, 9 Diamond
-    _p2.hand_(new Hand(List(new Card("A", 14, "Diamond", Color.red), new Card("K", 13, "Diamond", Color.red),
-      new Card("Q", 12, "Diamond", Color.red), new Card("10", 10, "Club", Color.black),
-      new Card("9", 9, "Diamond", Color.red))))
+    _p2.hand_(new Hand(List(new Card("A", 14, "Diamond", Color.red, ""), new Card("K", 13, "Diamond", Color.red, ""),
+      new Card("Q", 12, "Diamond", Color.red, ""), new Card("10", 10, "Club", Color.black, ""),
+      new Card("9", 9, "Diamond", Color.red, ""))))
 
     // A Heart, K Heart, Q Heart, 10 Heart, 9 Heart
-    _p3.hand_(new Hand(List(new Card("A", 14, "Heart", Color.red), new Card("K", 13, "Heart", Color.red),
-      new Card("Q", 12, "Heart", Color.red), new Card("10", 10, "Heart", Color.red),
-      new Card("9", 9, "Heart", Color.red))))
+    _p3.hand_(new Hand(List(new Card("A", 14, "Heart", Color.red, ""), new Card("K", 13, "Heart", Color.red, ""),
+      new Card("Q", 12, "Heart", Color.red, ""), new Card("10", 10, "Heart", Color.red, ""),
+      new Card("9", 9, "Heart", Color.red, ""))))
 
     // A Diamond, K Diamond, Q Diamond, 10 Club, 9 Diamond
-    _p4.hand_(new Hand(List(new Card("A", 14, "Diamond", Color.red), new Card("K", 13, "Diamond", Color.red),
-      new Card("Q", 12, "Diamond", Color.red), new Card("10", 10, "Club", Color.black),
-      new Card("9", 9, "Diamond", Color.red))))
+    _p4.hand_(new Hand(List(new Card("A", 14, "Diamond", Color.red, ""), new Card("K", 13, "Diamond", Color.red, ""),
+      new Card("Q", 12, "Diamond", Color.red, ""), new Card("10", 10, "Club", Color.black, ""),
+      new Card("9", 9, "Diamond", Color.red, ""))))
 
     // set trump to clubs
     _gameArea.round.trump_("Club")

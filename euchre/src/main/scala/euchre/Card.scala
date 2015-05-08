@@ -10,8 +10,9 @@ import java.awt.Color
  *   value (8, 9, 10, 11, 12, 13, etc)
  *   suit (Diamond, Heart, Spade, Club)
  *   color (black, red)
+ *   fileName
  */
-class Card(val _displayValue: String, val _value: Int, val _suit: String, val _color: Color) {
+class Card(val _displayValue: String, val _value: Int, val _suit: String, val _color: Color, val _fileName: String) {
   // displayValue, value, suit, color
   override def toString() = _displayValue + ' ' + _suit
 
@@ -19,4 +20,5 @@ class Card(val _displayValue: String, val _value: Int, val _suit: String, val _c
   def value: Int = { _value }
   def suit: String = { _suit }
   def color: Color = { _color}
+  def fileName: String = { _fileName }
 }

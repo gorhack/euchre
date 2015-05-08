@@ -27,7 +27,6 @@ class Model {
       p.hand.init
     }
     _p1.isLead_(true)
-    _playerOrder.setPlayerOrder
     _playerOrder.indexOfCurrentPlayer_(0)
     // Scoreboard
     _scoreboard.init
@@ -57,7 +56,7 @@ class Model {
     _gameArea.advancePlayerOrder()
     playerOrder_(_gameArea.playerOrder)
   }
-  def indexOfCurrentPlayer = _gameArea.indexOfCurrentPlayer
+  def indexOfCurrentPlayer = _playerOrder.indexOfCurrentPlayer
 
   // schema methods
   def schemas: List[String] = _schema.schemas // set up schema

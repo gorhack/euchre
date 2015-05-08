@@ -49,7 +49,6 @@ class GameMaster(private var _state: String) {
         }
         p1.name = name
         p1.isLead_(true)
-        playerOrder.setPlayerOrder
         playerOrder.indexOfCurrentPlayer_(0)
         // Scoreboard
         scoreboard.init
