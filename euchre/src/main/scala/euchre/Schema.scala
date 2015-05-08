@@ -15,7 +15,7 @@ class Schema(private var _schema: String) {
 // 5. Aggressive-Fail: Play highest card available. Do not trump until the end.
 // 6. Passive-Fail: Play lowest card available. Do not trump until the end.
 
-  def schemas = List("Aggressive", "Passive ", "Semi-Aggressive",
+  def schemas = List("Aggressive", "Semi-Aggressive", "Passive",
                     "Aggressive-Trump", "Aggressive-Fail",
                     "Passive-Fail")
   def init = {

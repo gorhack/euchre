@@ -7,263 +7,91 @@ import org.scalatest.{Matchers, FunSpec}
 abstract class UnitSpec extends FunSpec with Matchers
 
 class ProjectTester extends UnitSpec {
-  val gm = new GameMaster("Start")
-  val hand = new Hand(List.empty)
-  val schema = new Schema("")
-  val p1 = new Player(hand, schema)
-  val p2 = new Player(hand, schema)
-  val p3 = new Player(hand, schema)
-  val p4 = new Player(hand, schema)
-  val t1 = new Team(p1, p2)
-  val t2 = new Team(p3, p4)
-  val playerOrder = new PlayerOrder(p1, p2, p3, p4)
-  val scoreboard = new Scoreboard(playerOrder, t1, t2)
-  describe("A Deck") {
-    val deck = new Deck
-    if (gm.state == "Start") {
-      describe("in its initial state") {
-        it("has 32 cards") {
-          assert(deck.length == 32)
-        }
-      }
-    }
-    if (gm.state == "Play")
-    describe("in its ready state") {
-      it("can deal card") {
-        //deck.deal should be (true)
-      }
-//      it("can show top card") {
-//        val aCard = new Card('A', "Heart")
-//        deck.showTopCard should be (aCard) // cannot compare new objects...
-//      }
-      it("can shuffle") {
-        //deck.shuffle should be (true)
-      }
-    }
-    describe("in its play state") { // during a round
-      it("has 20 cards") {
-        assert(deck.length == 20)
-      }
-    }
-    describe("after round completed") {
-      it("is initialized") {
-        val newDeck = new Deck
-        deck.init should equal(newDeck)
-      }
-    }
-  }
+  var _deck = new Deck()
 
-  describe("A Card") {
-    val card = new Card("A", 14, "Heart", Color.red)
-    it("has value") {
-      assert(card.value == ("A", "K", "Q", "J", "10", "9", "8", "7"))
-    }
-    it("has suit") {
-      assert(card.suit == ("Club", "Spade", "Diamond", "Heart"))
-    }
-  }
+  private var _p1 = new Player(new Hand(List.empty), new Schema(""))
+  private var _p2 = new Player(new Hand(List.empty), new Schema(""))
+  private var _p3 = new Player(new Hand(List.empty), new Schema(""))
+  private var _p4 = new Player(new Hand(List.empty), new Schema(""))
+  private var _playerOrder = new PlayerOrder(_p1, _p3, _p2, _p4)
+  private var _t1 = new Team(_p1, _p2)
+  private var _t2 = new Team(_p3, _p4)
+  private var _scoreboard = new Scoreboard(_playerOrder, _t1, _t2)
+  private var _gameArea = new GameArea(_scoreboard, _t1, _t2, _playerOrder, _deck)
 
+  describe("A Card Play") {
+    _deck.init
+    // Game Area
+    // Players and Hand
+    for (p <- _playerOrder.players) {
+      p.init
+      p.hand.init
+    }
+    _p1.isLead_(true)
+    _playerOrder.setPlayerOrder
+    _playerOrder.indexOfCurrentPlayer_(0)
+    // Scoreboard
+    _scoreboard.init
+    // Team
+    _t1.init
+    _t2.init
+    _gameArea.startNewRound
 
-  describe("A Hand") {
-    val hand = new Hand(List.empty)
-    describe("in its initial state") {
-      it("has no cards") {
-        hand.length should be (0)
-      }
-    }
-    describe("after cards have been dealt") {
-      it("has 5 cards") {
-        hand.length should be (0)
-      }
-    }
-    describe("during normal gameplay") {
-      it("can play a card") {
-        //hand.playCard should be (true)
-      }
-    }
-    describe("after round completed") {
-      it("is has no cards") {
-        //hand.length should be (0)
-      }
-    }
-  }
+    _gameArea.deal
+    _gameArea.setTrump
 
-  describe("A Player") {
-    describe("in its initial state") {
-      it("has name") {
-        p1.name.length should be > 0
-      }
-      it("has teammate") {
-        val aTeammate = new Player(hand, schema)
-        //p1.teammate should be (aTeammate)
-      }
-      it("has empty hand") {
-        assert(p1.hand.length == 0)
-      }
-      it("has playing schema") {
-        p1.schema should be (schema)
-      }
-      it("has position") {
-        //p1.position should be (playerOrder)
-      }
-      it("is dealer") {
-        p1.isLead should be (true)
-      }
-    }
-    describe("in its ready to play state") {
-      it("has 5 cards in hand") {
-        p1.hand.length shouldEqual 5
-      }
-      it("can play card") {
-        p1.canPlayCard should be (true)
-      }
-    }
-    describe("once the first turn is over") {
-      it("has 4 cards in hand") {
-        p1.hand.length shouldEqual 4
-      }
-    }
-    describe("during normal gameplay") {
-      it("can play card") {
-        p1.canPlayCard should be (true)
-      }
-      it("can play trump") {
-        p1.canPlayCard should be (true)
-      }
-      it("can follow suit") {
-        p1.canPlayCard should be (true)
-      }
-    }
-  }
+    // set the schemas
+    _p1.schema_(new Schema("Aggressive"))
+    _p2.schema_(new Schema("Passive"))
+    _p3.schema_(new Schema("Aggressive-Trump"))
+    _p4.schema_(new Schema("Passive-Fail"))
 
-  describe("A team") {
-    describe("in its initial state") {
-      it("has 2 players") {
-        t1.size shouldEqual 2
-      }
-      it("has 0 points") {
-        t1.points shouldEqual 0
-      }
-    }
-    describe("during normal gameplay") {
-      it("has 7 or fewer points") {
-        t1.points should be <= 7
-      }
-      it("has the deal") {
-        t1.hasDeal should be (true)
-      }
-      it("has between 0 and 5 tricks") {
-        t1.tricks should be <= 5
-      }
-    }
-  }
+    // set the hands
 
-  describe("A Trick") {
-    val trick = new Trick
-    describe("in its intial state") {
-      it("has a leading player") {
-        trick.leader should be (p1)
-      }
-      it("has no cards") {
-        trick.cards.length shouldEqual 0
-      }
-    }
-    describe("after first card has been played") {
-      it("is the suit of trump") {
-        val round = new Round
-        trick.cards(0).suit shouldEqual round.trump
-      }
-    }
-    describe("in its normal state") {
-      it("has been trumped") {
-        trick.isTrumped should be (true)
-      }
-    }
-    describe("after last player has played a card") {
-      it("can declare winning player of the trick") {
-        val winningPlayer = new Player(hand, schema)
-        trick.winner should be (winningPlayer)
-      }
-      it("can declare the winning team of the trick") {
-        val aTeam = new Team(new Player(hand, schema), new Player(hand, schema))
-        trick.winningTeam should be (aTeam)
-      }
-    }
-  }
+    // A Heart, K Heart, Q Heart, 10 Heart, 9 Heart
+    _p1.hand_(new Hand(List(new Card("A", 14, "Heart", Color.red), new Card("K", 13, "Heart", Color.red),
+      new Card("Q", 12, "Heart", Color.red), new Card("10", 10, "Heart", Color.red),
+      new Card("9", 9, "Heart", Color.red))))
 
-  describe("A Round") {
-    val round = new Round
-    describe("in its initial state") {
-      it("has 2 teams") {
-        //round.teams.length shouldEqual 2
-      }
-      it("has played 0 tricks") {
-        round.tricks.length shouldEqual 0
-      }
-      it("has score of dealing team") {
-        val dealingTeam = new Team(new Player(hand, schema), new Player(hand, schema))
-        //round.highScore should be ((dealingTeam, 0))
-      }
-    }
-    describe("during normal gameplay") {
-      it("has dealing team score up to 5 tricks") {
-        //round.highScore._2 should be <= 5
-      }
-    }
-  }
+    // A Diamond, K Diamond, Q Diamond, 10 Club, 9 Diamond
+    _p2.hand_(new Hand(List(new Card("A", 14, "Diamond", Color.red), new Card("K", 13, "Diamond", Color.red),
+      new Card("Q", 12, "Diamond", Color.red), new Card("10", 10, "Club", Color.black),
+      new Card("9", 9, "Diamond", Color.red))))
 
-  describe("A Trump") {
-    val trump = new Trump
-    describe("in its initial state") {
-      it("is not set") {
-        trump.suit should be (null)
-      }
-    }
-    describe("during normal gameplay") {
-      it("has suit") {
-        val deck = new Deck
-        trump.suit should be (deck.showTopCard.suit)
-      }
-    }
-  }
+    // A Heart, K Heart, Q Heart, 10 Heart, 9 Heart
+    _p3.hand_(new Hand(List(new Card("A", 14, "Heart", Color.red), new Card("K", 13, "Heart", Color.red),
+      new Card("Q", 12, "Heart", Color.red), new Card("10", 10, "Heart", Color.red),
+      new Card("9", 9, "Heart", Color.red))))
 
-  describe("A Scoreboard") {
-    describe("in its initial state") {
-      it("all scores are zero") {
-        scoreboard.scores._1 shouldEqual 0
-        scoreboard.scores._2 shouldEqual 0
-      }
-    }
-    describe("in its normal state") {
-      it("has high score >= 0") {
-        scoreboard.highScore._2 should be >= 0
-      }
-      it("high score is not greater than 7") {
-        scoreboard.highScore._2 should be <=7
-      }
-    }
-  }
+    // A Diamond, K Diamond, Q Diamond, 10 Club, 9 Diamond
+    _p4.hand_(new Hand(List(new Card("A", 14, "Diamond", Color.red), new Card("K", 13, "Diamond", Color.red),
+      new Card("Q", 12, "Diamond", Color.red), new Card("10", 10, "Club", Color.black),
+      new Card("9", 9, "Diamond", Color.red))))
 
-  describe("A GameArea") {
-    val gameArea = new GameArea(scoreboard, t1, t2, playerOrder, new Deck())
-    describe("in its initial state") {
-      it("has scoreboard") {
-        //gameArea.displayScoreboard should be (scorebaord)
+    // set trump to clubs
+    _gameArea.round.trump_("Club")
+    _gameArea.round.color_(Color.black)
+
+    describe("first trick") {
+      it("plays first card") {
+        _gameArea.playCard
+        // player 1 leads with an aggressive schema; play the Ace of Hearts
+        assert(_p1.hand.toString() == "Hand: (K Heart, Q Heart, 10 Heart, 9 Heart)")
       }
-      it("has round") {
-        val round = new Round
-        gameArea.round should be (round)
+      it("plays next card") {
+        _gameArea.playCard
+        // player 3 follows suit with a aggressive-trump schema; play 9 Heart
+        assert(_p3.hand.toString() == "Hand: (A Heart, K Heart, Q Heart, 10 Heart)")
       }
-    }
-    describe("after round complete") {
-      it("updates scorebaord") {
-        //gameArea.updateScorebaord should be (scorebaord)
+      it("plays 3rd card") {
+        _gameArea.playCard
+        // player 2 follows suit with a passive schema; play 10 Club
+        assert(_p2.hand.toString() == "Hand: (A Diamond, K Diamond, Q Diamond, 9 Diamond)")
       }
-      it("displays scoreboard") {
-        gameArea.displayScoreboard should be (scoreboard)
-      }
-      it("starts another round") {
-        gameArea.startNewRound should be (scoreboard)
+      it("plays 4th card") {
+        _gameArea.playCard
+        // player 2 follows suit with a passive-fail schema; play 9 Diamond
+        assert(_p4.hand.toString() == "Hand: (A Diamond, K Diamond, Q Diamond, 10 Club)")
       }
     }
   }

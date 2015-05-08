@@ -119,7 +119,7 @@ class GameMaster(private var _state: String) {
       case "Play" => {
         println("Playing...")
         // Deal cards
-        while (!playRound(300)) {
+        while (!playRound(50)) {
           println()
         }
         _state = "Game Complete"

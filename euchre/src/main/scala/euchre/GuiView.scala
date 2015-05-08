@@ -16,7 +16,7 @@ import scala.swing.event.ButtonClicked
 
 class GuiView extends View {
   private implicit val baseTime = System.currentTimeMillis()
-  private val delay = 1
+  private val delay = 3000
   private var gameOver = false
 
   var gameArea = new Label("Welcome to Euchre", EmptyIcon, Alignment.Center)
