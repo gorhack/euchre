@@ -88,8 +88,11 @@ class GameArea(private var _scoreboard: Scoreboard, private var _t1: Team,
         for (p <- playerOrder.players) {
           p.isLead_(false)
         }
+
+        // after each round of Euchre the player to the right of the player that started the round leads into the next round
         playerOrder.players(game.length % 4).isLead_(true)
         playerOrder.indexOfCurrentPlayer_(game.length % 4)
+        playerOrder.players(playerOrder.indexOfCurrentPlayer).isLead_(true)
       }
       else {
         // if not all 5 tricks have been played start a new trick

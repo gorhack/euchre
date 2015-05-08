@@ -24,7 +24,7 @@ class GuiView extends View {
   private val HEIGHT = 822
   private val DELAY = 200
   private var gameOver = false
-  private val SHOWHANDS = true
+  private val SHOWHANDS = false
   private val CARD_SIZE = new Dimension(71, 96)
   private val NUMBER_OF_PLAYERS = 4
 

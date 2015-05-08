@@ -2,95 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9ce3759-06ef-4577-bcb3-f9a8a41e04ea" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$1$$anonfun$apply$mcVI$sp$22.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$13.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$15.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$16.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$17.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$18.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$19.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13$$anonfun$apply$mcVI$sp$20.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$13.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$10.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$9.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2$$anonfun$apply$mcVI$sp$21.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12$$anon$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anon$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11$$anonfun$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3$$anonfun$20$$anonfun$apply$1$$anonfun$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3$$anonfun$20$$anonfun$apply$1$$anonfun$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3$$anonfun$20$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3$$anonfun$20$$anonfun$apply$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3$$anonfun$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3$$anonfun$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19$$anon$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2$$anonfun$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anon$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10$$anonfun$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10$$anonfun$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12$$anonfun$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12$$anonfun$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$21.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$4$$anonfun$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$4$$anonfun$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6$$anonfun$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6$$anonfun$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8$$anonfun$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8$$anonfun$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1$$anonfun$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14$$anon$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$9.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anon$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$17.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createGameArea$1$$anon$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createGameArea$1$$anon$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createGameArea$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createGameArea$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$createUserArea$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2$$anonfun$apply$mcVI$sp$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$6.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$7.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$8.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayPlayers$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$displayWinner$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$setNextPlayer$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView$$anonfun$setNextPlayer$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/GuiView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Schema.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/euchre/Schema.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" afterPath="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Euchre SBT Project, CS403.iws" />
@@ -131,9 +44,11 @@
       <file leaf-file-name="GuiView.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="404" column="24" selection-start-line="404" selection-start-column="24" selection-end-line="404" selection-end-column="24" />
-              <folding />
+            <state vertical-scroll-proportion="-4.4444447">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding>
+                <element signature="e#56#91#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,21 +103,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Schema.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Schema.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67811936">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameArea.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameArea.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.259259">
-              <caret line="180" column="92" selection-start-line="180" selection-start-column="92" selection-end-line="180" selection-end-column="92" />
+            <state vertical-scroll-proportion="0.44676808">
+              <caret line="94" column="75" selection-start-line="94" selection-start-column="75" selection-end-line="94" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -260,8 +175,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Player.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Team.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Controller.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/Schema.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala" />
       </list>
     </option>
@@ -1289,26 +1204,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="404" column="24" selection-start-line="404" selection-start-column="24" selection-end-line="404" selection-end-column="24" />
+          <caret line="12" column="58" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GuiView.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.4444447">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#56#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/GameArea.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.259259">
-          <caret line="180" column="92" selection-start-line="180" selection-start-column="92" selection-end-line="180" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/euchre/Schema.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67811936">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.44676808">
+          <caret line="94" column="75" selection-start-line="94" selection-start-column="75" selection-end-line="94" selection-end-column="75" />
           <folding />
         </state>
       </provider>
